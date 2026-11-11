@@ -150,7 +150,7 @@
       "pattern": "Token-aware history truncation, turn integrity, and mandatory-context protection",
       "difficulty": "Beginner to intermediate",
       "status": "In progress",
-      "implementation_path": "01-foundations/06-context-window-truncation-strategy",
+      "implementation_path": "01-foundations/06-context-window-truncation",
       "tags": [
         "foundations",
         "python",
