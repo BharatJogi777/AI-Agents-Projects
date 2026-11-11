@@ -19,4 +19,4 @@ def build_grounded_answer(claims:Sequence[Claim],sources:Sequence[Source])->Grou
   refs=", ".join(f"[{sid}]" for sid in claim.source_ids); lines.append(f"{claim.text} {refs}")
   for sid in claim.source_ids:
    if sid not in used: used.append(sid)
- return GroundedAnswer("\\n".join(lines),tuple(claims),tuple(used))
+ return GroundedAnswer("\n".join(lines),tuple(claims),tuple(used))
