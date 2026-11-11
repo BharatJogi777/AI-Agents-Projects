@@ -3,7 +3,7 @@
   "catalogue_version": "1.0.0",
   "total_projects": 500,
   "generated_at": "2026-11-12",
-  "status_policy": "Planned entries are catalogue records, not implementation claims. AG-001 through AG-012 have code in the repository and remain in progress pending local verification.",
+  "status_policy": "Planned entries are catalogue records, not implementation claims. AG-001 through AG-016 have code in the repository and remain in progress pending local verification.",
   "tracks": [
     {
       "id": "01-foundations",
@@ -259,60 +259,64 @@
       "id": "AG-013",
       "track": "01-foundations",
       "title": "Tool result normalization agent",
-      "description": "Learn and implement a focused building block of a reliable LLM agent. Keep model reasoning separate from deterministic application logic.",
-      "pattern": "Core agent loop, typed I/O, tools, state, and control flow",
+      "description": "Normalize arbitrary tool outputs into bounded JSON-safe envelopes with credential redaction, circular-reference handling, and explicit truncation warnings.",
+      "pattern": "Tool result serialization, redaction, bounded output, and normalization warnings",
       "difficulty": "Beginner to intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "01-foundations/13-tool-result-normalization-agent",
       "tags": [
         "foundations",
-        "python",
-        "agent"
+        "tool-results",
+        "serialization",
+        "security"
       ]
     },
     {
       "id": "AG-014",
       "track": "01-foundations",
       "title": "Bounded agent loop",
-      "description": "Learn and implement a focused building block of a reliable LLM agent. Keep model reasoning separate from deterministic application logic.",
-      "pattern": "Core agent loop, typed I/O, tools, state, and control flow",
+      "description": "Enforce independent step, tool-call, and consecutive-error budgets around a framework-independent agent step callback.",
+      "pattern": "Step budgets, tool-call budgets, error thresholds, and explicit stop reports",
       "difficulty": "Beginner to intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "01-foundations/14-bounded-agent-loop",
       "tags": [
         "foundations",
-        "python",
-        "agent"
+        "agent-loop",
+        "limits",
+        "reliability"
       ]
     },
     {
       "id": "AG-015",
       "track": "01-foundations",
       "title": "Stop-condition and loop detector",
-      "description": "Learn and implement a focused building block of a reliable LLM agent. Keep model reasoning separate from deterministic application logic.",
-      "pattern": "Core agent loop, typed I/O, tools, state, and control flow",
+      "description": "Detect repeated agent states using stable fingerprints and apply deterministic stop priority for cancellation, deadlines, final answers, and budgets.",
+      "pattern": "State fingerprinting, rolling repeat detection, and deterministic stop policy",
       "difficulty": "Beginner to intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "01-foundations/15-stop-condition-and-loop-detector",
       "tags": [
         "foundations",
-        "python",
-        "agent"
+        "loop-detection",
+        "state",
+        "termination"
       ]
     },
     {
       "id": "AG-016",
       "track": "01-foundations",
       "title": "Tool timeout handler",
-      "description": "Learn and implement a focused building block of a reliable LLM agent. Keep model reasoning separate from deterministic application logic.",
-      "pattern": "Core agent loop, typed I/O, tools, state, and control flow",
+      "description": "Apply per-tool deadlines to async handlers, propagate cancellation, and distinguish timeout from tool failures.",
+      "pattern": "Async tool deadlines, cancellation semantics, and typed timeout failures",
       "difficulty": "Beginner to intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "01-foundations/16-tool-timeout-handler",
       "tags": [
         "foundations",
-        "python",
-        "agent"
+        "timeouts",
+        "asyncio",
+        "reliability"
       ]
     },
     {

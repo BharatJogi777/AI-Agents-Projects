@@ -23,7 +23,7 @@ This is the master index for the repository. It contains **500 distinct project 
 - **Planned:** catalogued, not yet implemented.
 - **Implemented / Verified / Production-oriented:** only assigned when the evidence requirements in [PROJECT_STANDARD.md](PROJECT_STANDARD.md) are met.
 
-Current implementation status: AG-001 through AG-012 are in progress. The other 488 entries are planned.
+Current implementation status: AG-001 through AG-016 are in progress. The other 484 entries are planned.
 
 ## How to use this catalogue
 
@@ -51,10 +51,10 @@ Current implementation status: AG-001 through AG-012 are in progress. The other 
 | AG-010 | Multi-tool selection agent | Beginner to intermediate | In progress |
 | AG-011 | Typed tool registry | Beginner to intermediate | In progress |
 | AG-012 | Tool argument validation agent | Beginner to intermediate | In progress |
-| AG-013 | Tool result normalization agent | Beginner to intermediate | Planned |
-| AG-014 | Bounded agent loop | Beginner to intermediate | Planned |
-| AG-015 | Stop-condition and loop detector | Beginner to intermediate | Planned |
-| AG-016 | Tool timeout handler | Beginner to intermediate | Planned |
+| AG-013 | Tool result normalization agent | Beginner to intermediate | In progress |
+| AG-014 | Bounded agent loop | Beginner to intermediate | In progress |
+| AG-015 | Stop-condition and loop detector | Beginner to intermediate | In progress |
+| AG-016 | Tool timeout handler | Beginner to intermediate | In progress |
 | AG-017 | Retry with exponential backoff | Beginner to intermediate | Planned |
 | AG-018 | Circuit-breaker model client | Beginner to intermediate | Planned |
 | AG-019 | Provider-agnostic LLM adapter | Beginner to intermediate | Planned |

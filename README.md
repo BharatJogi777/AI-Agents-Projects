@@ -48,7 +48,11 @@ This was a structural scan only; it does not establish whether upstream projects
 - [x] AG-010 Multi-tool selection agent: model selection across three typed, allowlisted tools with bounded execution (local verification pending).
 - [x] AG-011 Typed tool registry: provider schema export, duplicate registration checks, Pydantic validation, and controlled handler failures (local verification pending).
 - [x] AG-012 Tool argument validation gate: allowlist checks, JSON parsing, strict Pydantic validation, and separate handler failure handling (local verification pending).
-- [ ] Run AG-001 and AG-002 in clean Python 3.12 environments and verify Ollama integration; run AG-003 tests and CLI locally; run AG-004 tests and history demo; run AG-005 tests and budget demo; run AG-006 tests and truncation demo; run AG-007 tests and entity extraction demo; run AG-008 tests and repair/retry demo; run AG-009 calculator tests and Ollama tool-call demo; run AG-010 multi-tool selection tests and model demo; run AG-011 registry tests; run AG-012 validation gate tests.
+- [x] AG-013 Tool result normalization: bounded JSON-safe output, secret redaction, cycle handling, and truncation warnings (local verification pending).
+- [x] AG-014 Bounded agent loop: independent step, tool-call, and consecutive-error limits (local verification pending).
+- [x] AG-015 Stop-condition and loop detector: stable state fingerprints, bounded repeat history, and deterministic stop priority (local verification pending).
+- [x] AG-016 Tool timeout handler: async deadlines, cancellation propagation, and typed timeout errors (local verification pending).
+- [ ] Run AG-001 and AG-002 in clean Python 3.12 environments and verify Ollama integration; run AG-003 tests and CLI locally; run AG-004 tests and history demo; run AG-005 tests and budget demo; run AG-006 tests and truncation demo; run AG-007 tests and entity extraction demo; run AG-008 tests and repair/retry demo; run AG-009 calculator tests and Ollama tool-call demo; run AG-010 multi-tool selection tests and model demo; run AG-011 registry tests; run AG-012 validation gate tests; run AG-013 normalization tests; run AG-014 loop-budget tests; run AG-015 detector tests; run AG-016 async timeout tests.
 
 ## Delivery sequence
 
