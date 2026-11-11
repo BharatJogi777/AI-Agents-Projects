@@ -44,7 +44,8 @@ This was a structural scan only; it does not establish whether upstream projects
 - [x] AG-006 Context-window truncation strategy: mandatory system/current-user preservation, complete-turn integrity, newest-first retention, and explicit overflow (verification pending).
 - [x] AG-007 Evidence-backed entity extraction agent: typed entity schema, exact source-substring evidence checks, duplicate rejection, and explicit validation failures (verification pending).
 - [x] AG-008 Schema repair and retry agent: strict Pydantic validation, bounded feedback, configurable repair attempts, and explicit exhaustion handling (verification pending).
-- [ ] Run AG-001 and AG-002 in clean Python 3.12 environments and verify Ollama integration; run AG-003 tests and CLI locally; run AG-004 tests and history demo; run AG-005 tests and budget demo; run AG-006 tests and truncation demo; run AG-007 tests and entity extraction demo; run AG-008 tests and repair/retry demo.
+- [x] AG-009 Tool-calling calculator: Ollama tool selection, strict argument validation, restricted AST evaluation with Decimal, and bounded execution (verification pending).
+- [ ] Run AG-001 and AG-002 in clean Python 3.12 environments and verify Ollama integration; run AG-003 tests and CLI locally; run AG-004 tests and history demo; run AG-005 tests and budget demo; run AG-006 tests and truncation demo; run AG-007 tests and entity extraction demo; run AG-008 tests and repair/retry demo; run AG-009 calculator tests and Ollama tool-call demo.
 
 ## Delivery sequence
 

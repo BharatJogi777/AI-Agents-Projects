@@ -39,6 +39,7 @@ The repository now has a **500-project catalogue across 10 engineering tracks**.
 | AG-006 | [Context-window truncation strategy](01-foundations/06-context-window-truncation/) | In progress — local verification pending |
 | AG-007 | [Evidence-backed entity extraction agent](01-foundations/07-evidence-backed-entity-extraction-agent/) | In progress — local verification pending |
 | AG-008 | [Schema repair and retry agent](01-foundations/08-schema-repair-and-retry-agent/) | In progress — local verification pending |
+| AG-009 | [Tool-calling calculator](01-foundations/09-tool-calling-calculator/) | In progress — local verification pending |
 
 ## Engineering principles
 
