@@ -87,3 +87,17 @@ Follow [PROJECT_STANDARD.md](docs/PROJECT_STANDARD.md). Every implementation nee
 ## License
 
 A repository licence will be selected before external contributions or third-party code reuse. Individual third-party components retain their original licences and notices.
+
+
+## Newly implemented foundations (AG-021–AG-030)
+
+- [x] AG-021 — OpenAI-compatible API adapter: OpenAI-compatible chat-completions HTTP adapter (local verification pending).
+- [x] AG-022 — Model capability registry: Capability metadata, registration, filtering, and deterministic selection (local verification pending).
+- [x] AG-023 — Model fallback router: Capability-aware provider routing and sequential fallback (local verification pending).
+- [x] AG-024 — Streaming response agent: SSE frame parsing, incremental text events, and stream completion (local verification pending).
+- [x] AG-025 — Incremental JSON stream parser: Incremental JSON decoding and buffer limits (local verification pending).
+- [x] AG-026 — Function-call parser: Function-call parsing, allowlist validation, and dispatch boundary (local verification pending).
+- [x] AG-027 — Model output parser benchmark: Parser correctness gates and throughput measurement (local verification pending).
+- [x] AG-028 — Deterministic rule plus LLM router: Rule-first routing with constrained LLM fallback (local verification pending).
+- [x] AG-029 — Intent classification agent: Typed intent output, confidence threshold, and review flag (local verification pending).
+- [x] AG-030 — Entity extraction agent: Evidence-grounded entity extraction and validation (local verification pending).
