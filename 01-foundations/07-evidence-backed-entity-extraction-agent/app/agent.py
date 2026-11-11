@@ -30,14 +30,24 @@ class ExtractionValidationError(RuntimeError):
 
 
 class EvidenceBackedEntityExtractor:
-    def __init__(self, generator: StructuredGenerator) -> None:
+    def __init__(
+        self,
+        generator: StructuredGenerator,
+        *,
+        max_input_bytes: int = 80_000,
+        max_output_bytes: int = 64_000,
+    ) -> None:
+        if max_input_bytes < 1 or max_output_bytes < 1:
+            raise ValueError("input and output byte limits must be positive")
         self.generator = generator
+        self.max_input_bytes = max_input_bytes
+        self.max_output_bytes = max_output_bytes
 
     def extract(self, source_text: str) -> ExtractionResult:
         if not isinstance(source_text, str) or not source_text.strip():
             raise ValueError("source_text cannot be empty")
-        if len(source_text) > 20_000:
-            raise ValueError("source_text exceeds the 20000-character limit")
+        if len(source_text.encode("utf-8")) > self.max_input_bytes:
+            raise ValueError("source_text exceeds the configured byte limit")
 
         messages = [
             {"role": "system", "content": SYSTEM_PROMPT},
@@ -54,6 +64,11 @@ class EvidenceBackedEntityExtractor:
         raw = self.generator.generate_structured(
             messages, ExtractionResult.model_json_schema()
         )
+        if not isinstance(raw, str):
+            raise ExtractionValidationError("The model response was not text.")
+        if len(raw.encode("utf-8")) > self.max_output_bytes:
+            raise ExtractionValidationError("The model response exceeded the byte limit.")
+
         try:
             result = ExtractionResult.model_validate_json(raw, strict=True)
         except ValidationError as exc:
