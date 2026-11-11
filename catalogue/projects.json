@@ -3,7 +3,7 @@
   "catalogue_version": "1.0.0",
   "total_projects": 500,
   "generated_at": "2026-11-12",
-  "status_policy": "Planned entries are catalogue records, not implementation claims. AG-001 through AG-050 have code in the repository and remain in progress pending local verification.",
+  "status_policy": "Planned entries are catalogue records, not implementation claims. AG-001 through AG-060 have code in the repository and remain in progress pending local verification.",
   "tracks": [
     {
       "id": "01-foundations",
@@ -843,150 +843,150 @@
       "id": "AG-051",
       "track": "02-rag-agents",
       "title": "PDF question-answering agent",
-      "description": "Build a grounded knowledge or data workflow. Answers must expose evidence, respect access filters, and abstain when retrieval is insufficient.",
-      "pattern": "Ingestion, retrieval, grounding, data access, and evaluation",
+      "description": "Extract page-aware text from PDF files and return bounded evidence snippets with page numbers for downstream grounded answers.",
+      "pattern": "Format-specific ingestion, provenance preservation, bounded extraction, and retrieval preparation",
       "difficulty": "Intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "02-rag-agents/01-pdf-question-answering-agent",
       "tags": [
-        "rag-and-data-agents",
-        "python",
-        "agent"
+        "rag",
+        "ingestion",
+        "python"
       ]
     },
     {
       "id": "AG-052",
       "track": "02-rag-agents",
       "title": "DOCX knowledge assistant",
-      "description": "Build a grounded knowledge or data workflow. Answers must expose evidence, respect access filters, and abstain when retrieval is insufficient.",
-      "pattern": "Ingestion, retrieval, grounding, data access, and evaluation",
+      "description": "Extract DOCX paragraphs and table rows in document order, retaining structural labels so retrieved evidence can be traced to its source.",
+      "pattern": "Format-specific ingestion, provenance preservation, bounded extraction, and retrieval preparation",
       "difficulty": "Intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "02-rag-agents/02-docx-knowledge-assistant",
       "tags": [
-        "rag-and-data-agents",
-        "python",
-        "agent"
+        "rag",
+        "ingestion",
+        "python"
       ]
     },
     {
       "id": "AG-053",
       "track": "02-rag-agents",
       "title": "Markdown documentation assistant",
-      "description": "Build a grounded knowledge or data workflow. Answers must expose evidence, respect access filters, and abstain when retrieval is insufficient.",
-      "pattern": "Ingestion, retrieval, grounding, data access, and evaluation",
+      "description": "Split Markdown documentation into heading-aware chunks while retaining heading paths, source line ranges, and original text for citations.",
+      "pattern": "Format-specific ingestion, provenance preservation, bounded extraction, and retrieval preparation",
       "difficulty": "Intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "02-rag-agents/03-markdown-documentation-assistant",
       "tags": [
-        "rag-and-data-agents",
-        "python",
-        "agent"
+        "rag",
+        "ingestion",
+        "python"
       ]
     },
     {
       "id": "AG-054",
       "track": "02-rag-agents",
       "title": "HTML knowledge-base agent",
-      "description": "Build a grounded knowledge or data workflow. Answers must expose evidence, respect access filters, and abstain when retrieval is insufficient.",
-      "pattern": "Ingestion, retrieval, grounding, data access, and evaluation",
+      "description": "Extract readable HTML text while excluding script, style, and hidden content; retain headings and links as text for safer knowledge ingestion.",
+      "pattern": "Format-specific ingestion, provenance preservation, bounded extraction, and retrieval preparation",
       "difficulty": "Intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "02-rag-agents/04-html-knowledge-base-agent",
       "tags": [
-        "rag-and-data-agents",
-        "python",
-        "agent"
+        "rag",
+        "ingestion",
+        "python"
       ]
     },
     {
       "id": "AG-055",
       "track": "02-rag-agents",
       "title": "CSV question-answering agent",
-      "description": "Build a grounded knowledge or data workflow. Answers must expose evidence, respect access filters, and abstain when retrieval is insufficient.",
-      "pattern": "Ingestion, retrieval, grounding, data access, and evaluation",
+      "description": "Turn CSV rows into evidence-bearing records with row numbers, strict headers, bounded file size, and safe handling of quoted delimiters.",
+      "pattern": "Format-specific ingestion, provenance preservation, bounded extraction, and retrieval preparation",
       "difficulty": "Intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "02-rag-agents/05-csv-question-answering-agent",
       "tags": [
-        "rag-and-data-agents",
-        "python",
-        "agent"
+        "rag",
+        "ingestion",
+        "python"
       ]
     },
     {
       "id": "AG-056",
       "track": "02-rag-agents",
       "title": "Excel workbook analyst",
-      "description": "Build a grounded knowledge or data workflow. Answers must expose evidence, respect access filters, and abstain when retrieval is insufficient.",
-      "pattern": "Ingestion, retrieval, grounding, data access, and evaluation",
+      "description": "Read Excel worksheets in read-only mode, preserve sheet and row provenance, and bound workbook size and row counts.",
+      "pattern": "Format-specific ingestion, provenance preservation, bounded extraction, and retrieval preparation",
       "difficulty": "Intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "02-rag-agents/06-excel-workbook-analyst",
       "tags": [
-        "rag-and-data-agents",
-        "python",
-        "agent"
+        "rag",
+        "ingestion",
+        "python"
       ]
     },
     {
       "id": "AG-057",
       "track": "02-rag-agents",
       "title": "JSON dataset assistant",
-      "description": "Build a grounded knowledge or data workflow. Answers must expose evidence, respect access filters, and abstain when retrieval is insufficient.",
-      "pattern": "Ingestion, retrieval, grounding, data access, and evaluation",
+      "description": "Normalize JSON objects and arrays into bounded records with stable JSON paths and canonical serialization for evidence and indexing.",
+      "pattern": "Format-specific ingestion, provenance preservation, bounded extraction, and retrieval preparation",
       "difficulty": "Intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "02-rag-agents/07-json-dataset-assistant",
       "tags": [
-        "rag-and-data-agents",
-        "python",
-        "agent"
+        "rag",
+        "ingestion",
+        "python"
       ]
     },
     {
       "id": "AG-058",
       "track": "02-rag-agents",
       "title": "Multi-format document ingester",
-      "description": "Build a grounded knowledge or data workflow. Answers must expose evidence, respect access filters, and abstain when retrieval is insufficient.",
-      "pattern": "Ingestion, retrieval, grounding, data access, and evaluation",
+      "description": "Provide one bounded ingestion interface for TXT, Markdown, HTML, CSV, JSON, PDF, DOCX, and XLSX while retaining source-specific provenance.",
+      "pattern": "Format-specific ingestion, provenance preservation, bounded extraction, and retrieval preparation",
       "difficulty": "Intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "02-rag-agents/08-multi-format-document-ingester",
       "tags": [
-        "rag-and-data-agents",
-        "python",
-        "agent"
+        "rag",
+        "ingestion",
+        "python"
       ]
     },
     {
       "id": "AG-059",
       "track": "02-rag-agents",
       "title": "Directory watcher ingestion agent",
-      "description": "Build a grounded knowledge or data workflow. Answers must expose evidence, respect access filters, and abstain when retrieval is insufficient.",
-      "pattern": "Ingestion, retrieval, grounding, data access, and evaluation",
+      "description": "Poll a document directory safely and emit deterministic created, modified, and deleted events using content hashes without following symlinks.",
+      "pattern": "Format-specific ingestion, provenance preservation, bounded extraction, and retrieval preparation",
       "difficulty": "Intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "02-rag-agents/09-directory-watcher-ingestion-agent",
       "tags": [
-        "rag-and-data-agents",
-        "python",
-        "agent"
+        "rag",
+        "ingestion",
+        "python"
       ]
     },
     {
       "id": "AG-060",
       "track": "02-rag-agents",
       "title": "Incremental document indexer",
-      "description": "Build a grounded knowledge or data workflow. Answers must expose evidence, respect access filters, and abstain when retrieval is insufficient.",
-      "pattern": "Ingestion, retrieval, grounding, data access, and evaluation",
+      "description": "Maintain a transactional SQLite document and chunk index using content hashes, deterministic chunk IDs, and unchanged-document skips.",
+      "pattern": "Format-specific ingestion, provenance preservation, bounded extraction, and retrieval preparation",
       "difficulty": "Intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "02-rag-agents/10-incremental-document-indexer",
       "tags": [
-        "rag-and-data-agents",
-        "python",
-        "agent"
+        "rag",
+        "ingestion",
+        "python"
       ]
     },
     {

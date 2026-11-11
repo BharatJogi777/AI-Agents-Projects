@@ -115,3 +115,16 @@ A repository licence will be selected before external contributions or third-par
 - [x] AG-048 — Agent trace event emitter: Structured events, ordering, bounds, and redaction (local verification pending).
 - [x] AG-049 — CLI agent interface: CLI boundary, validation, dependency injection, and exit codes (local verification pending).
 - [x] AG-050 — FastAPI agent endpoint: HTTP API boundary, typed validation, injection, and safe error mapping (local verification pending).
+
+## RAG and data agents implemented (AG-051–AG-060)
+
+- [x] AG-051 — PDF question-answering agent: Extract page-aware text from PDF files and return bounded evidence snippets with page numbers for downstream grounded answers. (local verification pending).
+- [x] AG-052 — DOCX knowledge assistant: Extract DOCX paragraphs and table rows in document order, retaining structural labels so retrieved evidence can be traced to its source. (local verification pending).
+- [x] AG-053 — Markdown documentation assistant: Split Markdown documentation into heading-aware chunks while retaining heading paths, source line ranges, and original text for citations. (local verification pending).
+- [x] AG-054 — HTML knowledge-base agent: Extract readable HTML text while excluding script, style, and hidden content; retain headings and links as text for safer knowledge ingestion. (local verification pending).
+- [x] AG-055 — CSV question-answering agent: Turn CSV rows into evidence-bearing records with row numbers, strict headers, bounded file size, and safe handling of quoted delimiters. (local verification pending).
+- [x] AG-056 — Excel workbook analyst: Read Excel worksheets in read-only mode, preserve sheet and row provenance, and bound workbook size and row counts. (local verification pending).
+- [x] AG-057 — JSON dataset assistant: Normalize JSON objects and arrays into bounded records with stable JSON paths and canonical serialization for evidence and indexing. (local verification pending).
+- [x] AG-058 — Multi-format document ingester: Provide one bounded ingestion interface for TXT, Markdown, HTML, CSV, JSON, PDF, DOCX, and XLSX while retaining source-specific provenance. (local verification pending).
+- [x] AG-059 — Directory watcher ingestion agent: Poll a document directory safely and emit deterministic created, modified, and deleted events using content hashes without following symlinks. (local verification pending).
+- [x] AG-060 — Incremental document indexer: Maintain a transactional SQLite document and chunk index using content hashes, deterministic chunk IDs, and unchanged-document skips. (local verification pending).

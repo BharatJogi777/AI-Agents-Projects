@@ -108,3 +108,17 @@ Never count a planned catalogue entry as an implemented project.
 - [x] AG-049 — [CLI agent interface](01-foundations/49-cli-agent-interface/) — CLI boundary, validation, dependency injection, and exit codes (local verification pending).
 - [x] AG-050 — [FastAPI agent endpoint](01-foundations/50-fastapi-agent-endpoint/) — HTTP API boundary, typed validation, injection, and safe error mapping (local verification pending).
 
+
+## RAG and data agents implemented (AG-051–AG-060)
+
+- [x] AG-051 — [PDF question-answering agent](02-rag-agents/01-pdf-question-answering-agent/) (local verification pending).
+- [x] AG-052 — [DOCX knowledge assistant](02-rag-agents/02-docx-knowledge-assistant/) (local verification pending).
+- [x] AG-053 — [Markdown documentation assistant](02-rag-agents/03-markdown-documentation-assistant/) (local verification pending).
+- [x] AG-054 — [HTML knowledge-base agent](02-rag-agents/04-html-knowledge-base-agent/) (local verification pending).
+- [x] AG-055 — [CSV question-answering agent](02-rag-agents/05-csv-question-answering-agent/) (local verification pending).
+- [x] AG-056 — [Excel workbook analyst](02-rag-agents/06-excel-workbook-analyst/) (local verification pending).
+- [x] AG-057 — [JSON dataset assistant](02-rag-agents/07-json-dataset-assistant/) (local verification pending).
+- [x] AG-058 — [Multi-format document ingester](02-rag-agents/08-multi-format-document-ingester/) (local verification pending).
+- [x] AG-059 — [Directory watcher ingestion agent](02-rag-agents/09-directory-watcher-ingestion-agent/) (local verification pending).
+- [x] AG-060 — [Incremental document indexer](02-rag-agents/10-incremental-document-indexer/) (local verification pending).
+

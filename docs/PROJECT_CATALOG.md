@@ -104,16 +104,16 @@ Current implementation status: AG-001 through AG-040 are in progress. The other 
 
 | ID | Project | Difficulty | Status |
 |---|---|---|---|
-| AG-051 | PDF question-answering agent | Intermediate | Planned |
-| AG-052 | DOCX knowledge assistant | Intermediate | Planned |
-| AG-053 | Markdown documentation assistant | Intermediate | Planned |
-| AG-054 | HTML knowledge-base agent | Intermediate | Planned |
-| AG-055 | CSV question-answering agent | Intermediate | Planned |
-| AG-056 | Excel workbook analyst | Intermediate | Planned |
-| AG-057 | JSON dataset assistant | Intermediate | Planned |
-| AG-058 | Multi-format document ingester | Intermediate | Planned |
-| AG-059 | Directory watcher ingestion agent | Intermediate | Planned |
-| AG-060 | Incremental document indexer | Intermediate | Planned |
+| AG-051 | PDF question-answering agent | Intermediate | In progress |
+| AG-052 | DOCX knowledge assistant | Intermediate | In progress |
+| AG-053 | Markdown documentation assistant | Intermediate | In progress |
+| AG-054 | HTML knowledge-base agent | Intermediate | In progress |
+| AG-055 | CSV question-answering agent | Intermediate | In progress |
+| AG-056 | Excel workbook analyst | Intermediate | In progress |
+| AG-057 | JSON dataset assistant | Intermediate | In progress |
+| AG-058 | Multi-format document ingester | Intermediate | In progress |
+| AG-059 | Directory watcher ingestion agent | Intermediate | In progress |
+| AG-060 | Incremental document indexer | Intermediate | In progress |
 | AG-061 | Document deduplication agent | Intermediate | Planned |
 | AG-062 | Document metadata extractor | Intermediate | Planned |
 | AG-063 | Semantic chunking pipeline | Intermediate | Planned |
