@@ -46,7 +46,9 @@ This was a structural scan only; it does not establish whether upstream projects
 - [x] AG-008 Schema repair and retry agent: strict Pydantic validation, bounded feedback, configurable repair attempts, and explicit exhaustion handling (verification pending).
 - [x] AG-009 Tool-calling calculator: Ollama tool selection, strict argument validation, restricted AST evaluation with Decimal, and bounded execution (verification pending).
 - [x] AG-010 Multi-tool selection agent: model selection across three typed, allowlisted tools with bounded execution (local verification pending).
-- [ ] Run AG-001 and AG-002 in clean Python 3.12 environments and verify Ollama integration; run AG-003 tests and CLI locally; run AG-004 tests and history demo; run AG-005 tests and budget demo; run AG-006 tests and truncation demo; run AG-007 tests and entity extraction demo; run AG-008 tests and repair/retry demo; run AG-009 calculator tests and Ollama tool-call demo.
+- [x] AG-011 Typed tool registry: provider schema export, duplicate registration checks, Pydantic validation, and controlled handler failures (local verification pending).
+- [x] AG-012 Tool argument validation gate: allowlist checks, JSON parsing, strict Pydantic validation, and separate handler failure handling (local verification pending).
+- [ ] Run AG-001 and AG-002 in clean Python 3.12 environments and verify Ollama integration; run AG-003 tests and CLI locally; run AG-004 tests and history demo; run AG-005 tests and budget demo; run AG-006 tests and truncation demo; run AG-007 tests and entity extraction demo; run AG-008 tests and repair/retry demo; run AG-009 calculator tests and Ollama tool-call demo; run AG-010 multi-tool selection tests and model demo; run AG-011 registry tests; run AG-012 validation gate tests.
 
 ## Delivery sequence
 
