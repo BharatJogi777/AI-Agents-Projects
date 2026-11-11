@@ -1,7 +1,7 @@
 # 01 — Tool-calling agent
 
 **Difficulty:** Beginner → Intermediate  
-**Status:** Implemented (automated tests authored; local Ollama integration still needs verification)  
+**Status:** In progress (implementation and automated tests committed; tests and local Ollama integration have not yet been executed in a clean environment)  
 **Model:** Ollama through its OpenAI-compatible API  
 **Default model:** `qwen3:4b`
 
