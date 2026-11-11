@@ -3,7 +3,7 @@
   "catalogue_version": "1.0.0",
   "total_projects": 500,
   "generated_at": "2026-11-12",
-  "status_policy": "Planned entries are catalogue records, not implementation claims. AG-001 through AG-009 have code in the repository and remain in progress pending local verification.",
+  "status_policy": "Planned entries are catalogue records, not implementation claims. AG-001 through AG-010 have code in the repository and remain in progress pending local verification.",
   "tracks": [
     {
       "id": "01-foundations",
@@ -211,15 +211,16 @@
       "id": "AG-010",
       "track": "01-foundations",
       "title": "Multi-tool selection agent",
-      "description": "Learn and implement a focused building block of a reliable LLM agent. Keep model reasoning separate from deterministic application logic.",
-      "pattern": "Core agent loop, typed I/O, tools, state, and control flow",
+      "description": "Let an Ollama model choose among multiple allowlisted typed tools, validate arguments, execute handlers, and return results through a bounded agent loop.",
+      "pattern": "Multi-tool routing, typed argument schemas, allowlisted dispatch, and bounded tool loop",
       "difficulty": "Beginner to intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "01-foundations/10-multi-tool-selection-agent",
       "tags": [
         "foundations",
-        "python",
-        "agent"
+        "tool-calling",
+        "multi-tool",
+        "ollama"
       ]
     },
     {
