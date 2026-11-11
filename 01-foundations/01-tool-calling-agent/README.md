@@ -1,105 +1,112 @@
 # 01 — Tool-calling agent
 
 **Difficulty:** Beginner → Intermediate  
-**Status:** In progress (implementation and automated tests committed; tests and local Ollama integration have not yet been executed in a clean environment)  
-**Model:** Ollama through its OpenAI-compatible API  
-**Default model:** `qwen3:4b`
+**Status:** Expanded reference implementation; tests are authored but not yet executed in a clean environment.  
+**Model:** Ollama OpenAI-compatible chat API; default qwen3:4b.
 
-A small agent that receives a user request, lets the model choose from a strict allowlist of tools, validates tool arguments, executes deterministic Python functions, returns tool results to the model, and produces a final answer.
+This project demonstrates the complete tool-calling cycle: the model proposes a structured tool call, Python validates and executes an allowlisted function, and the result is returned to the model for a final answer.
 
-## What this teaches
+## What you will learn
 
-- The difference between an LLM response and an agent loop.
-- How tool schemas are exposed to a model.
-- Why the model proposes a tool call but application code executes it.
-- How tool results are added back to the conversation.
-- Why tool allowlists, schema validation, and maximum step limits matter.
-- How to test an agent without making paid model calls.
+- LLM response vs. an agent loop.
+- Tool schemas and model-generated arguments.
+- Why the model does not execute Python code.
+- Provider adapters and dependency injection.
+- Tool allowlists, Pydantic validation, and bounded execution.
+- CLI and FastAPI entry points.
+- Unit testing without a running model.
+- Docker packaging and local Ollama connectivity.
+- Trust boundaries and operational gaps.
 
 ## Architecture
 
-```text
-User prompt
-    |
-    v
-ToolCallingAgent -----> OllamaChatClient -----> Ollama /v1/chat/completions
-    |                           ^
-    | model proposes tool call  | tool result + conversation
-    v                           |
-Allowlist + Pydantic validation |
-    |
-    v
-Deterministic Python tool
-    |
-    +---- add_numbers
-    +---- get_current_utc_time
-```
+    CLI / HTTP API
+          |
+          v
+    ToolCallingAgent ---- ChatClient protocol
+          |                       |
+          |                 OllamaChatClient
+          |                       |
+          v                       v
+    Tool allowlist            Ollama API
+          |
+          v
+    Pydantic validation
+          |
+          v
+    Deterministic Python handlers
 
-The LLM never executes Python code. It returns a structured request. The application checks the tool name and arguments, runs an allowlisted function, and sends the result back to the model.
+The model proposes an action. Application code validates the tool name and arguments, executes the registered handler, and returns its result. The LLM has no direct Python, shell, filesystem, or database execution access.
+
+Read docs/architecture.md, docs/execution-flow.md, and docs/security.md before running it.
 
 ## Prerequisites
 
 - Python 3.12+
-- Ollama installed and running on the host
-- A tool-capable local model, for example `qwen3:4b`
+- Ollama running on the host
+- qwen3:4b or another tool-calling-capable model
 
-Pull the model if needed:
+    ollama pull qwen3:4b
+    ollama list
 
-```bash
-ollama pull qwen3:4b
-ollama list
-```
+## Local setup
 
-## Setup
+    python3.12 -m venv .venv
+    source .venv/bin/activate
+    python -m pip install --upgrade pip
+    pip install -e '.[dev]'
+    cp .env.example .env
 
-From this directory:
+## Run the CLI
 
-```bash
-python3.12 -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-pip install -e '.[dev]'
-cp .env.example .env
-```
+    python -m app.main "What is 19 plus 23? Use a tool to calculate it."
+    python -m app.main "What time is it in UTC?"
 
-Edit `.env` only if you need a different model or Ollama endpoint.
+## Run the HTTP API
 
-## Run
+    uvicorn app.server:app --host 127.0.0.1 --port 8000
 
-```bash
-python -m app.main "What is 19 plus 23? Use a tool to calculate it."
-python -m app.main "What time is it in UTC?"
-```
+    curl http://127.0.0.1:8000/health/live
 
-Ollama's OpenAI-compatible endpoint is expected at `http://localhost:11434/v1/chat/completions`.
+    curl -X POST http://127.0.0.1:8000/v1/agent/run \
+      -H 'Content-Type: application/json' \
+      -d '{"prompt":"What is 19 plus 23? Use a tool."}'
 
-## Test without Ollama
+The API factory accepts an injected agent, so endpoint tests do not call Ollama.
 
-```bash
-pytest
-```
+## Run with Docker
 
-Tests use a fake model client, so they do not need an API key, internet access, or a running Ollama service.
+    docker compose up --build
 
-## Safety and current limitations
+Ollama remains on the host. Compose binds the API to localhost and uses host.docker.internal for the host Ollama endpoint.
 
-- Only `add_numbers` and `get_current_utc_time` are registered.
-- Unknown tools are rejected.
-- Arguments are validated before execution.
-- The number of model steps is bounded.
-- The example has no shell, filesystem, browser, database, or network tools.
-- This is a teaching foundation, not a deployed multi-user service. Before exposing it as an API, add authentication, rate limits, per-user budgets, request IDs, structured audit events, and concurrency controls.
-- Model behavior varies. If the model does not produce a tool call, inspect its response and confirm that the selected model supports tool calling.
+## Run tests
 
-## Project structure
+    pytest
 
-```text
-app/
-  agent.py       # bounded agent loop
-  config.py      # environment-backed settings
-  llm.py         # Ollama API adapter
-  main.py        # CLI
-  tools.py       # tool schemas, validation, allowlist
-tests/
-  test_agent.py  # deterministic unit tests
-```
+Tests use a fake client and should not need Ollama, network access, or a model download. They are authored but must be run locally before this project is marked verified.
+
+## Project layout
+
+    app/
+      agent.py             # bounded reasoning/tool loop
+      api.py               # FastAPI factory and request boundary
+      config.py            # environment-backed settings
+      llm.py               # Ollama HTTP adapter
+      main.py              # CLI
+      server.py            # ASGI entry point
+      schemas.py           # API contract
+      tools.py             # schemas, validation, allowlist, handlers
+      core/                # application error types
+      observability/       # structured event interface
+    tests/
+      test_agent.py
+      test_api.py
+    docs/
+      architecture.md
+      execution-flow.md
+      security.md
+
+## Current limitations
+
+This is a learning foundation, not a claim of production readiness. The API has no authentication, tenant authorization, rate limiting, durable run store, or distributed tracing. Keep it local or behind a trusted gateway. Add those controls before exposing it to untrusted users. The sample tools are intentionally harmless and have no external side effects.
