@@ -3,7 +3,7 @@
   "catalogue_version": "1.0.0",
   "total_projects": 500,
   "generated_at": "2026-11-12",
-  "status_policy": "Planned entries are catalogue records, not implementation claims. Only AG-001 and AG-002 have code in the repository and remain in progress pending local verification.",
+  "status_policy": "Planned entries are catalogue records, not implementation claims. AG-001 through AG-003 have code in the repository and remain in progress pending local verification.",
   "tracks": [
     {
       "id": "01-foundations",
@@ -101,10 +101,10 @@
       "id": "AG-003",
       "track": "01-foundations",
       "title": "System and developer prompt boundary demo",
-      "description": "Learn and implement a focused building block of a reliable LLM agent. Keep model reasoning separate from deterministic application logic.",
+      "description": "Demonstrate trusted system and developer instructions, untrusted user input, safe message framing, and provider-specific role mapping.",
       "pattern": "Core agent loop, typed I/O, tools, state, and control flow",
       "difficulty": "Beginner to intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "01-foundations/03-system-and-developer-prompt-boundary-demo",
       "tags": [
         "foundations",

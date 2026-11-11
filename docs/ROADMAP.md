@@ -37,8 +37,8 @@ This was a structural scan only; it does not establish whether upstream projects
 ## Existing implementations
 
 - [x] AG-001 Tool-calling agent: bounded loop, allowlisted tools, validation, Ollama adapter (verification pending).
-- [x] AG-002 Structured-output agent: schema-constrained generation and strict Pydantic validation (verification pending).
-- [ ] Run both projects in clean Python 3.12 environments and verify Ollama integration.
+- [x] AG-002 Structured-output agent: schema-constrained generation and strict Pydantic validation (verification pending).\n- [x] AG-003 Prompt boundary demo: trusted system/developer messages, untrusted user framing, and provider role mapping (verification pending).
+- [ ] Run AG-001 and AG-002 in clean Python 3.12 environments and verify Ollama integration; run AG-003 tests and CLI locally.
 
 ## Delivery sequence
 

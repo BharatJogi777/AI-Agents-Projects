@@ -32,7 +32,7 @@ The repository now has a **500-project catalogue across 10 engineering tracks**.
 | ID | Project | Status |
 |---|---|---|
 | AG-001 | [Tool-calling agent](01-foundations/01-tool-calling-agent/) | In progress — local verification pending |
-| AG-002 | [Structured-output agent](01-foundations/02-structured-output-agent/) | In progress — local verification pending |
+| AG-002 | [Structured-output agent](01-foundations/02-structured-output-agent/) | In progress — local verification pending |\n| AG-003 | [System and developer prompt boundary demo](01-foundations/03-system-and-developer-prompt-boundary-demo/) | In progress — local verification pending |
 
 ## Engineering principles
 
