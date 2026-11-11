@@ -23,7 +23,7 @@ This is the master index for the repository. It contains **500 distinct project 
 - **Planned:** catalogued, not yet implemented.
 - **Implemented / Verified / Production-oriented:** only assigned when the evidence requirements in [PROJECT_STANDARD.md](PROJECT_STANDARD.md) are met.
 
-Current implementation status: AG-001 through AG-040 are in progress. The other 460 entries are planned.
+Current implementation status: AG-001 through AG-070 are in progress. The other 430 entries are planned.
 
 ## How to use this catalogue
 
@@ -594,3 +594,16 @@ Current implementation status: AG-001 through AG-040 are in progress. The other 
 | AG-498 | Interview preparation assistant | Beginner to advanced | Planned |
 | AG-499 | Learning path planner | Beginner to advanced | Planned |
 | AG-500 | Interactive study coach | Beginner to advanced | Planned |
+
+## RAG and data agents (AG-051–AG-070)
+
+| AG-061 | Document deduplication agent | Intermediate | In progress |
+| AG-062 | Document metadata extractor | Intermediate | In progress |
+| AG-063 | Semantic chunking pipeline | Intermediate | In progress |
+| AG-064 | Parent-child chunk retrieval | Intermediate | In progress |
+| AG-065 | Sliding-window chunker | Intermediate | In progress |
+| AG-066 | Hybrid keyword-vector search agent | Intermediate | In progress |
+| AG-067 | Metadata-filtered retrieval agent | Intermediate | In progress |
+| AG-068 | Query rewriting agent | Intermediate | In progress |
+| AG-069 | Multi-query retrieval agent | Intermediate | In progress |
+| AG-070 | HyDE retrieval agent | Intermediate | In progress |
