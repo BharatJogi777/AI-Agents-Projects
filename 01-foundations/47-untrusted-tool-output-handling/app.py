@@ -1,8 +1,8 @@
 """AG-047: Normalize and bound tool output before it re-enters model context."""
 import json,re
 class ToolOutputNormalizer:
- # Redact string values of common credential fields in serialized JSON.
- pattern=re.compile(r'(?i)("(?:api[_-]?key|access[_-]?token|password)"\\s*:\\s*")[^"]*(")')
+ # JSON serialization uses a space after the colon by default; allow optional spaces.
+ pattern=re.compile(r'(?i)("(?:api[_-]?key|access[_-]?token|password)" *: *")[^"]*(")')
  def __init__(self,max_chars=4000):
   if max_chars<32: raise ValueError("minimum limit is 32")
   self.max_chars=max_chars
