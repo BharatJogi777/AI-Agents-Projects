@@ -52,7 +52,11 @@ This was a structural scan only; it does not establish whether upstream projects
 - [x] AG-014 Bounded agent loop: independent step, tool-call, and consecutive-error limits (local verification pending).
 - [x] AG-015 Stop-condition and loop detector: stable state fingerprints, bounded repeat history, and deterministic stop priority (local verification pending).
 - [x] AG-016 Tool timeout handler: async deadlines, cancellation propagation, and typed timeout errors (local verification pending).
-- [ ] Run AG-001 and AG-002 in clean Python 3.12 environments and verify Ollama integration; run AG-003 tests and CLI locally; run AG-004 tests and history demo; run AG-005 tests and budget demo; run AG-006 tests and truncation demo; run AG-007 tests and entity extraction demo; run AG-008 tests and repair/retry demo; run AG-009 calculator tests and Ollama tool-call demo; run AG-010 multi-tool selection tests and model demo; run AG-011 registry tests; run AG-012 validation gate tests; run AG-013 normalization tests; run AG-014 loop-budget tests; run AG-015 detector tests; run AG-016 async timeout tests.
+- [x] AG-017 Retry with exponential backoff: bounded attempts, exponential delays, jitter, and retry classification (local verification pending).
+- [x] AG-018 Circuit-breaker model client: thread-safe state transitions, recovery window, and a single half-open probe (local verification pending).
+- [x] AG-019 Provider-agnostic LLM adapter: normalized chat contracts and provider routing (local verification pending).
+- [x] AG-020 Ollama local model adapter: non-streaming chat, health/model listing, and provider error normalization (local verification pending).
+- [ ] Run AG-001 and AG-002 in clean Python 3.12 environments and verify Ollama integration; run AG-003 tests and CLI locally; run AG-004 tests and history demo; run AG-005 tests and budget demo; run AG-006 tests and truncation demo; run AG-007 tests and entity extraction demo; run AG-008 tests and repair/retry demo; run AG-009 calculator tests and Ollama tool-call demo; run AG-010 multi-tool selection tests and model demo; run AG-011 registry tests; run AG-012 validation gate tests; run AG-013 normalization tests; run AG-014 loop-budget tests; run AG-015 detector tests; run AG-016 async timeout tests; run AG-017 retry tests; run AG-018 circuit-breaker tests; run AG-019 provider-contract tests; run AG-020 Ollama adapter tests and local integration.
 
 ## Delivery sequence
 

@@ -3,7 +3,7 @@
   "catalogue_version": "1.0.0",
   "total_projects": 500,
   "generated_at": "2026-11-12",
-  "status_policy": "Planned entries are catalogue records, not implementation claims. AG-001 through AG-016 have code in the repository and remain in progress pending local verification.",
+  "status_policy": "Planned entries are catalogue records, not implementation claims. AG-001 through AG-020 have code in the repository and remain in progress pending local verification.",
   "tracks": [
     {
       "id": "01-foundations",
@@ -323,60 +323,64 @@
       "id": "AG-017",
       "track": "01-foundations",
       "title": "Retry with exponential backoff",
-      "description": "Learn and implement a focused building block of a reliable LLM agent. Keep model reasoning separate from deterministic application logic.",
-      "pattern": "Core agent loop, typed I/O, tools, state, and control flow",
+      "description": "Retry transient failures with bounded exponential backoff, jitter, retry classification, injectable timing, and explicit exhaustion errors.",
+      "pattern": "Bounded retry policy, exponential delay, jitter, and retry predicate",
       "difficulty": "Beginner to intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "01-foundations/17-retry-with-exponential-backoff",
       "tags": [
         "foundations",
-        "python",
-        "agent"
+        "retries",
+        "backoff",
+        "resilience"
       ]
     },
     {
       "id": "AG-018",
       "track": "01-foundations",
       "title": "Circuit-breaker model client",
-      "description": "Learn and implement a focused building block of a reliable LLM agent. Keep model reasoning separate from deterministic application logic.",
-      "pattern": "Core agent loop, typed I/O, tools, state, and control flow",
+      "description": "Protect model/provider calls with a thread-safe CLOSED/OPEN/HALF_OPEN circuit breaker and a single recovery probe.",
+      "pattern": "Circuit-breaker state machine, recovery window, and half-open probe",
       "difficulty": "Beginner to intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "01-foundations/18-circuit-breaker-model-client",
       "tags": [
         "foundations",
-        "python",
-        "agent"
+        "circuit-breaker",
+        "resilience",
+        "provider"
       ]
     },
     {
       "id": "AG-019",
       "track": "01-foundations",
       "title": "Provider-agnostic LLM adapter",
-      "description": "Learn and implement a focused building block of a reliable LLM agent. Keep model reasoning separate from deterministic application logic.",
-      "pattern": "Core agent loop, typed I/O, tools, state, and control flow",
+      "description": "Define normalized chat request/response contracts and route agent calls through interchangeable provider implementations.",
+      "pattern": "Provider protocol, normalized chat contracts, and explicit provider routing",
       "difficulty": "Beginner to intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "01-foundations/19-provider-agnostic-llm-adapter",
       "tags": [
         "foundations",
-        "python",
-        "agent"
+        "llm-adapter",
+        "provider-abstraction",
+        "python"
       ]
     },
     {
       "id": "AG-020",
       "track": "01-foundations",
       "title": "Ollama local model adapter",
-      "description": "Learn and implement a focused building block of a reliable LLM agent. Keep model reasoning separate from deterministic application logic.",
-      "pattern": "Core agent loop, typed I/O, tools, state, and control flow",
+      "description": "Implement a concrete Ollama text-chat provider with health checks, model listing, request mapping, response validation, and usage normalization.",
+      "pattern": "Ollama HTTP adapter, provider contract mapping, and stable error handling",
       "difficulty": "Beginner to intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "01-foundations/20-ollama-local-model-adapter",
       "tags": [
         "foundations",
-        "python",
-        "agent"
+        "ollama",
+        "local-llm",
+        "httpx"
       ]
     },
     {
