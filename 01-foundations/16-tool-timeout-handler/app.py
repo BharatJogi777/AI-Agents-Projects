@@ -28,5 +28,9 @@ async def execute_with_timeout(handler: Callable[..., Awaitable[Any]], *args,
         value=await asyncio.wait_for(task,timeout=timeout_seconds)
         return TimeoutResult(True,value=value,elapsed_seconds=loop.time()-started)
     except asyncio.TimeoutError as exc:
+        # A handler may itself raise TimeoutError. Only translate the timeout
+        # when wait_for cancelled the task because our deadline elapsed.
+        if task.done() and not task.cancelled():
+            raise
         # wait_for cancels the task; handlers should cooperate with cancellation.
         raise ToolTimedOut(f"tool exceeded {timeout_seconds:.3f}s timeout") from exc

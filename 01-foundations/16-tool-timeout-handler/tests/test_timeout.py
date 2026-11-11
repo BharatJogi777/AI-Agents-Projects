@@ -33,3 +33,9 @@ def test_handler_exception_propagates():
     async def handler(): raise RuntimeError("failure")
     with pytest.raises(RuntimeError,match="failure"):
         asyncio.run(execute_with_timeout(handler,timeout_seconds=1))
+
+def test_handler_raised_timeout_is_not_misclassified():
+    async def handler(): raise TimeoutError("upstream timed out")
+    with pytest.raises(TimeoutError,match="upstream timed out") as error:
+        asyncio.run(execute_with_timeout(handler,timeout_seconds=1))
+    assert not isinstance(error.value,ToolTimedOut)
