@@ -1,6 +1,11 @@
 # AG-021 — OpenAI-compatible API adapter
 
-A minimal non-streaming adapter for servers exposing the OpenAI chat-completions shape. It normalizes messages, generation settings, finish reason, and token usage; API keys are sent as bearer credentials and never included in error messages.
+A non-streaming chat-completions adapter for OpenAI-compatible endpoints. It maps normalized messages and generation options, sends bearer credentials, validates response structure and usage, and reuses a connection-pooled HTTPX client.
+
+## Architecture
+- `openai_adapter/contracts.py`: validated request/message/response DTOs.
+- `openai_adapter/provider.py`: HTTP lifecycle, endpoint mapping, auth header, response validation, and sanitized provider errors.
+- `app.py`: compatibility facade.
 
 ## Run
 ```bash
@@ -9,4 +14,4 @@ pip install -e '.[dev]'
 pytest
 ```
 
-Configure the provider API root, including its `/v1` prefix where applicable. Compatibility varies: tool calling, structured output, token limits, and error formats differ by vendor. This adapter intentionally supports plain text only. Tests are authored but not yet executed.
+Pass the API root (including `/v1` where required). This adapter intentionally supports plain non-streaming text only. Vendor differences in token limits, tool calls, JSON mode, and errors require explicit capabilities. Tests are authored; local execution remains pending.

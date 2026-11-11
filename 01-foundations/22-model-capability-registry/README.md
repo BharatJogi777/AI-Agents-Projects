@@ -1,12 +1,19 @@
 # AG-022 — Model capability registry
 
-Store explicit model/provider capability metadata and select compatible models using required features and context limits. Selection is deterministic and never infers capabilities from a model's name.
+An explicit in-memory catalogue of provider/model capabilities. Selection uses verified metadata rather than guessing from model names and returns a stable ordering.
 
-## Run
+## Architecture
+- `model_registry/contracts.py`: immutable capability record and validation.
+- `model_registry/registry.py`: duplicate-safe registration, lookup, filtering, and deterministic sorting.
+- `app.py`: compatibility facade.
+
+## Execution flow
+Register a model with provider IDs, context/output limits, and explicit feature flags. A caller requests required features and a minimum context; the registry returns only matching models, sorted by descending context and then model ID.
+
 ```bash
 python3.12 -m venv .venv && source .venv/bin/activate
 pip install -e '.[dev]'
 pytest
 ```
 
-Populate the registry from verified provider documentation or runtime probes. Metadata can become stale; do not assume tool or JSON-schema support across model versions. Tests are authored but not yet executed.
+Populate metadata from verified provider documentation or runtime probes. Capabilities can change across model versions. Tests are authored; local execution remains pending.

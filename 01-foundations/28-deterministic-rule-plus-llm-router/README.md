@@ -1,12 +1,19 @@
 # AG-028 — Deterministic rule plus LLM router
 
-Applies cheap, explicit deterministic rules before invoking an injected LLM classifier. Rule matches have priority; model output is constrained to a configured route allowlist.
+Applies ordered deterministic routing rules first and calls an injected LLM classifier only when no rule matches. Both rule destinations and model-selected destinations are constrained to a server-owned allowlist.
 
-## Run
+## Architecture
+- `rule_router/contracts.py`: normalized route result with confidence and source.
+- `rule_router/router.py`: rule evaluation, LLM fallback, and route allowlist enforcement.
+- `app.py`: compatibility facade.
+
+## Execution flow
+Validate input, evaluate rules in registration order, and immediately return the first match. Only unmatched requests reach the classifier. A model-selected route outside the allowlist is rejected.
+
 ```bash
 python3.12 -m venv .venv && source .venv/bin/activate
 pip install -e '.[dev]'
 pytest
 ```
 
-The LLM is not allowed to invent destinations. Add confidence thresholds, abstention, audit logs, and human escalation before using this pattern for high-impact routing. Tests are authored but not yet executed.
+The model is not permitted to invent destinations. Add abstention, audit logging, human escalation, and domain-specific evaluation before high-impact routing. Tests are authored; local execution remains pending.
