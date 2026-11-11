@@ -23,7 +23,7 @@ This is the master index for the repository. It contains **500 distinct project 
 - **Planned:** catalogued, not yet implemented.
 - **Implemented / Verified / Production-oriented:** only assigned when the evidence requirements in [PROJECT_STANDARD.md](PROJECT_STANDARD.md) are met.
 
-Current implementation status: AG-001 through AG-020 are in progress. The other 480 entries are planned.
+Current implementation status: AG-001 through AG-030 are in progress. The other 470 entries are planned.
 
 ## How to use this catalogue
 
@@ -59,16 +59,16 @@ Current implementation status: AG-001 through AG-020 are in progress. The other 
 | AG-018 | Circuit-breaker model client | Beginner to intermediate | In progress |
 | AG-019 | Provider-agnostic LLM adapter | Beginner to intermediate | In progress |
 | AG-020 | Ollama local model adapter | Beginner to intermediate | In progress |
-| AG-021 | OpenAI-compatible API adapter | Beginner to intermediate | Planned |
-| AG-022 | Model capability registry | Beginner to intermediate | Planned |
-| AG-023 | Model fallback router | Beginner to intermediate | Planned |
-| AG-024 | Streaming response agent | Beginner to intermediate | Planned |
-| AG-025 | Incremental JSON stream parser | Beginner to intermediate | Planned |
-| AG-026 | Function-call parser | Beginner to intermediate | Planned |
-| AG-027 | Model output parser benchmark | Beginner to intermediate | Planned |
-| AG-028 | Deterministic rule plus LLM router | Beginner to intermediate | Planned |
-| AG-029 | Intent classification agent | Beginner to intermediate | Planned |
-| AG-030 | Entity extraction agent | Beginner to intermediate | Planned |
+| AG-021 | OpenAI-compatible API adapter | Beginner to intermediate | In progress |
+| AG-022 | Model capability registry | Beginner to intermediate | In progress |
+| AG-023 | Model fallback router | Beginner to intermediate | In progress |
+| AG-024 | Streaming response agent | Beginner to intermediate | In progress |
+| AG-025 | Incremental JSON stream parser | Beginner to intermediate | In progress |
+| AG-026 | Function-call parser | Beginner to intermediate | In progress |
+| AG-027 | Model output parser benchmark | Beginner to intermediate | In progress |
+| AG-028 | Deterministic rule plus LLM router | Beginner to intermediate | In progress |
+| AG-029 | Intent classification agent | Beginner to intermediate | In progress |
+| AG-030 | Entity extraction agent | Beginner to intermediate | In progress |
 | AG-031 | Task decomposition agent | Beginner to intermediate | Planned |
 | AG-032 | Plan generation agent | Beginner to intermediate | Planned |
 | AG-033 | Plan validation agent | Beginner to intermediate | Planned |
