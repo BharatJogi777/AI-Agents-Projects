@@ -90,9 +90,9 @@ def test_empty_model_response_can_be_retried():
 
 
 def test_oversized_model_output_is_rejected_and_retried():
-    generator = SequenceGenerator(["x" * 101, VALID])
+    generator = SequenceGenerator(["x" * 501, VALID])
     result = SchemaRepairAgent(
-        generator, max_output_chars=100
+        generator, max_output_chars=500
     ).generate("Do work")
     assert result.attempts == 2
 
