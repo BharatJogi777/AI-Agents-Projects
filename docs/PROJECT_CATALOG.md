@@ -23,7 +23,7 @@ This is the master index for the repository. It contains **500 distinct project 
 - **Planned:** catalogued, not yet implemented.
 - **Implemented / Verified / Production-oriented:** only assigned when the evidence requirements in [PROJECT_STANDARD.md](PROJECT_STANDARD.md) are met.
 
-Current implementation status: AG-001 through AG-006 are in progress. The other 494 entries are planned.
+Current implementation status: AG-001 through AG-007 are in progress. The other 493 entries are planned.
 
 ## How to use this catalogue
 
@@ -45,7 +45,7 @@ Current implementation status: AG-001 through AG-006 are in progress. The other 
 | AG-004 | Conversation history manager | Beginner to intermediate | In progress |
 | AG-005 | Token budget estimator | Beginner to intermediate | In progress |
 | AG-006 | Context-window truncation strategy | Beginner to intermediate | In progress |
-| AG-007 | Structured JSON response agent | Beginner to intermediate | Planned |
+| AG-007 | Evidence-backed entity extraction agent | Beginner to intermediate | In progress |
 | AG-008 | Schema repair and retry agent | Beginner to intermediate | Planned |
 | AG-009 | Tool-calling calculator | Beginner to intermediate | Planned |
 | AG-010 | Multi-tool selection agent | Beginner to intermediate | Planned |

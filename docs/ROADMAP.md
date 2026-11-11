@@ -42,7 +42,8 @@ This was a structural scan only; it does not establish whether upstream projects
 - [x] AG-004 Conversation history manager: bounded session-scoped history, complete-turn trimming, and isolation (verification pending).
 - [x] AG-005 Token budget estimator: pluggable token counter, output/safety reservation, mandatory context protection, and priority-based admission (verification pending).
 - [x] AG-006 Context-window truncation strategy: mandatory system/current-user preservation, complete-turn integrity, newest-first retention, and explicit overflow (verification pending).
-- [ ] Run AG-001 and AG-002 in clean Python 3.12 environments and verify Ollama integration; run AG-003 tests and CLI locally; run AG-004 tests and history demo; run AG-005 tests and budget demo; run AG-006 tests and truncation demo.
+- [x] AG-007 Evidence-backed entity extraction agent: typed entity schema, exact source-substring evidence checks, duplicate rejection, and explicit validation failures (verification pending).
+- [ ] Run AG-001 and AG-002 in clean Python 3.12 environments and verify Ollama integration; run AG-003 tests and CLI locally; run AG-004 tests and history demo; run AG-005 tests and budget demo; run AG-006 tests and truncation demo; run AG-007 tests and entity extraction demo.
 
 ## Delivery sequence
 

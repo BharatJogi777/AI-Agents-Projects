@@ -3,7 +3,7 @@
   "catalogue_version": "1.0.0",
   "total_projects": 500,
   "generated_at": "2026-11-12",
-  "status_policy": "Planned entries are catalogue records, not implementation claims. AG-001 through AG-006 have code in the repository and remain in progress pending local verification.",
+  "status_policy": "Planned entries are catalogue records, not implementation claims. AG-001 through AG-007 have code in the repository and remain in progress pending local verification.",
   "tracks": [
     {
       "id": "01-foundations",
@@ -160,16 +160,17 @@
     {
       "id": "AG-007",
       "track": "01-foundations",
-      "title": "Structured JSON response agent",
-      "description": "Learn and implement a focused building block of a reliable LLM agent. Keep model reasoning separate from deterministic application logic.",
-      "pattern": "Core agent loop, typed I/O, tools, state, and control flow",
+      "title": "Evidence-backed entity extraction agent",
+      "description": "Extract typed entities from unstructured text and require each extracted value to be supported by an exact quote from the source; validate schema, duplicates, and evidence deterministically.",
+      "pattern": "Schema-constrained extraction, source-grounded evidence, and deterministic validation",
       "difficulty": "Beginner to intermediate",
-      "status": "Planned",
-      "implementation_path": "01-foundations/07-structured-json-response-agent",
+      "status": "In progress",
+      "implementation_path": "01-foundations/07-evidence-backed-entity-extraction-agent",
       "tags": [
         "foundations",
         "python",
-        "agent"
+        "structured-output",
+        "grounding"
       ]
     },
     {
