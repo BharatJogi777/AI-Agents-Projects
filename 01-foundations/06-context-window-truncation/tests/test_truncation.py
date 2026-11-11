@@ -115,6 +115,17 @@ def test_rejects_duplicate_turn_ids():
         ])
 
 
+def test_rejects_current_user_reusing_a_completed_turn_id():
+    truncator = make_truncator({"system": 1, "u": 1, "a": 1})
+    with pytest.raises(InvalidConversation, match="current user turn_id"):
+        truncator.truncate([
+            ContextMessage("system", "system"),
+            ContextMessage("user", "u", "same"),
+            ContextMessage("assistant", "a", "same"),
+            ContextMessage("user", "current", "same"),
+        ])
+
+
 def test_config_rejects_invalid_budget():
     with pytest.raises(ValueError):
         TruncationConfig(10, reserved_output_tokens=8, safety_margin_tokens=2)

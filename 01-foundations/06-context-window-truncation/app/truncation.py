@@ -15,12 +15,14 @@ class ContextMessage:
     turn_id: str | None = None
 
     def __post_init__(self) -> None:
-        if not self.content.strip():
-            raise ValueError("message content cannot be empty")
+        if self.role not in ("system", "user", "assistant"):
+            raise ValueError("role must be system, user, or assistant")
+        if not isinstance(self.content, str) or not self.content.strip():
+            raise ValueError("message content must be a non-empty string")
         if self.role == "system" and self.turn_id is not None:
             raise ValueError("system messages cannot belong to a conversation turn")
-        if self.role != "system" and not self.turn_id:
-            raise ValueError("conversation messages require a turn_id")
+        if self.role != "system" and (not self.turn_id or not self.turn_id.strip()):
+            raise ValueError("conversation messages require a non-empty turn_id")
 
 
 @dataclass(frozen=True, slots=True)
@@ -122,6 +124,8 @@ class ContextTruncator:
 
         if index != len(messages) or current_user is None:
             raise InvalidConversation("history must end with exactly one pending current user message")
+        if any(turn_id == current_user.turn_id for turn_id, _ in turns):
+            raise InvalidConversation("current user turn_id must be unique")
 
         mandatory = system_messages + [current_user]
         mandatory_tokens = sum(self._measure(message) for message in mandatory)
@@ -144,7 +148,8 @@ class ContextTruncator:
                 used += turn_tokens
             else:
                 dropped_ids.extend(
-                    older_id for older_id, _ in turns if older_id not in selected_ids and older_id not in dropped_ids
+                    older_id for older_id, _ in turns
+                    if older_id not in selected_ids and older_id not in dropped_ids
                 )
                 break
 
@@ -153,7 +158,7 @@ class ContextTruncator:
             for message in messages
             if message.role == "system"
             or message is current_user
-            or (message.turn_id in selected_ids)
+            or message.turn_id in selected_ids
         )
         return TruncationResult(
             input_budget=budget,
