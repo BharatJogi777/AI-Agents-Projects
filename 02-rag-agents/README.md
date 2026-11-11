@@ -49,3 +49,18 @@ All ten have standalone tests and dependency metadata. Tests are authored but re
 - [HyDE retrieval agent](./20-hyde-retrieval-agent/) — Generate a hypothetical document for query expansion while never treating generated text as evidence.
 
 All ten include deterministic application code, standalone tests, README instructions, and dependency metadata. Tests are authored but not locally executed.
+
+## Grounded answering and graph retrieval (AG-071–AG-080)
+
+- [Cross-encoder reranking agent](./21-cross-encoder-reranking-agent/) — Rerank retrieved passages using an injected query-passage relevance scorer with deterministic ordering.
+- [Context compression agent](./22-context-compression-agent/) — Compress retrieved context by selecting exact relevant spans while preserving source offsets.
+- [Citation-grounded answer agent](./23-citation-grounded-answer-agent/) — Construct claim-level answers whose citations must resolve to supplied source records.
+- [Citation verification agent](./24-citation-verification-agent/) — Verify citation source IDs and exact quoted substrings against the original source text.
+- [Evidence coverage evaluator](./25-evidence-coverage-evaluator/) — Measure claim-level evidence coverage and flag uncited or unknown-source claims.
+- [Abstention-on-no-evidence agent](./26-abstention-on-no-evidence-agent/) — Abstain when retrieved evidence is absent or fails a configured score and source-count policy.
+- [Multi-hop retrieval agent](./27-multi-hop-retrieval-agent/) — Run bounded sequential retrieval hops, preserving provenance and deduplicating evidence.
+- [Knowledge graph RAG agent](./28-knowledge-graph-rag-agent/) — Validate source-backed entity-relation triples and retrieve facts connected to a requested entity.
+- [Graph traversal question-answering agent](./29-graph-traversal-question-answering-agent/) — Find bounded graph paths with cycle prevention and evidence IDs on every edge.
+- [SQL database question-answering agent](./30-sql-database-question-answering-agent/) — Execute bounded read-only SQLite SELECT queries with table allowlists and an authorizer.
+
+These projects add evidence-aware answer assembly, citation checks, abstention, graph traversal, and constrained SQL execution. Tests are authored but not locally executed.
