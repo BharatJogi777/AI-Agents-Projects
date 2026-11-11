@@ -1,14 +1,20 @@
 [build-system]
 requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
+
 [project]
 name = "agent-project-51"
 version = "0.1.0"
 description = "PDF question-answering agent"
 requires-python = ">=3.12"
 dependencies = ["pypdf>=4.2"]
+
 [project.optional-dependencies]
 dev = ["pytest>=8"]
+
+[tool.setuptools]
+py-modules = ["app"]
+
 [tool.pytest.ini_options]
 pythonpath = ["."]
 testpaths = ["tests"]
