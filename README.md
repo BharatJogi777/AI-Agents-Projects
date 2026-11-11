@@ -135,3 +135,16 @@ Never count a planned catalogue entry as an implemented project.
 - [x] AG-068 — [Query rewriting agent](02-rag-agents/18-query-rewriting-agent/) (local verification pending).
 - [x] AG-069 — [Multi-query retrieval agent](02-rag-agents/19-multi-query-retrieval-agent/) (local verification pending).
 - [x] AG-070 — [HyDE retrieval agent](02-rag-agents/20-hyde-retrieval-agent/) (local verification pending).
+
+## Grounded answering and graph retrieval (AG-071–AG-080)
+
+- [x] AG-071 — [Cross-encoder reranking agent](02-rag-agents/21-cross-encoder-reranking-agent/) (local verification pending).
+- [x] AG-072 — [Context compression agent](02-rag-agents/22-context-compression-agent/) (local verification pending).
+- [x] AG-073 — [Citation-grounded answer agent](02-rag-agents/23-citation-grounded-answer-agent/) (local verification pending).
+- [x] AG-074 — [Citation verification agent](02-rag-agents/24-citation-verification-agent/) (local verification pending).
+- [x] AG-075 — [Evidence coverage evaluator](02-rag-agents/25-evidence-coverage-evaluator/) (local verification pending).
+- [x] AG-076 — [Abstention-on-no-evidence agent](02-rag-agents/26-abstention-on-no-evidence-agent/) (local verification pending).
+- [x] AG-077 — [Multi-hop retrieval agent](02-rag-agents/27-multi-hop-retrieval-agent/) (local verification pending).
+- [x] AG-078 — [Knowledge graph RAG agent](02-rag-agents/28-knowledge-graph-rag-agent/) (local verification pending).
+- [x] AG-079 — [Graph traversal question-answering agent](02-rag-agents/29-graph-traversal-question-answering-agent/) (local verification pending).
+- [x] AG-080 — [SQL database question-answering agent](02-rag-agents/30-sql-database-question-answering-agent/) (local verification pending).
