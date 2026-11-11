@@ -2,7 +2,7 @@ import hashlib,re
 from dataclasses import dataclass
 @dataclass(frozen=True)
 class DuplicateGroup: digest:str; document_ids:tuple[str,...]
-def normalize(text): return " ".join(re.findall(r"\\w+",text.casefold()))
+def normalize(text): return " ".join(re.findall(r"\w+",text.casefold()))
 def deduplicate(documents):
  buckets={}
  for doc_id,text in documents.items():
