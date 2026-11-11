@@ -3,7 +3,7 @@
   "catalogue_version": "1.0.0",
   "total_projects": 500,
   "generated_at": "2026-11-12",
-  "status_policy": "Planned entries are catalogue records, not implementation claims. AG-001 through AG-070 have implementation files in the repository and remain in progress pending local verification.",
+  "status_policy": "Planned entries are catalogue records, not implementation claims. AG-001 through AG-080 have implementation files in the repository and remain in progress pending local verification.",
   "tracks": [
     {
       "id": "01-foundations",
@@ -1143,150 +1143,160 @@
       "id": "AG-071",
       "track": "02-rag-agents",
       "title": "Cross-encoder reranking agent",
-      "description": "Build a grounded knowledge or data workflow. Answers must expose evidence, respect access filters, and abstain when retrieval is insufficient.",
-      "pattern": "Ingestion, retrieval, grounding, data access, and evaluation",
+      "description": "Rerank retrieved passages using an injected query-passage relevance scorer with deterministic ordering.",
+      "pattern": "Grounded answer generation, evidence verification, graph retrieval, and safe structured-data querying",
       "difficulty": "Intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "02-rag-agents/21-cross-encoder-reranking-agent",
       "tags": [
-        "rag-and-data-agents",
-        "python",
-        "agent"
+        "rag",
+        "grounding",
+        "retrieval",
+        "python"
       ]
     },
     {
       "id": "AG-072",
       "track": "02-rag-agents",
       "title": "Context compression agent",
-      "description": "Build a grounded knowledge or data workflow. Answers must expose evidence, respect access filters, and abstain when retrieval is insufficient.",
-      "pattern": "Ingestion, retrieval, grounding, data access, and evaluation",
+      "description": "Compress retrieved context by selecting exact relevant spans while preserving source offsets.",
+      "pattern": "Grounded answer generation, evidence verification, graph retrieval, and safe structured-data querying",
       "difficulty": "Intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "02-rag-agents/22-context-compression-agent",
       "tags": [
-        "rag-and-data-agents",
-        "python",
-        "agent"
+        "rag",
+        "grounding",
+        "retrieval",
+        "python"
       ]
     },
     {
       "id": "AG-073",
       "track": "02-rag-agents",
       "title": "Citation-grounded answer agent",
-      "description": "Build a grounded knowledge or data workflow. Answers must expose evidence, respect access filters, and abstain when retrieval is insufficient.",
-      "pattern": "Ingestion, retrieval, grounding, data access, and evaluation",
+      "description": "Construct claim-level answers whose citations must resolve to supplied source records.",
+      "pattern": "Grounded answer generation, evidence verification, graph retrieval, and safe structured-data querying",
       "difficulty": "Intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "02-rag-agents/23-citation-grounded-answer-agent",
       "tags": [
-        "rag-and-data-agents",
-        "python",
-        "agent"
+        "rag",
+        "grounding",
+        "retrieval",
+        "python"
       ]
     },
     {
       "id": "AG-074",
       "track": "02-rag-agents",
       "title": "Citation verification agent",
-      "description": "Build a grounded knowledge or data workflow. Answers must expose evidence, respect access filters, and abstain when retrieval is insufficient.",
-      "pattern": "Ingestion, retrieval, grounding, data access, and evaluation",
+      "description": "Verify citation source IDs and exact quoted substrings against the original source text.",
+      "pattern": "Grounded answer generation, evidence verification, graph retrieval, and safe structured-data querying",
       "difficulty": "Intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "02-rag-agents/24-citation-verification-agent",
       "tags": [
-        "rag-and-data-agents",
-        "python",
-        "agent"
+        "rag",
+        "grounding",
+        "retrieval",
+        "python"
       ]
     },
     {
       "id": "AG-075",
       "track": "02-rag-agents",
       "title": "Evidence coverage evaluator",
-      "description": "Build a grounded knowledge or data workflow. Answers must expose evidence, respect access filters, and abstain when retrieval is insufficient.",
-      "pattern": "Ingestion, retrieval, grounding, data access, and evaluation",
+      "description": "Measure claim-level evidence coverage and flag uncited or unknown-source claims.",
+      "pattern": "Grounded answer generation, evidence verification, graph retrieval, and safe structured-data querying",
       "difficulty": "Intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "02-rag-agents/25-evidence-coverage-evaluator",
       "tags": [
-        "rag-and-data-agents",
-        "python",
-        "agent"
+        "rag",
+        "grounding",
+        "retrieval",
+        "python"
       ]
     },
     {
       "id": "AG-076",
       "track": "02-rag-agents",
       "title": "Abstention-on-no-evidence agent",
-      "description": "Build a grounded knowledge or data workflow. Answers must expose evidence, respect access filters, and abstain when retrieval is insufficient.",
-      "pattern": "Ingestion, retrieval, grounding, data access, and evaluation",
+      "description": "Abstain when retrieved evidence is absent or fails a configured score and source-count policy.",
+      "pattern": "Grounded answer generation, evidence verification, graph retrieval, and safe structured-data querying",
       "difficulty": "Intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "02-rag-agents/26-abstention-on-no-evidence-agent",
       "tags": [
-        "rag-and-data-agents",
-        "python",
-        "agent"
+        "rag",
+        "grounding",
+        "retrieval",
+        "python"
       ]
     },
     {
       "id": "AG-077",
       "track": "02-rag-agents",
       "title": "Multi-hop retrieval agent",
-      "description": "Build a grounded knowledge or data workflow. Answers must expose evidence, respect access filters, and abstain when retrieval is insufficient.",
-      "pattern": "Ingestion, retrieval, grounding, data access, and evaluation",
+      "description": "Run bounded sequential retrieval hops, preserving provenance and deduplicating evidence.",
+      "pattern": "Grounded answer generation, evidence verification, graph retrieval, and safe structured-data querying",
       "difficulty": "Intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "02-rag-agents/27-multi-hop-retrieval-agent",
       "tags": [
-        "rag-and-data-agents",
-        "python",
-        "agent"
+        "rag",
+        "grounding",
+        "retrieval",
+        "python"
       ]
     },
     {
       "id": "AG-078",
       "track": "02-rag-agents",
       "title": "Knowledge graph RAG agent",
-      "description": "Build a grounded knowledge or data workflow. Answers must expose evidence, respect access filters, and abstain when retrieval is insufficient.",
-      "pattern": "Ingestion, retrieval, grounding, data access, and evaluation",
+      "description": "Validate source-backed entity-relation triples and retrieve facts connected to a requested entity.",
+      "pattern": "Grounded answer generation, evidence verification, graph retrieval, and safe structured-data querying",
       "difficulty": "Intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "02-rag-agents/28-knowledge-graph-rag-agent",
       "tags": [
-        "rag-and-data-agents",
-        "python",
-        "agent"
+        "rag",
+        "grounding",
+        "retrieval",
+        "python"
       ]
     },
     {
       "id": "AG-079",
       "track": "02-rag-agents",
       "title": "Graph traversal question-answering agent",
-      "description": "Build a grounded knowledge or data workflow. Answers must expose evidence, respect access filters, and abstain when retrieval is insufficient.",
-      "pattern": "Ingestion, retrieval, grounding, data access, and evaluation",
+      "description": "Find bounded graph paths with cycle prevention and evidence IDs on every edge.",
+      "pattern": "Grounded answer generation, evidence verification, graph retrieval, and safe structured-data querying",
       "difficulty": "Intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "02-rag-agents/29-graph-traversal-question-answering-agent",
       "tags": [
-        "rag-and-data-agents",
-        "python",
-        "agent"
+        "rag",
+        "grounding",
+        "retrieval",
+        "python"
       ]
     },
     {
       "id": "AG-080",
       "track": "02-rag-agents",
       "title": "SQL database question-answering agent",
-      "description": "Build a grounded knowledge or data workflow. Answers must expose evidence, respect access filters, and abstain when retrieval is insufficient.",
-      "pattern": "Ingestion, retrieval, grounding, data access, and evaluation",
+      "description": "Execute bounded read-only SQLite SELECT queries with table allowlists and an authorizer.",
+      "pattern": "Grounded answer generation, evidence verification, graph retrieval, and safe structured-data querying",
       "difficulty": "Intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "02-rag-agents/30-sql-database-question-answering-agent",
       "tags": [
-        "rag-and-data-agents",
-        "python",
-        "agent"
+        "rag",
+        "grounding",
+        "retrieval",
+        "python"
       ]
     },
     {
