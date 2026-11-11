@@ -141,3 +141,16 @@ A repository licence will be selected before external contributions or third-par
 - [x] AG-068 — Query rewriting agent: Expand ambiguous queries using an injected rewriter while retaining the original and bounding variants. (local verification pending).
 - [x] AG-069 — Multi-query retrieval agent: Retrieve across query variants, deduplicate candidates, and fuse ranks using reciprocal rank fusion. (local verification pending).
 - [x] AG-070 — HyDE retrieval agent: Generate a hypothetical document for query expansion while never treating generated text as evidence. (local verification pending).
+
+## Grounded answering and graph retrieval (AG-071–AG-080)
+
+- [x] AG-071 — Cross-encoder reranking agent: Rerank retrieved passages using an injected query-passage relevance scorer with deterministic ordering. (local verification pending).
+- [x] AG-072 — Context compression agent: Compress retrieved context by selecting exact relevant spans while preserving source offsets. (local verification pending).
+- [x] AG-073 — Citation-grounded answer agent: Construct claim-level answers whose citations must resolve to supplied source records. (local verification pending).
+- [x] AG-074 — Citation verification agent: Verify citation source IDs and exact quoted substrings against the original source text. (local verification pending).
+- [x] AG-075 — Evidence coverage evaluator: Measure claim-level evidence coverage and flag uncited or unknown-source claims. (local verification pending).
+- [x] AG-076 — Abstention-on-no-evidence agent: Abstain when retrieved evidence is absent or fails a configured score and source-count policy. (local verification pending).
+- [x] AG-077 — Multi-hop retrieval agent: Run bounded sequential retrieval hops, preserving provenance and deduplicating evidence. (local verification pending).
+- [x] AG-078 — Knowledge graph RAG agent: Validate source-backed entity-relation triples and retrieve facts connected to a requested entity. (local verification pending).
+- [x] AG-079 — Graph traversal question-answering agent: Find bounded graph paths with cycle prevention and evidence IDs on every edge. (local verification pending).
+- [x] AG-080 — SQL database question-answering agent: Execute bounded read-only SQLite SELECT queries with table allowlists and an authorizer. (local verification pending).
