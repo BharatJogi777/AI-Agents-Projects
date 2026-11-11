@@ -1,4 +1,4 @@
-"""AG-047: Untrusted tool-output handling. Serialize tool results into bounded, trust-labeled envelopes and redact common credential patterns before model-context insertion."""
+"""AG-047: Normalize and bound tool output before it re-enters model context."""
 import json,re
 class ToolOutputNormalizer:
  pattern=re.compile(r'(?i)(api[_-]?key|access[_-]?token|password)(\\s*[:=]\\s*)([^\\s,;]+)')
