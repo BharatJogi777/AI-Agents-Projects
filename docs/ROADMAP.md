@@ -128,3 +128,16 @@ A repository licence will be selected before external contributions or third-par
 - [x] AG-058 — Multi-format document ingester: Provide one bounded ingestion interface for TXT, Markdown, HTML, CSV, JSON, PDF, DOCX, and XLSX while retaining source-specific provenance. (local verification pending).
 - [x] AG-059 — Directory watcher ingestion agent: Poll a document directory safely and emit deterministic created, modified, and deleted events using content hashes without following symlinks. (local verification pending).
 - [x] AG-060 — Incremental document indexer: Maintain a transactional SQLite document and chunk index using content hashes, deterministic chunk IDs, and unchanged-document skips. (local verification pending).
+
+## Retrieval agents implemented (AG-061–AG-070)
+
+- [x] AG-061 — Document deduplication agent: Detect exact duplicates using SHA-256 and normalized text; report groups without automatically deleting source records. (local verification pending).
+- [x] AG-062 — Document metadata extractor: Extract deterministic file metadata including name, media type, byte size, modification time, and content digest. (local verification pending).
+- [x] AG-063 — Semantic chunking pipeline: Split text at injected semantic similarity boundaries while retaining source offsets. (local verification pending).
+- [x] AG-064 — Parent-child chunk retrieval: Store larger parent passages and smaller searchable child chunks, then expand matched children to parent context. (local verification pending).
+- [x] AG-065 — Sliding-window chunker: Generate overlapping text windows with stable offsets and validated size and overlap. (local verification pending).
+- [x] AG-066 — Hybrid keyword-vector search agent: Combine lexical and vector rankings using reciprocal rank fusion. (local verification pending).
+- [x] AG-067 — Metadata-filtered retrieval agent: Apply validated allowlisted metadata filters without evaluating user-supplied expressions. (local verification pending).
+- [x] AG-068 — Query rewriting agent: Expand ambiguous queries using an injected rewriter while retaining the original and bounding variants. (local verification pending).
+- [x] AG-069 — Multi-query retrieval agent: Retrieve across query variants, deduplicate candidates, and fuse ranks using reciprocal rank fusion. (local verification pending).
+- [x] AG-070 — HyDE retrieval agent: Generate a hypothetical document for query expansion while never treating generated text as evidence. (local verification pending).
