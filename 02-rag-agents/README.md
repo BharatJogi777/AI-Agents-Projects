@@ -34,3 +34,18 @@ These first ten projects provide format-specific extraction and incremental inge
 - [Incremental document indexer](./10-incremental-document-indexer/) — Maintain a transactional SQLite document and chunk index using content hashes, deterministic chunk IDs, and unchanged-document skips.
 
 All ten have standalone tests and dependency metadata. Tests are authored but require local execution. These are ingestion components, not complete LLM-backed RAG assistants.
+
+## Retrieval projects (AG-061–AG-070)
+
+- [Document deduplication agent](./11-document-deduplication-agent/) — Detect exact duplicates using SHA-256 and normalized text; report groups without automatically deleting source records.
+- [Document metadata extractor](./12-document-metadata-extractor/) — Extract deterministic file metadata including name, media type, byte size, modification time, and content digest.
+- [Semantic chunking pipeline](./13-semantic-chunking-pipeline/) — Split text at injected semantic similarity boundaries while retaining source offsets.
+- [Parent-child chunk retrieval](./14-parent-child-chunk-retrieval/) — Store larger parent passages and smaller searchable child chunks, then expand matched children to parent context.
+- [Sliding-window chunker](./15-sliding-window-chunker/) — Generate overlapping text windows with stable offsets and validated size and overlap.
+- [Hybrid keyword-vector search agent](./16-hybrid-keyword-vector-search-agent/) — Combine lexical and vector rankings using reciprocal rank fusion.
+- [Metadata-filtered retrieval agent](./17-metadata-filtered-retrieval-agent/) — Apply validated allowlisted metadata filters without evaluating user-supplied expressions.
+- [Query rewriting agent](./18-query-rewriting-agent/) — Expand ambiguous queries using an injected rewriter while retaining the original and bounding variants.
+- [Multi-query retrieval agent](./19-multi-query-retrieval-agent/) — Retrieve across query variants, deduplicate candidates, and fuse ranks using reciprocal rank fusion.
+- [HyDE retrieval agent](./20-hyde-retrieval-agent/) — Generate a hypothetical document for query expansion while never treating generated text as evidence.
+
+All ten include deterministic application code, standalone tests, README instructions, and dependency metadata. Tests are authored but not locally executed.
