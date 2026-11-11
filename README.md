@@ -122,3 +122,16 @@ Never count a planned catalogue entry as an implemented project.
 - [x] AG-059 — [Directory watcher ingestion agent](02-rag-agents/09-directory-watcher-ingestion-agent/) (local verification pending).
 - [x] AG-060 — [Incremental document indexer](02-rag-agents/10-incremental-document-indexer/) (local verification pending).
 
+
+## Retrieval agents implemented (AG-061–AG-070)
+
+- [x] AG-061 — [Document deduplication agent](02-rag-agents/11-document-deduplication-agent/) (local verification pending).
+- [x] AG-062 — [Document metadata extractor](02-rag-agents/12-document-metadata-extractor/) (local verification pending).
+- [x] AG-063 — [Semantic chunking pipeline](02-rag-agents/13-semantic-chunking-pipeline/) (local verification pending).
+- [x] AG-064 — [Parent-child chunk retrieval](02-rag-agents/14-parent-child-chunk-retrieval/) (local verification pending).
+- [x] AG-065 — [Sliding-window chunker](02-rag-agents/15-sliding-window-chunker/) (local verification pending).
+- [x] AG-066 — [Hybrid keyword-vector search agent](02-rag-agents/16-hybrid-keyword-vector-search-agent/) (local verification pending).
+- [x] AG-067 — [Metadata-filtered retrieval agent](02-rag-agents/17-metadata-filtered-retrieval-agent/) (local verification pending).
+- [x] AG-068 — [Query rewriting agent](02-rag-agents/18-query-rewriting-agent/) (local verification pending).
+- [x] AG-069 — [Multi-query retrieval agent](02-rag-agents/19-multi-query-retrieval-agent/) (local verification pending).
+- [x] AG-070 — [HyDE retrieval agent](02-rag-agents/20-hyde-retrieval-agent/) (local verification pending).
