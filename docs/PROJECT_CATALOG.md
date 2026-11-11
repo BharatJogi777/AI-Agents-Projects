@@ -23,7 +23,7 @@ This is the master index for the repository. It contains **500 distinct project 
 - **Planned:** catalogued, not yet implemented.
 - **Implemented / Verified / Production-oriented:** only assigned when the evidence requirements in [PROJECT_STANDARD.md](PROJECT_STANDARD.md) are met.
 
-Current implementation status: AG-001 through AG-070 are in progress. The other 430 entries are planned.
+Current implementation status: AG-001 through AG-080 are in progress. The other 420 entries are planned.
 
 ## How to use this catalogue
 
@@ -607,3 +607,16 @@ Current implementation status: AG-001 through AG-070 are in progress. The other 
 | AG-068 | Query rewriting agent | Intermediate | In progress |
 | AG-069 | Multi-query retrieval agent | Intermediate | In progress |
 | AG-070 | HyDE retrieval agent | Intermediate | In progress |
+
+## Grounded RAG and structured data (AG-071–AG-080)
+
+| AG-071 | Cross-encoder reranking agent | Intermediate | In progress |
+| AG-072 | Context compression agent | Intermediate | In progress |
+| AG-073 | Citation-grounded answer agent | Intermediate | In progress |
+| AG-074 | Citation verification agent | Intermediate | In progress |
+| AG-075 | Evidence coverage evaluator | Intermediate | In progress |
+| AG-076 | Abstention-on-no-evidence agent | Intermediate | In progress |
+| AG-077 | Multi-hop retrieval agent | Intermediate | In progress |
+| AG-078 | Knowledge graph RAG agent | Intermediate | In progress |
+| AG-079 | Graph traversal question-answering agent | Intermediate | In progress |
+| AG-080 | SQL database question-answering agent | Intermediate | In progress |
