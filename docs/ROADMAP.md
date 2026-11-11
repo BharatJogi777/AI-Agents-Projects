@@ -49,8 +49,13 @@ Do not copy source code by default. Reimplement independently; where third-party
 - [x] Define a common project quality standard.
 - [ ] Add project catalogue with IDs, status, difficulty, and coverage tags.
 - [ ] Add contribution and security policies.
+- [x] Add first tool-calling agent implementation and deterministic tests (execution verification pending).
+- [x] Add first structured-output agent with JSON Schema generation and Pydantic validation (execution verification pending).
 
 ### Milestone 1 — First complete agent
+- [x] Implement the bounded tool-calling agent and deterministic unit tests.
+- [x] Implement the structured-output agent and deterministic schema-validation tests.
+- [ ] Run both test suites in a clean Python 3.12 environment and verify Ollama integration.
 - [ ] Build a minimal tool-calling agent with a local Ollama model.
 - [ ] Separate model interface, tool registry, policy checks, execution, and API.
 - [ ] Validate model tool-call output before execution.
