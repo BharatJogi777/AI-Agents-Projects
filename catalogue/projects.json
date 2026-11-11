@@ -3,7 +3,7 @@
   "catalogue_version": "1.0.0",
   "total_projects": 500,
   "generated_at": "2026-11-12",
-  "status_policy": "Planned entries are catalogue records, not implementation claims. AG-001 through AG-060 have code in the repository and remain in progress pending local verification.",
+  "status_policy": "Planned entries are catalogue records, not implementation claims. AG-001 through AG-070 have implementation files in the repository and remain in progress pending local verification.",
   "tracks": [
     {
       "id": "01-foundations",
@@ -993,150 +993,150 @@
       "id": "AG-061",
       "track": "02-rag-agents",
       "title": "Document deduplication agent",
-      "description": "Build a grounded knowledge or data workflow. Answers must expose evidence, respect access filters, and abstain when retrieval is insufficient.",
-      "pattern": "Ingestion, retrieval, grounding, data access, and evaluation",
+      "description": "Detect exact duplicates using SHA-256 and normalized text; report groups without automatically deleting source records.",
+      "pattern": "Document retrieval, semantic chunking, query expansion, and rank fusion",
       "difficulty": "Intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "02-rag-agents/11-document-deduplication-agent",
       "tags": [
-        "rag-and-data-agents",
-        "python",
-        "agent"
+        "rag",
+        "retrieval",
+        "python"
       ]
     },
     {
       "id": "AG-062",
       "track": "02-rag-agents",
       "title": "Document metadata extractor",
-      "description": "Build a grounded knowledge or data workflow. Answers must expose evidence, respect access filters, and abstain when retrieval is insufficient.",
-      "pattern": "Ingestion, retrieval, grounding, data access, and evaluation",
+      "description": "Extract deterministic file metadata including name, media type, byte size, modification time, and content digest.",
+      "pattern": "Document retrieval, semantic chunking, query expansion, and rank fusion",
       "difficulty": "Intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "02-rag-agents/12-document-metadata-extractor",
       "tags": [
-        "rag-and-data-agents",
-        "python",
-        "agent"
+        "rag",
+        "retrieval",
+        "python"
       ]
     },
     {
       "id": "AG-063",
       "track": "02-rag-agents",
       "title": "Semantic chunking pipeline",
-      "description": "Build a grounded knowledge or data workflow. Answers must expose evidence, respect access filters, and abstain when retrieval is insufficient.",
-      "pattern": "Ingestion, retrieval, grounding, data access, and evaluation",
+      "description": "Split text at injected semantic similarity boundaries while retaining source offsets.",
+      "pattern": "Document retrieval, semantic chunking, query expansion, and rank fusion",
       "difficulty": "Intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "02-rag-agents/13-semantic-chunking-pipeline",
       "tags": [
-        "rag-and-data-agents",
-        "python",
-        "agent"
+        "rag",
+        "retrieval",
+        "python"
       ]
     },
     {
       "id": "AG-064",
       "track": "02-rag-agents",
       "title": "Parent-child chunk retrieval",
-      "description": "Build a grounded knowledge or data workflow. Answers must expose evidence, respect access filters, and abstain when retrieval is insufficient.",
-      "pattern": "Ingestion, retrieval, grounding, data access, and evaluation",
+      "description": "Store larger parent passages and smaller searchable child chunks, then expand matched children to parent context.",
+      "pattern": "Document retrieval, semantic chunking, query expansion, and rank fusion",
       "difficulty": "Intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "02-rag-agents/14-parent-child-chunk-retrieval",
       "tags": [
-        "rag-and-data-agents",
-        "python",
-        "agent"
+        "rag",
+        "retrieval",
+        "python"
       ]
     },
     {
       "id": "AG-065",
       "track": "02-rag-agents",
       "title": "Sliding-window chunker",
-      "description": "Build a grounded knowledge or data workflow. Answers must expose evidence, respect access filters, and abstain when retrieval is insufficient.",
-      "pattern": "Ingestion, retrieval, grounding, data access, and evaluation",
+      "description": "Generate overlapping text windows with stable offsets and validated size and overlap.",
+      "pattern": "Document retrieval, semantic chunking, query expansion, and rank fusion",
       "difficulty": "Intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "02-rag-agents/15-sliding-window-chunker",
       "tags": [
-        "rag-and-data-agents",
-        "python",
-        "agent"
+        "rag",
+        "retrieval",
+        "python"
       ]
     },
     {
       "id": "AG-066",
       "track": "02-rag-agents",
       "title": "Hybrid keyword-vector search agent",
-      "description": "Build a grounded knowledge or data workflow. Answers must expose evidence, respect access filters, and abstain when retrieval is insufficient.",
-      "pattern": "Ingestion, retrieval, grounding, data access, and evaluation",
+      "description": "Combine lexical and vector rankings using reciprocal rank fusion.",
+      "pattern": "Document retrieval, semantic chunking, query expansion, and rank fusion",
       "difficulty": "Intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "02-rag-agents/16-hybrid-keyword-vector-search-agent",
       "tags": [
-        "rag-and-data-agents",
-        "python",
-        "agent"
+        "rag",
+        "retrieval",
+        "python"
       ]
     },
     {
       "id": "AG-067",
       "track": "02-rag-agents",
       "title": "Metadata-filtered retrieval agent",
-      "description": "Build a grounded knowledge or data workflow. Answers must expose evidence, respect access filters, and abstain when retrieval is insufficient.",
-      "pattern": "Ingestion, retrieval, grounding, data access, and evaluation",
+      "description": "Apply validated allowlisted metadata filters without evaluating user-supplied expressions.",
+      "pattern": "Document retrieval, semantic chunking, query expansion, and rank fusion",
       "difficulty": "Intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "02-rag-agents/17-metadata-filtered-retrieval-agent",
       "tags": [
-        "rag-and-data-agents",
-        "python",
-        "agent"
+        "rag",
+        "retrieval",
+        "python"
       ]
     },
     {
       "id": "AG-068",
       "track": "02-rag-agents",
       "title": "Query rewriting agent",
-      "description": "Build a grounded knowledge or data workflow. Answers must expose evidence, respect access filters, and abstain when retrieval is insufficient.",
-      "pattern": "Ingestion, retrieval, grounding, data access, and evaluation",
+      "description": "Expand ambiguous queries using an injected rewriter while retaining the original and bounding variants.",
+      "pattern": "Document retrieval, semantic chunking, query expansion, and rank fusion",
       "difficulty": "Intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "02-rag-agents/18-query-rewriting-agent",
       "tags": [
-        "rag-and-data-agents",
-        "python",
-        "agent"
+        "rag",
+        "retrieval",
+        "python"
       ]
     },
     {
       "id": "AG-069",
       "track": "02-rag-agents",
       "title": "Multi-query retrieval agent",
-      "description": "Build a grounded knowledge or data workflow. Answers must expose evidence, respect access filters, and abstain when retrieval is insufficient.",
-      "pattern": "Ingestion, retrieval, grounding, data access, and evaluation",
+      "description": "Retrieve across query variants, deduplicate candidates, and fuse ranks using reciprocal rank fusion.",
+      "pattern": "Document retrieval, semantic chunking, query expansion, and rank fusion",
       "difficulty": "Intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "02-rag-agents/19-multi-query-retrieval-agent",
       "tags": [
-        "rag-and-data-agents",
-        "python",
-        "agent"
+        "rag",
+        "retrieval",
+        "python"
       ]
     },
     {
       "id": "AG-070",
       "track": "02-rag-agents",
       "title": "HyDE retrieval agent",
-      "description": "Build a grounded knowledge or data workflow. Answers must expose evidence, respect access filters, and abstain when retrieval is insufficient.",
-      "pattern": "Ingestion, retrieval, grounding, data access, and evaluation",
+      "description": "Generate a hypothetical document for query expansion while never treating generated text as evidence.",
+      "pattern": "Document retrieval, semantic chunking, query expansion, and rank fusion",
       "difficulty": "Intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "02-rag-agents/20-hyde-retrieval-agent",
       "tags": [
-        "rag-and-data-agents",
-        "python",
-        "agent"
+        "rag",
+        "retrieval",
+        "python"
       ]
     },
     {
