@@ -3,7 +3,7 @@
   "catalogue_version": "1.0.0",
   "total_projects": 500,
   "generated_at": "2026-11-12",
-  "status_policy": "Planned entries are catalogue records, not implementation claims. AG-001 through AG-003 have code in the repository and remain in progress pending local verification.",
+  "status_policy": "Planned entries are catalogue records, not implementation claims. AG-001 through AG-004 have code in the repository and remain in progress pending local verification.",
   "tracks": [
     {
       "id": "01-foundations",
@@ -116,10 +116,10 @@
       "id": "AG-004",
       "track": "01-foundations",
       "title": "Conversation history manager",
-      "description": "Learn and implement a focused building block of a reliable LLM agent. Keep model reasoning separate from deterministic application logic.",
+      "description": "Manage isolated in-memory conversation sessions with validated user/assistant turn ordering, bounded history, and predictable context construction.",
       "pattern": "Core agent loop, typed I/O, tools, state, and control flow",
       "difficulty": "Beginner to intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "01-foundations/04-conversation-history-manager",
       "tags": [
         "foundations",

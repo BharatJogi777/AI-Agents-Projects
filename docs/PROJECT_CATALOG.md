@@ -23,7 +23,7 @@ This is the master index for the repository. It contains **500 distinct project 
 - **Planned:** catalogued, not yet implemented.
 - **Implemented / Verified / Production-oriented:** only assigned when the evidence requirements in [PROJECT_STANDARD.md](PROJECT_STANDARD.md) are met.
 
-Current implementation status: AG-001, AG-002, and AG-003 are in progress. The other 497 entries are planned.
+Current implementation status: AG-001 through AG-004 are in progress. The other 496 entries are planned.
 
 ## How to use this catalogue
 
@@ -42,7 +42,7 @@ Current implementation status: AG-001, AG-002, and AG-003 are in progress. The o
 | AG-001 | Minimal chat-completion client | Beginner to intermediate | In progress |
 | AG-002 | Prompt template and version manager | Beginner to intermediate | In progress |
 | AG-003 | System and developer prompt boundary demo | Beginner to intermediate | In progress |
-| AG-004 | Conversation history manager | Beginner to intermediate | Planned |
+| AG-004 | Conversation history manager | Beginner to intermediate | In progress |
 | AG-005 | Token budget estimator | Beginner to intermediate | Planned |
 | AG-006 | Context-window truncation strategy | Beginner to intermediate | Planned |
 | AG-007 | Structured JSON response agent | Beginner to intermediate | Planned |
