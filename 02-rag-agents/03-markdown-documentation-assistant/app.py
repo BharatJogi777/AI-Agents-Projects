@@ -9,12 +9,12 @@ def chunk_markdown(text:str,max_chars:int=1200)->list[MarkdownChunk]:
  headings=[]; chunks=[]; buf=[]; start=1
  def flush(end):
   nonlocal buf,start
-  content="\\n".join(buf).strip()
+  content="\n".join(buf).strip()
   if content: chunks.append(MarkdownChunk(len(chunks)+1,tuple(headings),start,end,content))
   buf=[]
  lines=text.splitlines()
  for no,line in enumerate(lines,1):
-  m=re.match(r"^(#{1,6})\\s+(.+?)\\s*#*\\s*$",line)
+  m=re.match(r"^(#{1,6})\s+(.+?)\s*#*\s*$",line)
   if m:
    flush(no-1); level=len(m.group(1)); headings[:]=headings[:level-1]; headings.append(m.group(2).strip()); start=no; buf=[line]; continue
   if not buf: start=no

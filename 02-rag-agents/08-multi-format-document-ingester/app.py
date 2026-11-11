@@ -17,11 +17,11 @@ def ingest(path:str|Path,max_bytes:int=20000000)->list[IngestedDocument]:
     if t in {"script","style","noscript"} and self.skip: self.skip-=1
    def handle_data(self,d):
     if not self.skip and d.strip(): self.out.append(d.strip())
-  q=Text(); q.feed(p.read_text(encoding="utf-8")); return [IngestedDocument(p.name,"\\n".join(q.out),{"format":"html"})]
+  q=Text(); q.feed(p.read_text(encoding="utf-8")); return [IngestedDocument(p.name,"\n".join(q.out),{"format":"html"})]
  if ext==".csv":
   import csv
   with p.open(encoding="utf-8-sig",newline="") as f: rows=list(csv.DictReader(f))
-  return [IngestedDocument(p.name,"\\n".join(str(row) for row in rows),{"format":"csv","rows":len(rows)})]
+  return [IngestedDocument(p.name,"\n".join(str(row) for row in rows),{"format":"csv","rows":len(rows)})]
  if ext==".json":
   import json
   data=json.loads(p.read_text(encoding="utf-8")); items=data if isinstance(data,list) else [data]
