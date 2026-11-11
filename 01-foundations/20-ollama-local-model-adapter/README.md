@@ -1,8 +1,14 @@
 # AG-020 — Ollama local model adapter
 
-Implements a concrete Ollama `/api/chat` provider for a small provider-neutral text-chat contract. It maps messages and generation options, exposes health/model-list operations, validates response shape, maps token usage, and wraps transport/provider failures in a stable exception.
+A concrete Ollama `/api/chat` implementation of the provider-neutral text-chat contract. It uses a persistent HTTPX client with connection pooling, maps chat options, checks health, lists models, validates response fields, and normalizes token usage.
+
+## Architecture
+- `contracts.py`: minimal request/response DTOs retained for compatibility with the original tutorial.
+- `ollama_adapter/provider.py`: HTTP lifecycle, transport mapping, response validation, health/model-list operations, and sanitized provider errors.
+- `app.py`: compatibility facade.
 
 ## Run
+
 ```bash
 python3.12 -m venv .venv && source .venv/bin/activate
 pip install -e '.[dev]'
@@ -11,13 +17,14 @@ pytest
 ```
 
 Example:
+
 ```python
 from app import OllamaProvider
 from contracts import ChatMessage, ChatRequest
 
-provider = OllamaProvider()
-request = ChatRequest((ChatMessage("user", "Explain tool calling briefly"),), "qwen3:4b")
-print(provider.chat(request).content)
+with OllamaProvider() as provider:
+    request = ChatRequest((ChatMessage("user", "Explain tool calling briefly"),), "qwen3:4b")
+    print(provider.chat(request).content)
 ```
 
-The adapter currently implements non-streaming text chat only. Ollama tool calling, structured output, vision, and streaming need separate explicit capabilities. The default URL targets a local Ollama service; use an explicit reachable URL in container deployments. Local test execution and live Ollama integration are pending.
+The adapter implements non-streaming text chat only. Tool calling, structured output, vision, and streaming need separate explicit capabilities. For container deployments, configure a reachable Ollama URL. Tests are authored; local execution and live Ollama integration remain pending.
