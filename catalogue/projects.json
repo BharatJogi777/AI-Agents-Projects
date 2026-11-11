@@ -3,7 +3,7 @@
   "catalogue_version": "1.0.0",
   "total_projects": 500,
   "generated_at": "2026-11-12",
-  "status_policy": "Planned entries are catalogue records, not implementation claims. AG-001 through AG-004 have code in the repository and remain in progress pending local verification.",
+  "status_policy": "Planned entries are catalogue records, not implementation claims. AG-001 through AG-006 have code in the repository and remain in progress pending local verification.",
   "tracks": [
     {
       "id": "01-foundations",
@@ -146,10 +146,10 @@
       "id": "AG-006",
       "track": "01-foundations",
       "title": "Context-window truncation strategy",
-      "description": "Learn and implement a focused building block of a reliable LLM agent. Keep model reasoning separate from deterministic application logic.",
-      "pattern": "Core agent loop, typed I/O, tools, state, and control flow",
+      "description": "Fit conversation history into a finite model input budget by preserving system instructions and the current user request, then retaining the newest complete user/assistant turns.",
+      "pattern": "Token-aware history truncation, turn integrity, and mandatory-context protection",
       "difficulty": "Beginner to intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "01-foundations/06-context-window-truncation-strategy",
       "tags": [
         "foundations",

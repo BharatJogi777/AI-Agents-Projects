@@ -36,6 +36,7 @@ The repository now has a **500-project catalogue across 10 engineering tracks**.
 | AG-003 | [System and developer prompt boundary demo](01-foundations/03-system-and-developer-prompt-boundary-demo/) | In progress — local verification pending |
 | AG-004 | [Conversation history manager](01-foundations/04-conversation-history-manager/) | In progress — local verification pending |
 | AG-005 | [Token budget estimator](01-foundations/05-token-budget-estimator/) | In progress — local verification pending |
+| AG-006 | [Context-window truncation strategy](01-foundations/06-context-window-truncation/) | In progress — local verification pending |
 
 ## Engineering principles
 
