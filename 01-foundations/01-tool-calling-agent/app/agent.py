@@ -22,16 +22,36 @@ class AgentStepLimitError(RuntimeError):
     pass
 
 
+class AgentProtocolError(RuntimeError):
+    pass
+
+
 class ToolCallingAgent:
-    def __init__(self, client: ChatClient, max_steps: int = 5) -> None:
+    """Bounded orchestration loop; all executable capabilities stay in Python."""
+
+    def __init__(
+        self,
+        client: ChatClient,
+        max_steps: int = 5,
+        max_tool_calls_per_step: int = 4,
+        max_argument_bytes: int = 4096,
+    ) -> None:
         if max_steps < 1:
             raise ValueError("max_steps must be at least 1")
+        if max_tool_calls_per_step < 1:
+            raise ValueError("max_tool_calls_per_step must be at least 1")
+        if max_argument_bytes < 1:
+            raise ValueError("max_argument_bytes must be at least 1")
         self.client = client
         self.max_steps = max_steps
+        self.max_tool_calls_per_step = max_tool_calls_per_step
+        self.max_argument_bytes = max_argument_bytes
 
     def run(self, user_input: str) -> str:
-        if not user_input.strip():
+        if not isinstance(user_input, str) or not user_input.strip():
             raise ValueError("user_input cannot be empty")
+        if len(user_input.encode("utf-8")) > 32_000:
+            raise ValueError("user_input exceeds the 32 KB limit")
 
         messages: list[dict[str, Any]] = [
             {"role": "system", "content": SYSTEM_PROMPT},
@@ -43,35 +63,77 @@ class ToolCallingAgent:
             try:
                 assistant_message = response["choices"][0]["message"]
             except (KeyError, IndexError, TypeError) as exc:
-                raise RuntimeError("Malformed chat-completion response") from exc
+                raise AgentProtocolError("Malformed chat-completion response") from exc
 
             if not isinstance(assistant_message, dict):
-                raise RuntimeError("Assistant message must be an object")
+                raise AgentProtocolError("Assistant message must be an object")
 
             tool_calls = assistant_message.get("tool_calls") or []
-            messages.append(assistant_message)
+            if not isinstance(tool_calls, list):
+                raise AgentProtocolError("tool_calls must be a list")
+            if len(tool_calls) > self.max_tool_calls_per_step:
+                raise AgentProtocolError("Model exceeded the per-step tool-call limit")
 
+            messages.append(assistant_message)
             if not tool_calls:
                 content = assistant_message.get("content")
                 if not isinstance(content, str) or not content.strip():
-                    raise RuntimeError("Assistant returned an empty final response")
+                    raise AgentProtocolError("Assistant returned an empty final response")
                 return content
 
-            for tool_call in tool_calls:
+            seen_call_ids: set[str] = set()
+            for index, tool_call in enumerate(tool_calls):
+                call_id = f"invalid-call-{index}"
+                tool_name = "unknown"
                 try:
-                    call_id = tool_call["id"]
-                    function = tool_call["function"]
-                    tool_name = function["name"]
+                    if not isinstance(tool_call, dict):
+                        raise ValueError("Tool call must be an object")
+                    candidate_id = tool_call.get("id")
+                    if not isinstance(candidate_id, str) or not candidate_id.strip():
+                        raise ValueError("Tool call ID is missing")
+                    call_id = candidate_id
+                    if call_id in seen_call_ids:
+                        raise ValueError("Duplicate tool call ID")
+                    seen_call_ids.add(call_id)
+
+                    function = tool_call.get("function")
+                    if not isinstance(function, dict):
+                        raise ValueError("Tool function must be an object")
+                    tool_name = function.get("name", "unknown")
+                    if not isinstance(tool_name, str):
+                        raise ValueError("Tool name must be a string")
+
                     raw_arguments = function.get("arguments", "{}")
-                    arguments = json.loads(raw_arguments) if isinstance(raw_arguments, str) else raw_arguments
+                    if isinstance(raw_arguments, str):
+                        if len(raw_arguments.encode("utf-8")) > self.max_argument_bytes:
+                            raise ValueError("Tool arguments exceed the size limit")
+                        arguments = json.loads(raw_arguments)
+                    elif isinstance(raw_arguments, dict):
+                        encoded = json.dumps(raw_arguments, separators=(",", ":")).encode("utf-8")
+                        if len(encoded) > self.max_argument_bytes:
+                            raise ValueError("Tool arguments exceed the size limit")
+                        arguments = raw_arguments
+                    else:
+                        raise ValueError("Tool arguments must be a JSON object")
+                    if not isinstance(arguments, dict):
+                        raise ValueError("Tool arguments must decode to a JSON object")
+
                     result = execute_tool(tool_name, arguments)
                     tool_content = json.dumps({"ok": True, "result": result})
                     logger.info("Tool completed", extra={"tool_name": tool_name, "step": step + 1})
+                except (ValueError, TypeError, json.JSONDecodeError) as exc:
+                    # Do not send raw exception text or arguments back to the model.
+                    tool_content = json.dumps({"ok": False, "error": "Tool call rejected or failed validation"})
+                    logger.warning(
+                        "Tool call rejected",
+                        extra={"step": step + 1, "tool_name": tool_name, "error_type": type(exc).__name__},
+                    )
                 except Exception as exc:
-                    # Tool errors are returned to the model as data; they do not execute arbitrary fallback code.
-                    call_id = tool_call.get("id", "unknown") if isinstance(tool_call, dict) else "unknown"
-                    tool_content = json.dumps({"ok": False, "error": str(exc)})
-                    logger.warning("Tool failed", extra={"step": step + 1, "error_type": type(exc).__name__})
+                    tool_content = json.dumps({"ok": False, "error": "Tool execution failed"})
+                    logger.exception(
+                        "Tool execution failed",
+                        extra={"step": step + 1, "tool_name": tool_name, "error_type": type(exc).__name__},
+                    )
 
                 messages.append({
                     "role": "tool",
