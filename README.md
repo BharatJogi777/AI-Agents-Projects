@@ -45,6 +45,13 @@ This repository is being built as an implementation-first alternative to collect
 | `shared/` | Reusable libraries only when abstractions are genuinely shared |
 | `docs/` | Architecture, standards, roadmap, and learning guides |
 
+### Implemented project foundations
+
+| Project | What it demonstrates | Status |
+|---|---|---|
+| [01 Tool-calling agent](01-foundations/01-tool-calling-agent/) | Bounded agent loop, allowlisted tools, argument validation, Ollama integration | In progress — local verification pending |
+| [02 Structured-output agent](01-foundations/02-structured-output-agent/) | JSON Schema-constrained generation and strict Pydantic validation | In progress — local verification pending |
+
 See [the roadmap](docs/ROADMAP.md) and [project implementation standard](docs/PROJECT_STANDARD.md).
 
 ## Project maturity
