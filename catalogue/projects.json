@@ -3,7 +3,7 @@
   "catalogue_version": "1.0.0",
   "total_projects": 500,
   "generated_at": "2026-11-12",
-  "status_policy": "Planned entries are catalogue records, not implementation claims. AG-001 through AG-030 have code in the repository and remain in progress pending local verification.",
+  "status_policy": "Planned entries are catalogue records, not implementation claims. AG-001 through AG-040 have code in the repository and remain in progress pending local verification.",
   "tracks": [
     {
       "id": "01-foundations",
@@ -543,150 +543,150 @@
       "id": "AG-031",
       "track": "01-foundations",
       "title": "Task decomposition agent",
-      "description": "Learn and implement a focused building block of a reliable LLM agent. Keep model reasoning separate from deterministic application logic.",
-      "pattern": "Core agent loop, typed I/O, tools, state, and control flow",
+      "description": "Decompose an objective into atomic tasks with stable IDs and dependencies; reject malformed or cyclic graphs.",
+      "pattern": "Objective decomposition, dependency graphs, bounded task specifications",
       "difficulty": "Beginner to intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "01-foundations/31-task-decomposition-agent",
       "tags": [
         "foundations",
         "python",
-        "agent"
+        "planning"
       ]
     },
     {
       "id": "AG-032",
       "track": "01-foundations",
       "title": "Plan generation agent",
-      "description": "Learn and implement a focused building block of a reliable LLM agent. Keep model reasoning separate from deterministic application logic.",
-      "pattern": "Core agent loop, typed I/O, tools, state, and control flow",
+      "description": "Generate a typed execution plan through an injected planner, enforcing task limits and a stable JSON contract.",
+      "pattern": "Typed plan generation, schema validation, deterministic serialization",
       "difficulty": "Beginner to intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "01-foundations/32-plan-generation-agent",
       "tags": [
         "foundations",
         "python",
-        "agent"
+        "planning"
       ]
     },
     {
       "id": "AG-033",
       "track": "01-foundations",
       "title": "Plan validation agent",
-      "description": "Learn and implement a focused building block of a reliable LLM agent. Keep model reasoning separate from deterministic application logic.",
-      "pattern": "Core agent loop, typed I/O, tools, state, and control flow",
+      "description": "Validate plans for unique IDs, valid dependencies, acyclic ordering, bounded actions, and allowed risk before execution.",
+      "pattern": "Pre-execution policy, dependency validation, risk checks",
       "difficulty": "Beginner to intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "01-foundations/33-plan-validation-agent",
       "tags": [
         "foundations",
         "python",
-        "agent"
+        "planning"
       ]
     },
     {
       "id": "AG-034",
       "track": "01-foundations",
       "title": "Plan execution tracker",
-      "description": "Learn and implement a focused building block of a reliable LLM agent. Keep model reasoning separate from deterministic application logic.",
-      "pattern": "Core agent loop, typed I/O, tools, state, and control flow",
+      "description": "Track step state transitions and dependency readiness with idempotent completion and explicit failure recovery.",
+      "pattern": "Execution state machine, dependency gating, idempotent updates",
       "difficulty": "Beginner to intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "01-foundations/34-plan-execution-tracker",
       "tags": [
         "foundations",
         "python",
-        "agent"
+        "planning"
       ]
     },
     {
       "id": "AG-035",
       "track": "01-foundations",
       "title": "Short-term conversation memory",
-      "description": "Learn and implement a focused building block of a reliable LLM agent. Keep model reasoning separate from deterministic application logic.",
-      "pattern": "Core agent loop, typed I/O, tools, state, and control flow",
+      "description": "Maintain a bounded chronological message window while preserving system instructions and complete turns.",
+      "pattern": "Short-term message memory, complete-turn retention, bounded context",
       "difficulty": "Beginner to intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "01-foundations/35-short-term-conversation-memory",
       "tags": [
         "foundations",
         "python",
-        "agent"
+        "memory"
       ]
     },
     {
       "id": "AG-036",
       "track": "01-foundations",
       "title": "Session-scoped memory store",
-      "description": "Learn and implement a focused building block of a reliable LLM agent. Keep model reasoning separate from deterministic application logic.",
-      "pattern": "Core agent loop, typed I/O, tools, state, and control flow",
+      "description": "Provide thread-safe session-isolated key/value memory with TTL, injectable clock, and bounded capacity.",
+      "pattern": "Session isolation, TTL expiry, capacity limits, concurrency-safe access",
       "difficulty": "Beginner to intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "01-foundations/36-session-scoped-memory-store",
       "tags": [
         "foundations",
         "python",
-        "agent"
+        "memory"
       ]
     },
     {
       "id": "AG-037",
       "track": "01-foundations",
       "title": "User preference memory prototype",
-      "description": "Learn and implement a focused building block of a reliable LLM agent. Keep model reasoning separate from deterministic application logic.",
-      "pattern": "Core agent loop, typed I/O, tools, state, and control flow",
+      "description": "Store only explicit, user-confirmed non-sensitive preferences with provenance and user-controlled deletion.",
+      "pattern": "Consent-based preference capture, provenance, revocation",
       "difficulty": "Beginner to intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "01-foundations/37-user-preference-memory-prototype",
       "tags": [
         "foundations",
         "python",
-        "agent"
+        "memory"
       ]
     },
     {
       "id": "AG-038",
       "track": "01-foundations",
       "title": "Memory summarization agent",
-      "description": "Learn and implement a focused building block of a reliable LLM agent. Keep model reasoning separate from deterministic application logic.",
-      "pattern": "Core agent loop, typed I/O, tools, state, and control flow",
+      "description": "Compress conversation through an injected summarizer while enforcing source and summary limits.",
+      "pattern": "Memory compaction, summarizer boundary, bounded factual retention",
       "difficulty": "Beginner to intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "01-foundations/38-memory-summarization-agent",
       "tags": [
         "foundations",
         "python",
-        "agent"
+        "memory"
       ]
     },
     {
       "id": "AG-039",
       "track": "01-foundations",
       "title": "Memory retrieval policy demo",
-      "description": "Learn and implement a focused building block of a reliable LLM agent. Keep model reasoning separate from deterministic application logic.",
-      "pattern": "Core agent loop, typed I/O, tools, state, and control flow",
+      "description": "Rank memory candidates using query overlap, recency, and confidence while filtering expired and unconfirmed records.",
+      "pattern": "Memory admission filters, deterministic relevance ranking, recency weighting",
       "difficulty": "Beginner to intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "01-foundations/39-memory-retrieval-policy-demo",
       "tags": [
         "foundations",
         "python",
-        "agent"
+        "memory"
       ]
     },
     {
       "id": "AG-040",
       "track": "01-foundations",
       "title": "Human approval checkpoint",
-      "description": "Learn and implement a focused building block of a reliable LLM agent. Keep model reasoning separate from deterministic application logic.",
-      "pattern": "Core agent loop, typed I/O, tools, state, and control flow",
+      "description": "Pause consequential actions behind expiring one-time approval requests bound to an immutable action payload hash.",
+      "pattern": "Human-in-the-loop authorization, action binding, expiry, replay prevention",
       "difficulty": "Beginner to intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "01-foundations/40-human-approval-checkpoint",
       "tags": [
         "foundations",
         "python",
-        "agent"
+        "human-in-the-loop"
       ]
     },
     {

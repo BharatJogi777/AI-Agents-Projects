@@ -1,0 +1,18 @@
+# AG-033 — Plan validation agent
+
+Validate plans for unique IDs, valid dependencies, acyclic ordering, bounded actions, and allowed risk before execution.
+
+## Run and test
+
+Requires Python 3.12+.
+
+```bash
+python3.12 -m venv .venv
+source .venv/bin/activate
+python -m pip install -e '.[dev]'
+pytest
+```
+
+## Design and limitations
+
+Model behavior is injected behind a small interface; deterministic code validates invariants before state changes. Tests do not require a model or network. This is a focused learning implementation, not a complete production platform. In-memory data is process-local; add durable storage, authentication, encryption, retention, observability, and operational controls before multi-user deployment. Treat model output as untrusted. Tests are authored; local execution remains pending.

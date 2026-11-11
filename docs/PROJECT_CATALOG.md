@@ -23,7 +23,7 @@ This is the master index for the repository. It contains **500 distinct project 
 - **Planned:** catalogued, not yet implemented.
 - **Implemented / Verified / Production-oriented:** only assigned when the evidence requirements in [PROJECT_STANDARD.md](PROJECT_STANDARD.md) are met.
 
-Current implementation status: AG-001 through AG-030 are in progress. The other 470 entries are planned.
+Current implementation status: AG-001 through AG-040 are in progress. The other 460 entries are planned.
 
 ## How to use this catalogue
 
@@ -69,6 +69,16 @@ Current implementation status: AG-001 through AG-030 are in progress. The other 
 | AG-028 | Deterministic rule plus LLM router | Beginner to intermediate | In progress |
 | AG-029 | Intent classification agent | Beginner to intermediate | In progress |
 | AG-030 | Entity extraction agent | Beginner to intermediate | In progress |
+| AG-040 | Human approval checkpoint | Beginner to intermediate | In progress |
+| AG-039 | Memory retrieval policy demo | Beginner to intermediate | In progress |
+| AG-038 | Memory summarization agent | Beginner to intermediate | In progress |
+| AG-037 | User preference memory prototype | Beginner to intermediate | In progress |
+| AG-036 | Session-scoped memory store | Beginner to intermediate | In progress |
+| AG-035 | Short-term conversation memory | Beginner to intermediate | In progress |
+| AG-034 | Plan execution tracker | Beginner to intermediate | In progress |
+| AG-033 | Plan validation agent | Beginner to intermediate | In progress |
+| AG-032 | Plan generation agent | Beginner to intermediate | In progress |
+| AG-031 | Task decomposition agent | Beginner to intermediate | In progress |
 | AG-031 | Task decomposition agent | Beginner to intermediate | Planned |
 | AG-032 | Plan generation agent | Beginner to intermediate | Planned |
 | AG-033 | Plan validation agent | Beginner to intermediate | Planned |

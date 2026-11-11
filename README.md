@@ -83,3 +83,17 @@ This was a structural scan only; it does not establish whether upstream projects
 A project is **Verified** only when clean setup, main scenario, automated tests, important failure paths, secrets handling, permissions, and safe logging are demonstrated. A project is **Production-oriented** only when deployment, health checks, observability, resource limits, scaling, threat model, and operational recovery are also documented.
 
 Never count a planned catalogue entry as an implemented project.
+
+
+## Newly implemented foundations (AG-031–AG-040)
+
+- [x] AG-031 Task decomposition agent: Decompose an objective into atomic tasks with stable IDs and dependencies; reject malformed or cyclic graphs. (local verification pending).
+- [x] AG-032 Plan generation agent: Generate a typed execution plan through an injected planner, enforcing task limits and a stable JSON contract. (local verification pending).
+- [x] AG-033 Plan validation agent: Validate plans for unique IDs, valid dependencies, acyclic ordering, bounded actions, and allowed risk before execution. (local verification pending).
+- [x] AG-034 Plan execution tracker: Track step state transitions and dependency readiness with idempotent completion and explicit failure recovery. (local verification pending).
+- [x] AG-035 Short-term conversation memory: Maintain a bounded chronological message window while preserving system instructions and complete turns. (local verification pending).
+- [x] AG-036 Session-scoped memory store: Provide thread-safe session-isolated key/value memory with TTL, injectable clock, and bounded capacity. (local verification pending).
+- [x] AG-037 User preference memory prototype: Store only explicit, user-confirmed non-sensitive preferences with provenance and user-controlled deletion. (local verification pending).
+- [x] AG-038 Memory summarization agent: Compress conversation through an injected summarizer while enforcing source and summary limits. (local verification pending).
+- [x] AG-039 Memory retrieval policy demo: Rank memory candidates using query overlap, recency, and confidence while filtering expired and unconfirmed records. (local verification pending).
+- [x] AG-040 Human approval checkpoint: Pause consequential actions behind expiring one-time approval requests bound to an immutable action payload hash. (local verification pending).
