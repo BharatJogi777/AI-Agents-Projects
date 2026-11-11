@@ -10,7 +10,7 @@ def compress_context(query:str,evidence:Sequence[Evidence],score:Callable[[str,s
  candidates=[]
  for ev in evidence:
   if not ev.document_id: raise ValueError("document ID required")
-  for m in re.finditer(r"[^.!?\\n]+(?:[.!?]+|$)",ev.text):
+  for m in re.finditer(r"[^.!?\n]+(?:[.!?]+|$)",ev.text):
    raw=m.group(); left=len(raw)-len(raw.lstrip()); right=len(raw.rstrip()); start=m.start()+left; end=m.start()+right; sentence=ev.text[start:end]
    if not sentence: continue
    value=score(query,sentence)
