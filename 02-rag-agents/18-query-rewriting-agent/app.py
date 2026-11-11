@@ -7,7 +7,7 @@ def rewrite_query(query,rewriter,max_variants=3,max_chars=500):
  out=[query]; seen={query.casefold()}
  for item in raw:
   if not isinstance(item,str): continue
-  v=re.sub(r"\\s+"," ",item).strip()
+  v=re.sub(r"\s+"," ",item).strip()
   if v and len(v)<=max_chars and v.casefold() not in seen: out.append(v); seen.add(v.casefold())
   if len(out)>=max_variants+1: break
  return out
