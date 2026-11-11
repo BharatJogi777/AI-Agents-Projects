@@ -4,8 +4,10 @@ from app.config import Settings
 from app.llm import OllamaChatClient
 
 settings = Settings()
-agent = ToolCallingAgent(
-    client=OllamaChatClient(settings.base_url, settings.model, settings.timeout_seconds),
-    max_steps=settings.max_steps,
+llm_client = OllamaChatClient(
+    settings.base_url,
+    settings.model,
+    settings.timeout_seconds,
 )
-app = create_app(agent)
+agent = ToolCallingAgent(client=llm_client, max_steps=settings.max_steps)
+app = create_app(agent, readiness_check=llm_client.is_ready)
