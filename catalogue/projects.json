@@ -131,10 +131,10 @@
       "id": "AG-005",
       "track": "01-foundations",
       "title": "Token budget estimator",
-      "description": "Learn and implement a focused building block of a reliable LLM agent. Keep model reasoning separate from deterministic application logic.",
-      "pattern": "Core agent loop, typed I/O, tools, state, and control flow",
+      "description": "Estimate prompt token usage against a finite model context window, reserve output capacity and safety margin, and select mandatory and optional context items deterministically.",
+      "pattern": "Token accounting, context admission, and budget enforcement",
       "difficulty": "Beginner to intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "01-foundations/05-token-budget-estimator",
       "tags": [
         "foundations",
