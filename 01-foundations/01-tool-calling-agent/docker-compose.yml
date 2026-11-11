@@ -1,0 +1,13 @@
+services:
+  agent-api:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      OLLAMA_BASE_URL: http://host.docker.internal:11434/v1
+      OLLAMA_MODEL: qwen3:4b
+      AGENT_MAX_STEPS: "5"
+      HTTP_TIMEOUT_SECONDS: "60"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
