@@ -1,7 +1,8 @@
 """AG-047: Normalize and bound tool output before it re-enters model context."""
 import json,re
 class ToolOutputNormalizer:
- pattern=re.compile(r'(?i)(api[_-]?key|access[_-]?token|password)(\\s*[:=]\\s*)([^\\s,;]+)')
+ # JSON key/value redaction for common credential field names. Not a general DLP scanner.
+ pattern=re.compile(r'(?i)(api[_-]?key|access[_-]?token|password)([ ]*[:=][ ]*)([^ ,;]+)')
  def __init__(self,max_chars=4000):
   if max_chars<32: raise ValueError("minimum limit is 32")
   self.max_chars=max_chars
