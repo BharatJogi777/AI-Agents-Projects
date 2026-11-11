@@ -101,3 +101,17 @@ A repository licence will be selected before external contributions or third-par
 - [x] AG-028 — Deterministic rule plus LLM router: Rule-first routing with constrained LLM fallback (local verification pending).
 - [x] AG-029 — Intent classification agent: Typed intent output, confidence threshold, and review flag (local verification pending).
 - [x] AG-030 — Entity extraction agent: Evidence-grounded entity extraction and validation (local verification pending).
+
+
+## Newly implemented foundations (AG-041–AG-050)
+
+- [x] AG-041 — Agent state machine: State transitions and terminal-state enforcement (local verification pending).
+- [x] AG-042 — Agent run lifecycle manager: Run lifecycle, timestamps, isolation, and locking (local verification pending).
+- [x] AG-043 — Idempotent tool execution: Idempotency keys, payload fingerprints, replay, and conflict detection (local verification pending).
+- [x] AG-044 — Agent cancellation handler: Cooperative cancellation and reason propagation (local verification pending).
+- [x] AG-045 — Run budget and step limiter: Step, deadline, and cost budget enforcement (local verification pending).
+- [x] AG-046 — Prompt injection awareness demo: Trusted/untrusted boundaries and deterministic policy checks (local verification pending).
+- [x] AG-047 — Untrusted tool-output handling: Bounded serialization, redaction, and untrusted labeling (local verification pending).
+- [x] AG-048 — Agent trace event emitter: Structured events, ordering, bounds, and redaction (local verification pending).
+- [x] AG-049 — CLI agent interface: CLI boundary, validation, dependency injection, and exit codes (local verification pending).
+- [x] AG-050 — FastAPI agent endpoint: HTTP API boundary, typed validation, injection, and safe error mapping (local verification pending).

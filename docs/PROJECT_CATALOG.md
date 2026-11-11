@@ -1,4 +1,4 @@
-# Project Catalogue — 500 AI Agent Projects
+| AG-050 | FastAPI agent endpoint | Beginner to intermediate | In progress |
 
 This is the master index for the repository. It contains **500 distinct project specifications** across 10 tracks. A catalogue entry is a scope definition, not a claim that its code exists or is production-ready.
 

@@ -97,3 +97,14 @@ Never count a planned catalogue entry as an implemented project.
 - [x] AG-038 Memory summarization agent: Compress conversation through an injected summarizer while enforcing source and summary limits. (local verification pending).
 - [x] AG-039 Memory retrieval policy demo: Rank memory candidates using query overlap, recency, and confidence while filtering expired and unconfirmed records. (local verification pending).
 - [x] AG-040 Human approval checkpoint: Pause consequential actions behind expiring one-time approval requests bound to an immutable action payload hash. (local verification pending).
+- [x] AG-041 — [Agent state machine](01-foundations/41-agent-state-machine/) — State transitions and terminal-state enforcement (local verification pending).
+- [x] AG-042 — [Agent run lifecycle manager](01-foundations/42-agent-run-lifecycle-manager/) — Run lifecycle, timestamps, isolation, and locking (local verification pending).
+- [x] AG-043 — [Idempotent tool execution](01-foundations/43-idempotent-tool-execution/) — Idempotency keys, payload fingerprints, replay, and conflict detection (local verification pending).
+- [x] AG-044 — [Agent cancellation handler](01-foundations/44-agent-cancellation-handler/) — Cooperative cancellation and reason propagation (local verification pending).
+- [x] AG-045 — [Run budget and step limiter](01-foundations/45-run-budget-and-step-limiter/) — Step, deadline, and cost budget enforcement (local verification pending).
+- [x] AG-046 — [Prompt injection awareness demo](01-foundations/46-prompt-injection-awareness-demo/) — Trusted/untrusted boundaries and deterministic policy checks (local verification pending).
+- [x] AG-047 — [Untrusted tool-output handling](01-foundations/47-untrusted-tool-output-handling/) — Bounded serialization, redaction, and untrusted labeling (local verification pending).
+- [x] AG-048 — [Agent trace event emitter](01-foundations/48-agent-trace-event-emitter/) — Structured events, ordering, bounds, and redaction (local verification pending).
+- [x] AG-049 — [CLI agent interface](01-foundations/49-cli-agent-interface/) — CLI boundary, validation, dependency injection, and exit codes (local verification pending).
+- [x] AG-050 — [FastAPI agent endpoint](01-foundations/50-fastapi-agent-endpoint/) — HTTP API boundary, typed validation, injection, and safe error mapping (local verification pending).
+

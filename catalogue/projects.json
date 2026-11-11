@@ -3,7 +3,7 @@
   "catalogue_version": "1.0.0",
   "total_projects": 500,
   "generated_at": "2026-11-12",
-  "status_policy": "Planned entries are catalogue records, not implementation claims. AG-001 through AG-040 have code in the repository and remain in progress pending local verification.",
+  "status_policy": "Planned entries are catalogue records, not implementation claims. AG-001 through AG-050 have code in the repository and remain in progress pending local verification.",
   "tracks": [
     {
       "id": "01-foundations",
@@ -693,150 +693,150 @@
       "id": "AG-041",
       "track": "01-foundations",
       "title": "Agent state machine",
-      "description": "Learn and implement a focused building block of a reliable LLM agent. Keep model reasoning separate from deterministic application logic.",
-      "pattern": "Core agent loop, typed I/O, tools, state, and control flow",
+      "description": "Finite-state machine for legal agent-run transitions, immutable terminal states, and transition history.",
+      "pattern": "State transitions and terminal-state enforcement",
       "difficulty": "Beginner to intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "01-foundations/41-agent-state-machine",
       "tags": [
         "foundations",
         "python",
-        "agent"
+        "agent-state-machine"
       ]
     },
     {
       "id": "AG-042",
       "track": "01-foundations",
       "title": "Agent run lifecycle manager",
-      "description": "Learn and implement a focused building block of a reliable LLM agent. Keep model reasoning separate from deterministic application logic.",
-      "pattern": "Core agent loop, typed I/O, tools, state, and control flow",
+      "description": "Thread-safe in-memory run registry with isolated IDs, UTC lifecycle timestamps, and validated completion.",
+      "pattern": "Run lifecycle, timestamps, isolation, and locking",
       "difficulty": "Beginner to intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "01-foundations/42-agent-run-lifecycle-manager",
       "tags": [
         "foundations",
         "python",
-        "agent"
+        "agent-run-lifecycle-manager"
       ]
     },
     {
       "id": "AG-043",
       "track": "01-foundations",
       "title": "Idempotent tool execution",
-      "description": "Learn and implement a focused building block of a reliable LLM agent. Keep model reasoning separate from deterministic application logic.",
-      "pattern": "Core agent loop, typed I/O, tools, state, and control flow",
+      "description": "Bind idempotency keys to canonical JSON fingerprints; replay matching results and reject key reuse with different inputs.",
+      "pattern": "Idempotency keys, payload fingerprints, replay, and conflict detection",
       "difficulty": "Beginner to intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "01-foundations/43-idempotent-tool-execution",
       "tags": [
         "foundations",
         "python",
-        "agent"
+        "idempotent-tool-execution"
       ]
     },
     {
       "id": "AG-044",
       "track": "01-foundations",
       "title": "Agent cancellation handler",
-      "description": "Learn and implement a focused building block of a reliable LLM agent. Keep model reasoning separate from deterministic application logic.",
-      "pattern": "Core agent loop, typed I/O, tools, state, and control flow",
+      "description": "Thread-safe cooperative cancellation token with first-reason-wins semantics and checkpoints between agent steps.",
+      "pattern": "Cooperative cancellation and reason propagation",
       "difficulty": "Beginner to intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "01-foundations/44-agent-cancellation-handler",
       "tags": [
         "foundations",
         "python",
-        "agent"
+        "agent-cancellation-handler"
       ]
     },
     {
       "id": "AG-045",
       "track": "01-foundations",
       "title": "Run budget and step limiter",
-      "description": "Learn and implement a focused building block of a reliable LLM agent. Keep model reasoning separate from deterministic application logic.",
-      "pattern": "Core agent loop, typed I/O, tools, state, and control flow",
+      "description": "Enforce independent maximum-step, elapsed-time, and estimated-cost budgets with explicit stop reasons.",
+      "pattern": "Step, deadline, and cost budget enforcement",
       "difficulty": "Beginner to intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "01-foundations/45-run-budget-and-step-limiter",
       "tags": [
         "foundations",
         "python",
-        "agent"
+        "run-budget-and-step-limiter"
       ]
     },
     {
       "id": "AG-046",
       "track": "01-foundations",
       "title": "Prompt injection awareness demo",
-      "description": "Learn and implement a focused building block of a reliable LLM agent. Keep model reasoning separate from deterministic application logic.",
-      "pattern": "Core agent loop, typed I/O, tools, state, and control flow",
+      "description": "Separate trusted application policy from untrusted user and retrieved text, with a server-side allowlist and approval gate.",
+      "pattern": "Trusted/untrusted boundaries and deterministic policy checks",
       "difficulty": "Beginner to intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "01-foundations/46-prompt-injection-awareness-demo",
       "tags": [
         "foundations",
         "python",
-        "agent"
+        "prompt-injection-awareness-demo"
       ]
     },
     {
       "id": "AG-047",
       "track": "01-foundations",
       "title": "Untrusted tool-output handling",
-      "description": "Learn and implement a focused building block of a reliable LLM agent. Keep model reasoning separate from deterministic application logic.",
-      "pattern": "Core agent loop, typed I/O, tools, state, and control flow",
+      "description": "Serialize tool results into bounded, trust-labeled envelopes and redact common credential patterns before model-context insertion.",
+      "pattern": "Bounded serialization, redaction, and untrusted labeling",
       "difficulty": "Beginner to intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "01-foundations/47-untrusted-tool-output-handling",
       "tags": [
         "foundations",
         "python",
-        "agent"
+        "untrusted-tool-output-handling"
       ]
     },
     {
       "id": "AG-048",
       "track": "01-foundations",
       "title": "Agent trace event emitter",
-      "description": "Learn and implement a focused building block of a reliable LLM agent. Keep model reasoning separate from deterministic application logic.",
-      "pattern": "Core agent loop, typed I/O, tools, state, and control flow",
+      "description": "Emit ordered structured lifecycle events with bounded attributes, UTC timestamps, and common sensitive-field redaction.",
+      "pattern": "Structured events, ordering, bounds, and redaction",
       "difficulty": "Beginner to intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "01-foundations/48-agent-trace-event-emitter",
       "tags": [
         "foundations",
         "python",
-        "agent"
+        "agent-trace-event-emitter"
       ]
     },
     {
       "id": "AG-049",
       "track": "01-foundations",
       "title": "CLI agent interface",
-      "description": "Learn and implement a focused building block of a reliable LLM agent. Keep model reasoning separate from deterministic application logic.",
-      "pattern": "Core agent loop, typed I/O, tools, state, and control flow",
+      "description": "Expose an injected agent through argparse with bounded prompt input, deterministic exit codes, and sanitized errors.",
+      "pattern": "CLI boundary, validation, dependency injection, and exit codes",
       "difficulty": "Beginner to intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "01-foundations/49-cli-agent-interface",
       "tags": [
         "foundations",
         "python",
-        "agent"
+        "cli-agent-interface"
       ]
     },
     {
       "id": "AG-050",
       "track": "01-foundations",
       "title": "FastAPI agent endpoint",
-      "description": "Learn and implement a focused building block of a reliable LLM agent. Keep model reasoning separate from deterministic application logic.",
-      "pattern": "Core agent loop, typed I/O, tools, state, and control flow",
+      "description": "Expose an injected agent with strict Pydantic request validation, bounded prompt size, health check, and sanitized execution errors.",
+      "pattern": "HTTP API boundary, typed validation, injection, and safe error mapping",
       "difficulty": "Beginner to intermediate",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "01-foundations/50-fastapi-agent-endpoint",
       "tags": [
         "foundations",
         "python",
-        "agent"
+        "fastapi-agent-endpoint"
       ]
     },
     {
