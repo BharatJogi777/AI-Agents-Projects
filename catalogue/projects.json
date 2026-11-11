@@ -70,8 +70,8 @@
     {
       "id": "AG-001",
       "track": "01-foundations",
-      "title": "Minimal chat-completion client",
-      "description": "Learn and implement a focused building block of a reliable LLM agent. Keep model reasoning separate from deterministic application logic.",
+      "title": "Bounded tool-calling agent",
+      "description": "Use an Ollama-backed agent loop to select allowlisted deterministic tools, validate arguments, execute them, and stop after a bounded number of steps.",
       "pattern": "Core agent loop, typed I/O, tools, state, and control flow",
       "difficulty": "Beginner to intermediate",
       "status": "In progress",
@@ -85,8 +85,8 @@
     {
       "id": "AG-002",
       "track": "01-foundations",
-      "title": "Prompt template and version manager",
-      "description": "Learn and implement a focused building block of a reliable LLM agent. Keep model reasoning separate from deterministic application logic.",
+      "title": "Schema-constrained structured-output agent",
+      "description": "Generate task-analysis JSON with Ollama structured output and independently validate the result against a strict Pydantic v2 schema.",
       "pattern": "Core agent loop, typed I/O, tools, state, and control flow",
       "difficulty": "Beginner to intermediate",
       "status": "In progress",

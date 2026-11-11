@@ -39,8 +39,8 @@ Current implementation status: AG-001 through AG-004 are in progress. The other 
 
 | ID | Project | Difficulty | Status |
 |---|---|---|---|
-| AG-001 | Minimal chat-completion client | Beginner to intermediate | In progress |
-| AG-002 | Prompt template and version manager | Beginner to intermediate | In progress |
+| AG-001 | Bounded tool-calling agent | Beginner to intermediate | In progress |
+| AG-002 | Schema-constrained structured-output agent | Beginner to intermediate | In progress |
 | AG-003 | System and developer prompt boundary demo | Beginner to intermediate | In progress |
 | AG-004 | Conversation history manager | Beginner to intermediate | In progress |
 | AG-005 | Token budget estimator | Beginner to intermediate | Planned |
