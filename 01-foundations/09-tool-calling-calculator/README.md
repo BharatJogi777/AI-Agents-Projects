@@ -20,7 +20,7 @@ python -m pip install -e '.[dev]'
 ollama pull qwen3:4b
 ```
 
-The CLI entry point is exposed in app.py; run it from a Python shell by constructing CalculatorAgent(OllamaChatClient()) and calling run("What is 19 plus 23?").
+Run the CLI with: python -m main \"What is 19 plus 23?\". Set OLLAMA_BASE_URL and OLLAMA_MODEL to override the defaults.
 
 ## Tests
 
