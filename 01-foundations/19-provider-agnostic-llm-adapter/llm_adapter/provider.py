@@ -3,8 +3,7 @@ from .contracts import ChatRequest,ChatResponse
 
 class LLMProvider(Protocol):
     def chat(self,request:ChatRequest)->ChatResponse: ...
-
-class ProviderNotRegistered(LookupError): pass
+class ProviderNotRegistered(ValueError): pass
 class ProviderContractError(TypeError): pass
 
 class LLMClient:
