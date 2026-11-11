@@ -1,31 +1,67 @@
 # AG-009 — Tool-calling calculator
 
-**Status:** In progress — code and tests committed; local execution pending.  
-**Model:** Ollama /api/chat; default qwen3:4b.
+**Status:** Modular implementation expanded; tests are authored but not locally executed.  
+**Runtime:** Python 3.12+ · **Model:** Ollama `qwen3:4b` by default
 
-The model converts a natural-language request into a calculate tool call. Python validates the arguments and evaluates the expression using a restricted AST parser and Decimal arithmetic. The model does not calculate mentally, and Python never executes model-generated Python code.
+## Purpose
 
-## Supported arithmetic
+The LLM interprets the natural-language request and chooses the calculator tool. Python validates the tool arguments and evaluates arithmetic deterministically. The application never executes model-generated Python, `eval()`, shell commands, or arbitrary AST nodes.
 
-Numbers, parentheses, unary plus/minus, addition, subtraction, multiplication, division, floor division, modulo, and integer powers from -8 to 8. Expression length, AST complexity, and result magnitude are bounded. Names, function calls, attribute access, comparisons, imports, and eval/exec are rejected.
+## Architecture
+
+```text
+Natural-language request
+        |
+        v
+CalculatorAgent (bounded model/tool loop)
+        |
+        v
+OllamaChatClient ----> Ollama /api/chat
+        |
+        | tool call (structured JSON)
+        v
+tools.execute_tool (allowlist + Pydantic)
+        |
+        v
+arithmetic.calculate (restricted AST + Decimal)
+        |
+        v
+tool result -> model -> final answer
+```
+
+## Modules
+
+- `calculator_core/arithmetic.py`: parser, AST allowlist, Decimal arithmetic, numeric/expression limits.
+- `calculator_core/tools.py`: strict argument schema, tool definition, allowlisted dispatch.
+- `calculator_core/agent.py`: bounded orchestration and tool-result messages.
+- `calculator_core/provider.py`: reusable HTTP client and Ollama response/error handling.
+- `app.py`: compatibility exports for existing examples/tests.
+- `main.py`: CLI composition root.
 
 ## Setup and run
 
-Requires Python 3.12+ and Ollama running on the host.
-
 ```bash
+ollama pull qwen3:4b
 python3.12 -m venv .venv
 source .venv/bin/activate
-python -m pip install -e '.[dev]'
-ollama pull qwen3:4b
+pip install -e '.[dev]'
+python main.py "What is (19 + 23) multiplied by 2?"
+pytest
 ```
 
-Run the CLI with: python -m main \"What is 19 plus 23?\". Set OLLAMA_BASE_URL and OLLAMA_MODEL to override the defaults.
+## Safety properties
+
+- Only arithmetic literals, unary signs, and selected binary operators are accepted.
+- Expression length and AST node count are bounded.
+- Exponents are restricted to integers from -8 through 8.
+- Numeric values and results are bounded; Decimal avoids common binary floating-point surprises.
+- Tool names are allowlisted and argument fields are strict.
+- Model steps are bounded; provider errors are sanitized.
 
 ## Tests
 
-Run pytest. Tests use a fake model client and do not require Ollama. They cover arithmetic, unsafe expressions, tool dispatch, schema validation, and step limits.
+`pytest` runs arithmetic, malicious-expression rejection, tool dispatch, agent-loop, and provider-adapter tests without a live Ollama server. The tests are committed but have not been executed in the maintainer's environment.
 
-## Safety
+## Limitations
 
-Only the calculate tool is exposed. No shell, filesystem, network, or database tools exist. The evaluator never calls eval or exec. This is a teaching CLI foundation, not a multi-tenant service. Model tool-call compatibility varies by Ollama model.
+This is a single-process CLI example. It has no API authentication, persistent run history, per-user quotas, or distributed tracing. Add those only when turning it into a hosted service.
