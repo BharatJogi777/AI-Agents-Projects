@@ -1,18 +1,17 @@
 # AG-036 — Session-scoped memory store
 
-Provide thread-safe session-isolated key/value memory with TTL, injectable clock, and bounded capacity.
+Provides a thread-safe, process-local key/value store with session isolation, TTL expiry, injected monotonic clock, and a global bounded capacity. Reads update LRU order; expired entries are purged before writes and size reporting.
 
-## Run and test
+## Modules
+- `session_memory/contracts.py`: immutable entry metadata.
+- `session_memory/store.py`: TTL/LRU operations, capacity enforcement, and session deletion.
+- `app.py`: compatibility facade.
 
-Requires Python 3.12+.
-
+## Run
 ```bash
-python3.12 -m venv .venv
-source .venv/bin/activate
-python -m pip install -e '.[dev]'
+python3.12 -m venv .venv && source .venv/bin/activate
+pip install -e '.[dev]'
 pytest
 ```
 
-## Design and limitations
-
-Model behavior is injected behind a small interface; deterministic code validates invariants before state changes. Tests do not require a model or network. This is a focused learning implementation, not a complete production platform. In-memory data is process-local; add durable storage, authentication, encryption, retention, observability, and operational controls before multi-user deployment. Treat model output as untrusted. Tests are authored; local execution remains pending.
+Memory is not shared across processes and is lost on restart. Use a durable shared store for production; add authentication, encryption, per-tenant quotas, and retention controls. Local test execution remains pending.

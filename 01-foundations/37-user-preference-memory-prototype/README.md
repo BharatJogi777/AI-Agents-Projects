@@ -1,18 +1,17 @@
 # AG-037 — User preference memory prototype
 
-Store only explicit, user-confirmed non-sensitive preferences with provenance and user-controlled deletion.
+Stores only explicit, user-confirmed preferences from a small non-sensitive category allowlist. Records include UTC provenance timestamps and can be deleted by category or user.
 
-## Run and test
+## Modules
+- `preference_memory/contracts.py`: immutable preference record.
+- `preference_memory/store.py`: consent gate, category allowlist, user isolation, provenance, and deletion.
+- `app.py`: compatibility facade.
 
-Requires Python 3.12+.
-
+## Run
 ```bash
-python3.12 -m venv .venv
-source .venv/bin/activate
-python -m pip install -e '.[dev]'
+python3.12 -m venv .venv && source .venv/bin/activate
+pip install -e '.[dev]'
 pytest
 ```
 
-## Design and limitations
-
-Model behavior is injected behind a small interface; deterministic code validates invariants before state changes. Tests do not require a model or network. This is a focused learning implementation, not a complete production platform. In-memory data is process-local; add durable storage, authentication, encryption, retention, observability, and operational controls before multi-user deployment. Treat model output as untrusted. Tests are authored; local execution remains pending.
+No inference or automatic capture is implemented. This is an in-memory prototype, not a consent-management or compliance platform. Production storage needs access controls, encryption, audit logs, retention, and verified deletion. Local test execution remains pending.

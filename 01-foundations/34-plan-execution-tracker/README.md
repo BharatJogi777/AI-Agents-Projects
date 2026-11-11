@@ -1,18 +1,17 @@
 # AG-034 — Plan execution tracker
 
-Track step state transitions and dependency readiness with idempotent completion and explicit failure recovery.
+Tracks each task through PENDING, RUNNING, SUCCEEDED, FAILED, and SKIPPED states. It gates task start on successful dependencies, supports explicit retry after failure, and makes terminal completion idempotent.
 
-## Run and test
+## Modules
+- `plan_tracker/contracts.py`: status enum and mutable per-step state.
+- `plan_tracker/tracker.py`: locked state transitions, dependency checks, and snapshots.
+- `app.py`: compatibility facade.
 
-Requires Python 3.12+.
-
+## Run
 ```bash
-python3.12 -m venv .venv
-source .venv/bin/activate
-python -m pip install -e '.[dev]'
+python3.12 -m venv .venv && source .venv/bin/activate
+pip install -e '.[dev]'
 pytest
 ```
 
-## Design and limitations
-
-Model behavior is injected behind a small interface; deterministic code validates invariants before state changes. Tests do not require a model or network. This is a focused learning implementation, not a complete production platform. In-memory data is process-local; add durable storage, authentication, encryption, retention, observability, and operational controls before multi-user deployment. Treat model output as untrusted. Tests are authored; local execution remains pending.
+The tracker is in-memory and process-local. It is not a durable workflow engine: persist state transitions transactionally and use leases/outbox patterns before coordinating workers. Local test execution remains pending.

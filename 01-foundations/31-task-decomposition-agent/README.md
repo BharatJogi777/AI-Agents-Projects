@@ -1,18 +1,18 @@
 # AG-031 — Task decomposition agent
 
-Decompose an objective into atomic tasks with stable IDs and dependencies; reject malformed or cyclic graphs.
+Turns a goal into a bounded dependency graph. The planner is injected; application code owns validation, duplicate detection, dependency integrity, cycle detection, and topological ordering.
 
-## Run and test
+## Modules
+- `task_decomposer/contracts.py`: immutable task DTO.
+- `task_decomposer/validator.py`: validates IDs/descriptions/dependencies and detects cycles.
+- `task_decomposer/agent.py`: planner boundary and objective/task limits.
+- `app.py`: compatibility facade for the original tutorial imports.
 
-Requires Python 3.12+.
-
+## Run
 ```bash
-python3.12 -m venv .venv
-source .venv/bin/activate
-python -m pip install -e '.[dev]'
+python3.12 -m venv .venv && source .venv/bin/activate
+pip install -e '.[dev]'
 pytest
 ```
 
-## Design and limitations
-
-Model behavior is injected behind a small interface; deterministic code validates invariants before state changes. Tests do not require a model or network. This is a focused learning implementation, not a complete production platform. In-memory data is process-local; add durable storage, authentication, encryption, retention, observability, and operational controls before multi-user deployment. Treat model output as untrusted. Tests are authored; local execution remains pending.
+The returned tasks are dependency-first. The planner is not allowed to execute them. Persist the graph and pass it through AG-033 validation before execution. Model-backed planning and local test execution remain pending.

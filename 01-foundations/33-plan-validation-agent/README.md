@@ -1,18 +1,17 @@
 # AG-033 — Plan validation agent
 
-Validate plans for unique IDs, valid dependencies, acyclic ordering, bounded actions, and allowed risk before execution.
+A deterministic pre-execution policy gate. Validates bounded step count, unique IDs, action length, allowed risk, dependency references, and acyclic graph structure. Valid plans include a dependency-first topological order.
 
-## Run and test
+## Modules
+- `plan_validator/contracts.py`: step and validation result DTOs.
+- `plan_validator/validator.py`: policy and graph validation.
+- `app.py`: compatibility facade.
 
-Requires Python 3.12+.
-
+## Run
 ```bash
-python3.12 -m venv .venv
-source .venv/bin/activate
-python -m pip install -e '.[dev]'
+python3.12 -m venv .venv && source .venv/bin/activate
+pip install -e '.[dev]'
 pytest
 ```
 
-## Design and limitations
-
-Model behavior is injected behind a small interface; deterministic code validates invariants before state changes. Tests do not require a model or network. This is a focused learning implementation, not a complete production platform. In-memory data is process-local; add durable storage, authentication, encryption, retention, observability, and operational controls before multi-user deployment. Treat model output as untrusted. Tests are authored; local execution remains pending.
+This validates structure and configured risk labels, not the real-world safety of an action. Enforce authorization and human approval separately. Local test execution remains pending.

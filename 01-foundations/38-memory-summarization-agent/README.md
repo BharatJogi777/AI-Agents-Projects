@@ -1,18 +1,17 @@
 # AG-038 — Memory summarization agent
 
-Compress conversation through an injected summarizer while enforcing source and summary limits.
+Calls an injected summarizer behind strict source and output size bounds. Exposes optional metadata about source and summary lengths without claiming that generated statements are verified facts.
 
-## Run and test
+## Modules
+- `memory_summarizer/contracts.py`: summary metadata DTO.
+- `memory_summarizer/agent.py`: summarizer protocol, input/output validation, and metadata.
+- `app.py`: compatibility facade.
 
-Requires Python 3.12+.
-
+## Run
 ```bash
-python3.12 -m venv .venv
-source .venv/bin/activate
-python -m pip install -e '.[dev]'
+python3.12 -m venv .venv && source .venv/bin/activate
+pip install -e '.[dev]'
 pytest
 ```
 
-## Design and limitations
-
-Model behavior is injected behind a small interface; deterministic code validates invariants before state changes. Tests do not require a model or network. This is a focused learning implementation, not a complete production platform. In-memory data is process-local; add durable storage, authentication, encryption, retention, observability, and operational controls before multi-user deployment. Treat model output as untrusted. Tests are authored; local execution remains pending.
+The summarizer may omit or distort details. Preserve source references, evaluate factual consistency, and require confirmation before promoting a generated summary into durable preference memory. Local test execution remains pending.
