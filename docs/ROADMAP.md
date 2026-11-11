@@ -1,65 +1,89 @@
-# Implementation Roadmap
+# AI Agents Projects
 
-## Mission
+A hands-on engineering collection of AI agents: from first principles to reliable, observable, secure systems.
 
-Build a broad catalogue of 500 AI agent projects and patterns, while earning completeness through working implementations rather than counting folders. The 500-entry catalogue is now established; implementation and verification remain separate milestones.
+The repository now has a **500-project catalogue across 10 engineering tracks**. The catalogue is a coverage map, not a claim that 500 implementations already exist. Projects are built and verified incrementally; quality takes priority over folder count.
 
-## Catalogue baseline
+## Start here
 
-- [x] Define 500 distinct project specifications across 10 tracks.
-- [x] Publish human-readable and machine-readable catalogues.
-- [x] Add track-level entry points and implementation expectations.
-- [ ] Implement and verify projects in priority order.
+- [Browse all 500 projects](docs/PROJECT_CATALOG.md)
+- [Machine-readable JSON catalogue](catalogue/projects.json)
+- [CSV catalogue](catalogue/projects.csv)
+- [Implementation roadmap](docs/ROADMAP.md)
+- [Project implementation standard](docs/PROJECT_STANDARD.md)
 
-See [PROJECT_CATALOG.md](PROJECT_CATALOG.md), [projects.json](../catalogue/projects.json), and [projects.csv](../catalogue/projects.csv).
+## Repository tracks
 
-## Priority tracks
+| Track | Purpose |
+|---|---|
+| [01 Foundations](01-foundations/) | LLM calls, structured output, tools, state, memory, and loops |
+| [02 RAG agents](02-rag-agents/) | Retrieval, grounding, citations, and data assistants |
+| [03 MCP agents](03-mcp-agents/) | MCP clients, servers, discovery, and integrations |
+| [04 Orchestration](04-orchestration/) | Stateful workflows, planning, routing, and multi-agent systems |
+| [05 Developer agents](05-developer-agents/) | Code review, debugging, testing, and repository automation |
+| [06 DevOps agents](06-devops-agents/) | Logs, incidents, Kubernetes, cloud, and SRE workflows |
+| [07 Domain agents](07-domain-agents/) | Business and industry-specific workflows |
+| [08 Advanced agents](08-advanced-agents/) | Browser, voice, multimodal, and long-running workflows |
+| [09 Security and evaluation](09-security-evaluation/) | Guardrails, threat testing, evaluation, and governance |
+| [10 Research and productivity](10-research-productivity/) | Research, knowledge management, and productivity workflows |
 
-| Priority | Track | Scope |
+## Implemented project foundations
+
+| ID | Project | Status |
 |---|---|---|
-| P0 | Foundations | LLM client, structured output, tool calling, loops, state, memory, retries |
-| P0 | RAG and data | ingestion, chunking, embeddings, retrieval, reranking, citations, evaluation |
-| P0 | MCP | servers, clients, discovery, multiple servers, authorization, resilience |
-| P0 | Orchestration | graph workflows, routing, planner/executor, supervisor, human-in-loop |
-| P0 | Security and evaluation | threat testing, policy enforcement, groundedness, regression, observability |
-| P1 | Developer agents | code review, debugging, tests, docs, issue triage, repository agent |
-| P1 | DevOps agents | logs, incidents, Kubernetes, cloud inventory, deployment review |
-| P1 | Domain agents | support, research, analytics, logistics, education, agriculture, healthcare admin |
-| P2 | Advanced agents | browser, voice, long-running tasks, multimodal workflows |
-| P2 | Research and productivity | evidence gathering, synthesis, personal and team knowledge workflows |
+| AG-001 | [Tool-calling agent](01-foundations/01-tool-calling-agent/) | In progress — local verification pending |
+| AG-002 | [Structured-output agent](01-foundations/02-structured-output-agent/) | In progress — local verification pending |
+| AG-003 | [System and developer prompt boundary demo](01-foundations/03-system-and-developer-prompt-boundary-demo/) | In progress — local verification pending |
+| AG-004 | [Conversation history manager](01-foundations/04-conversation-history-manager/) | In progress — local verification pending |
+| AG-005 | [Token budget estimator](01-foundations/05-token-budget-estimator/) | In progress — local verification pending |
+| AG-006 | [Context-window truncation strategy](01-foundations/06-context-window-truncation/) | In progress — local verification pending |
+| AG-007 | [Evidence-backed entity extraction agent](01-foundations/07-evidence-backed-entity-extraction-agent/) | In progress — local verification pending |
+| AG-008 | [Schema repair and retry agent](01-foundations/08-schema-repair-and-retry-agent/) | In progress — local verification pending |
+| AG-009 | [Tool-calling calculator](01-foundations/09-tool-calling-calculator/) | In progress — local verification pending |
+| AG-010 | [Multi-tool selection agent](01-foundations/10-multi-tool-selection-agent/) | In progress — local verification pending |
 
-## Reference audit: initial structural snapshot
+## Engineering principles
 
-Reference: [ashishpatel26/500-AI-Agents-Projects](https://github.com/ashishpatel26/500-AI-Agents-Projects), inspected on 2026-11-12. The initial recursive tree contained 179 entries: 145 files and 34 directories. Under `agents/`, there were 21 numbered project folders. All 21 had a README, a code file, and a dependency/configuration file. A filename-level scan found one project folder with a test-like filename and no Docker files in those 21 folders.
+1. Runnable code beats screenshots and pseudo-code.
+2. A model proposes; deterministic application code validates and executes.
+3. Tools use explicit schemas, allowlists, timeouts, and auditable results.
+4. State and memory are explicit, scoped, and inspectable.
+5. Every project tests important behavior and failure paths.
+6. Secrets are never committed; configuration is documented safely.
+7. Human approval is required for consequential or irreversible actions.
+8. Provider and framework choices are isolated behind adapters where useful.
+9. Production-oriented claims require evidence: tests, security, observability, and operational docs.
+10. Local models such as Ollama are supported where practical; cloud APIs remain optional when possible.
 
-This was a structural scan only; it does not establish whether upstream projects run or are high/low quality. No source is copied by default. Ideas are independently scoped and implemented, with third-party licence and attribution checks where reuse occurs.
+## Project maturity
 
-## Existing implementations
+- **Planned:** catalogued; no implementation claim.
+- **In progress:** implementation is being built; verification may be pending.
+- **Implemented:** main flow runs and basic tests pass.
+- **Verified:** reproducible setup and important failure cases pass.
+- **Production-oriented:** deployment, security, observability, limits, and operational guidance are included.
 
-- [x] AG-001 Tool-calling agent: bounded loop, allowlisted tools, validation, Ollama adapter (verification pending).
-- [x] AG-002 Structured-output agent: schema-constrained generation and strict Pydantic validation (verification pending).
-- [x] AG-003 Prompt boundary demo: trusted system/developer messages, untrusted user framing, and provider role mapping (verification pending).
-- [x] AG-004 Conversation history manager: bounded session-scoped history, complete-turn trimming, and isolation (verification pending).
-- [x] AG-005 Token budget estimator: pluggable token counter, output/safety reservation, mandatory context protection, and priority-based admission (verification pending).
-- [x] AG-006 Context-window truncation strategy: mandatory system/current-user preservation, complete-turn integrity, newest-first retention, and explicit overflow (verification pending).
-- [x] AG-007 Evidence-backed entity extraction agent: typed entity schema, exact source-substring evidence checks, duplicate rejection, and explicit validation failures (verification pending).
-- [x] AG-008 Schema repair and retry agent: strict Pydantic validation, bounded feedback, configurable repair attempts, and explicit exhaustion handling (verification pending).
-- [x] AG-009 Tool-calling calculator: Ollama tool selection, strict argument validation, restricted AST evaluation with Decimal, and bounded execution (verification pending).
-- [x] AG-010 Multi-tool selection agent: model selection across three typed, allowlisted tools with bounded execution (local verification pending).
-- [ ] Run AG-001 and AG-002 in clean Python 3.12 environments and verify Ollama integration; run AG-003 tests and CLI locally; run AG-004 tests and history demo; run AG-005 tests and budget demo; run AG-006 tests and truncation demo; run AG-007 tests and entity extraction demo; run AG-008 tests and repair/retry demo; run AG-009 calculator tests and Ollama tool-call demo.
+## Local development
 
-## Delivery sequence
+Python 3.12+ is the default for new Python projects unless a framework has a documented compatibility constraint. Each project has its own environment and setup instructions.
 
-1. Finish and verify the foundations projects; extract reusable interfaces only after real duplication appears.
-2. Build MCP server/client and multi-server tool discovery examples.
-3. Build RAG ingestion, retrieval, citation, and evaluation foundations.
-4. Build stateful orchestration with persistence, retries, idempotency, and human approval.
-5. Build developer and DevOps agents with read-only defaults and explicit approval for mutations.
-6. Expand domain, advanced interface, security, and research/productivity projects.
-7. Revisit the catalogue regularly to merge duplicates, retire obsolete ideas, and update dependencies.
+```bash
+git clone https://github.com/BharatJogi777/AI-Agents-Projects.git
+cd AI-Agents-Projects
+```
 
-## Definition of done
+## Safety
 
-A project is **Verified** only when clean setup, main scenario, automated tests, important failure paths, secrets handling, permissions, and safe logging are demonstrated. A project is **Production-oriented** only when deployment, health checks, observability, resource limits, scaling, threat model, and operational recovery are also documented.
+Agents must not receive unrestricted shell, filesystem, database, browser, or cloud access. Use least-privilege tools, validation, allowlists, execution limits, approval gates, and audit logs. Treat retrieved documents and tool outputs as untrusted data.
 
-Never count a planned catalogue entry as an implemented project.
+## Reference material and attribution
+
+The catalogue is informed by public agent projects and learning resources, including [500-AI-Agents-Projects](https://github.com/ashishpatel26/500-AI-Agents-Projects). This is an independent implementation effort, not a mirror. External code/assets are reused only when licences permit it and attribution requirements are met.
+
+## Contributing
+
+Follow [PROJECT_STANDARD.md](docs/PROJECT_STANDARD.md). Every implementation needs a clear use case, architecture, setup, runnable example, tests, limitations, and security notes.
+
+## License
+
+A repository licence will be selected before external contributions or third-party code reuse. Individual third-party components retain their original licences and notices.
