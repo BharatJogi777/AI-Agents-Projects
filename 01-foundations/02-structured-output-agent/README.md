@@ -1,56 +1,42 @@
-# 01 — Structured Output Agent
+# 02 — Structured-output agent
 
 **Difficulty:** Beginner → Intermediate  
-**Status:** In progress — implementation and deterministic tests committed; local Ollama execution still needs verification.  
+**Status:** Expanded implementation; tests are authored but local execution and live Ollama compatibility still need verification.  
 **Model:** Ollama native chat API, default `qwen3:4b`  
 **Validation:** Pydantic v2
 
 ## What it does
 
-Takes a plain-language work request and returns a validated `TaskAnalysis` object containing:
+Takes a plain-language work request and returns a validated `TaskAnalysis` object containing a summary, controlled priority and category, typed action items, a human-review flag, and uncertainty. The model must not invent an owner or deadline when the source does not provide one.
 
-- A concise summary.
-- A controlled priority enum.
-- A controlled category enum.
-- Typed action items.
-- A human-review flag.
-- An uncertainty field instead of invented facts.
-
-Ollama is given the Pydantic-generated JSON Schema through its native `/api/chat` `format` field. The application then independently validates the returned content with Pydantic. Model-side constrained generation is useful, but application-side validation remains mandatory.
+Ollama receives the Pydantic-generated JSON Schema through its native `/api/chat` `format` field. The application independently validates the returned content with Pydantic. Model-side constrained generation is useful, but application-side validation remains mandatory.
 
 ## Architecture
 
 ```text
-User text
-   |
-   v
-StructuredOutputAgent
-   | build JSON Schema from TaskAnalysis
-   v
-OllamaClient -----> Ollama /api/chat (format: JSON Schema)
-   |                         |
-   |<------ JSON text --------+
-   v
-Pydantic model_validate_json(strict=True)
-   |
-   +---- valid ----> TaskAnalysis object ----> JSON output
-   |
-   +---- invalid --> OutputValidationError
+CLI -> StructuredOutputAgent -> StructuredGenerator protocol
+             |                           |
+             |                     OllamaClient
+             |                           |
+             |                     Ollama /api/chat
+             |                           |
+             +<------ JSON text ----------+
+             |
+       output byte limit
+             |
+       strict Pydantic validation
+             |
+       TaskAnalysis object
 ```
 
-## Prerequisites
+## Prerequisites and setup
 
 - Python 3.12+
-- Ollama installed and running
-- A model that supports structured output, such as `qwen3:4b`
+- Ollama running locally
+- A model supporting structured output, such as `qwen3:4b`
 
 ```bash
 ollama pull qwen3:4b
-```
-
-## Setup
-
-```bash
 python3.12 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
@@ -62,49 +48,38 @@ cp .env.example .env
 
 ```bash
 python -m app.main "Checkout API latency increased after the latest deployment. The on-call engineer should inspect metrics."
-```
-
-Expected output shape (illustrative; model-generated wording can differ):
-
-```json
-{
-  "summary": "Investigate elevated API latency affecting checkout requests.",
-  "priority": "high",
-  "category": "operations",
-  "action_items": [
-    {
-      "task": "Inspect API latency metrics and recent deployments",
-      "owner": null,
-      "due_date": null
-    }
-  ],
-  "needs_human_review": true,
-  "uncertainty": "The affected time window and customer impact are not specified."
-}
-```
-
-The agent must not invent an owner or deadline when none was provided.
-
-## Run tests without Ollama
-
-```bash
 pytest
 ```
 
-The tests use a fake structured-output generator and require no API key or running model server.
+The deterministic tests use a fake generator and an `httpx.MockTransport` adapter. They do not require a running Ollama service or model download. Tests are authored but have not been executed in the maintainer's environment.
 
 ## Why both JSON Schema and Pydantic?
 
 - **JSON Schema at generation time:** guides the model toward the required shape and allowed values.
-- **Pydantic at the application boundary:** rejects malformed JSON, unknown fields, invalid enums, and values outside the declared constraints.
-- **Business logic after validation:** should consume the typed `TaskAnalysis`, not raw model text.
+- **Pydantic at the application boundary:** rejects malformed JSON, unknown fields, invalid enums, and values outside declared constraints.
+- **Business logic after validation:** consumes the typed `TaskAnalysis`, not raw model text.
 
-Never assume that a valid JSON document is automatically correct or factually grounded. Schema validation checks shape and types, not truth.
+Schema validation checks shape and types, not truth. Do not treat a valid JSON object as factual evidence.
 
-## Limitations and next improvements
+## Project layout
 
-- No automatic retry or repair is performed; invalid output fails explicitly.
-- This project does not verify factual correctness against source documents.
-- The example is a CLI, not a multi-user API.
-- Before production use, add request limits, authentication, metrics, tracing, and an evaluation dataset.
-- If a model or Ollama version does not support the supplied schema, the request may fail; verify model compatibility rather than silently accepting unconstrained text.
+```text
+app/
+  agent.py       # orchestration, input/output limits, strict validation
+  config.py      # environment-backed settings
+  llm.py         # Ollama HTTP adapter
+  main.py        # CLI composition root
+  schemas.py     # Pydantic output contract
+tests/
+  test_agent.py
+  test_llm.py
+docs/
+  architecture.md
+```
+
+## Limitations
+
+- Invalid output fails explicitly; no automatic repair loop is performed.
+- Factual correctness is not verified against source documents.
+- This is a CLI teaching project, not a multi-tenant service.
+- Add authentication, rate limits, metrics, tracing, and an evaluation dataset before exposing it as a service.

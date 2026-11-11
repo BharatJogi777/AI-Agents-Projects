@@ -43,16 +43,13 @@ def test_valid_json_is_parsed_into_typed_pydantic_model():
 
 
 def test_invalid_json_is_rejected():
-    generator = FakeGenerator("{not-json")
-
     with pytest.raises(OutputValidationError, match="did not satisfy"):
-        StructuredOutputAgent(generator).analyze("Classify this request")
+        StructuredOutputAgent(FakeGenerator("{not-json")).analyze("Classify this request")
 
 
 def test_invalid_enum_is_rejected():
     payload = json.loads(VALID_OUTPUT)
     payload["priority"] = "urgent-ish"
-
     with pytest.raises(OutputValidationError):
         StructuredOutputAgent(FakeGenerator(json.dumps(payload))).analyze("Classify this request")
 
@@ -60,17 +57,14 @@ def test_invalid_enum_is_rejected():
 def test_unknown_fields_are_rejected():
     payload = json.loads(VALID_OUTPUT)
     payload["made_up_field"] = "not allowed"
-
     with pytest.raises(OutputValidationError):
         StructuredOutputAgent(FakeGenerator(json.dumps(payload))).analyze("Classify this request")
 
 
 def test_empty_input_is_rejected_before_model_call():
     generator = FakeGenerator(VALID_OUTPUT)
-
     with pytest.raises(ValueError, match="cannot be empty"):
         StructuredOutputAgent(generator).analyze(" ")
-
     assert generator.messages is None
 
 
@@ -79,3 +73,20 @@ def test_schema_contract_has_required_fields():
     assert {"summary", "priority", "category", "action_items", "needs_human_review"} <= set(
         schema["properties"]
     )
+
+
+def test_input_size_is_bounded_before_model_call():
+    generator = FakeGenerator(VALID_OUTPUT)
+    with pytest.raises(ValueError, match="size limit"):
+        StructuredOutputAgent(generator, max_input_bytes=10).analyze("x" * 11)
+    assert generator.messages is None
+
+
+def test_oversized_model_output_is_rejected_before_json_parsing():
+    with pytest.raises(OutputValidationError, match="size limit"):
+        StructuredOutputAgent(FakeGenerator("x" * 100), max_output_bytes=50).analyze("Classify this request")
+
+
+def test_non_text_model_output_is_rejected():
+    with pytest.raises(OutputValidationError, match="not text"):
+        StructuredOutputAgent(FakeGenerator(None)).analyze("Classify this request")

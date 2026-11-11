@@ -28,12 +28,23 @@ class OutputValidationError(RuntimeError):
 
 
 class StructuredOutputAgent:
-    def __init__(self, generator: StructuredGenerator) -> None:
+    def __init__(
+        self,
+        generator: StructuredGenerator,
+        max_input_bytes: int = 32_000,
+        max_output_bytes: int = 64_000,
+    ) -> None:
+        if max_input_bytes < 1 or max_output_bytes < 1:
+            raise ValueError("input and output byte limits must be positive")
         self.generator = generator
+        self.max_input_bytes = max_input_bytes
+        self.max_output_bytes = max_output_bytes
 
     def analyze(self, text: str) -> TaskAnalysis:
-        if not text.strip():
+        if not isinstance(text, str) or not text.strip():
             raise ValueError("text cannot be empty")
+        if len(text.encode("utf-8")) > self.max_input_bytes:
+            raise ValueError("text exceeds the input size limit")
 
         messages = [
             {"role": "system", "content": SYSTEM_PROMPT},
@@ -48,11 +59,18 @@ class StructuredOutputAgent:
         ]
         schema = TaskAnalysis.model_json_schema()
         raw_output = self.generator.generate_structured(messages, schema)
+        if not isinstance(raw_output, str):
+            raise OutputValidationError("The model response was not text; no result was accepted.")
+        if len(raw_output.encode("utf-8")) > self.max_output_bytes:
+            raise OutputValidationError("The model response exceeded the output size limit.")
 
         try:
             result = TaskAnalysis.model_validate_json(raw_output, strict=True)
         except ValidationError as exc:
-            logger.warning("Structured model output failed validation", extra={"error_count": exc.error_count()})
+            logger.warning(
+                "Structured model output failed validation",
+                extra={"error_count": exc.error_count()},
+            )
             raise OutputValidationError(
                 "The model response did not satisfy the TaskAnalysis schema; no result was accepted."
             ) from exc
