@@ -4,10 +4,10 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "multi-tool-selection-agent"
-version = "0.2.0"
+version = "0.3.0"
 description = "A bounded Ollama agent with a typed local tool registry"
 requires-python = ">=3.12"
-dependencies = ["httpx>=0.27,<1", "pydantic>=2.7,<3"]
+dependencies = ["httpx>=0.27,<1", "pydantic>=2.7,<3", "tzdata>=2024.1"]
 
 [project.optional-dependencies]
 dev = ["pytest>=8,<9"]
