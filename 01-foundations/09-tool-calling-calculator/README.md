@@ -18,7 +18,7 @@ CalculatorAgent (bounded model/tool loop)
         v
 OllamaChatClient ----> Ollama /api/chat
         |
-        | tool call (structured JSON)
+        | tool call + JSON arguments
         v
 tools.execute_tool (allowlist + Pydantic)
         |
@@ -31,12 +31,12 @@ tool result -> model -> final answer
 
 ## Modules
 
-- `calculator_core/arithmetic.py`: parser, AST allowlist, Decimal arithmetic, numeric/expression limits.
+- `calculator_core/arithmetic.py`: restricted AST parser, Decimal arithmetic, numeric/expression limits.
 - `calculator_core/tools.py`: strict argument schema, tool definition, allowlisted dispatch.
-- `calculator_core/agent.py`: bounded orchestration and tool-result messages.
-- `calculator_core/provider.py`: reusable HTTP client and Ollama response/error handling.
+- `calculator_core/agent.py`: bounded orchestration, call correlation, and tool-result messages.
+- `calculator_core/provider.py`: persistent HTTP client and Ollama response/error handling.
 - `app.py`: compatibility exports for existing examples/tests.
-- `main.py`: CLI composition root.
+- `main.py`: CLI composition root and deterministic client cleanup.
 
 ## Setup and run
 
@@ -49,19 +49,20 @@ python main.py "What is (19 + 23) multiplied by 2?"
 pytest
 ```
 
-## Safety properties
+## Safety and reliability
 
-- Only arithmetic literals, unary signs, and selected binary operators are accepted.
-- Expression length and AST node count are bounded.
-- Exponents are restricted to integers from -8 through 8.
-- Numeric values and results are bounded; Decimal avoids common binary floating-point surprises.
-- Tool names are allowlisted and argument fields are strict.
-- Model steps are bounded; provider errors are sanitized.
+- Only numeric literals, unary signs, and selected binary operators are accepted.
+- Expression length, AST node count, exponent magnitude, numeric values, and results are bounded.
+- Decimal arithmetic avoids common binary floating-point surprises; arithmetic exceptions fail closed.
+- Tool names are allowlisted and arguments are strict; extra fields are rejected.
+- Model steps, tool calls per step, request bytes, and final answer bytes are bounded.
+- Provider errors are sanitized; the HTTP client is closed by the CLI.
+- The model is not trusted to authorize tools or execute code.
 
 ## Tests
 
-`pytest` runs arithmetic, malicious-expression rejection, tool dispatch, agent-loop, and provider-adapter tests without a live Ollama server. The tests are committed but have not been executed in the maintainer's environment.
+`pytest` runs arithmetic, malicious-expression rejection, tool dispatch, agent-loop, and provider-adapter tests without a live Ollama server. Tests are committed but have not been executed in the maintainer's environment.
 
 ## Limitations
 
-This is a single-process CLI example. It has no API authentication, persistent run history, per-user quotas, or distributed tracing. Add those only when turning it into a hosted service.
+This is a single-process CLI example. It has no API authentication, persistent run history, per-user quotas, or distributed tracing. Add those when turning it into a hosted service.
