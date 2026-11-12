@@ -2,33 +2,26 @@
 
 **Catalogue ID:** AG-007  
 **Difficulty:** Beginner → Intermediate  
-**Status:** In progress — implementation and deterministic tests committed; local execution pending.  
+**Status:** In progress — Ollama integration, deterministic validation, evidence offsets, and tests authored; local execution pending.  
 **Runtime:** Python 3.12+  
 **Model:** Ollama, default `qwen3:4b`
 
 ## Goal
 
-Extract typed entities from unstructured text while requiring an exact evidence quote for every extracted value. The model proposes structured data; Pydantic and deterministic source checks decide whether the result is accepted.
-
-This is intentionally different from AG-002: AG-002 classifies a work request into a task-analysis object; AG-007 extracts multiple source-grounded entities and verifies evidence against the original input.
+Extract typed entities from unstructured text using an LLM, then verify every returned value against exact source evidence in deterministic application code. The model proposes; Pydantic and the evidence verifier decide what is accepted.
 
 ## Architecture
 
 ```text
-Source text
-    |
-    v
-Ollama JSON Schema generation
-    |
-    v
-Pydantic strict schema validation
-    |
-    v
-Evidence substring validation
-    |
-    +-- valid --> typed ExtractionResult
-    |
-    +-- invalid -> ExtractionValidationError
+CLI request -> extraction agent -> JSON-encode untrusted source
+    -> Ollama native /api/chat + JSON Schema
+    -> Pydantic strict schema + duplicate validation
+    -> EvidenceVerifier
+       -> exact evidence substring
+       -> entity value inside evidence
+       -> source and entity character offsets
+       -> SHA-256 source fingerprint
+    -> verified extraction response
 ```
 
 ## Setup
@@ -47,12 +40,14 @@ pip install -e '.[dev]'
 python -m app.main "Bharat deployed the Checkout API in Bengaluru on 12 November 2026."
 ```
 
-Override the model or endpoint:
+Override model or endpoint:
 
 ```bash
 OLLAMA_MODEL=qwen3:4b OLLAMA_BASE_URL=http://localhost:11434 \
   python -m app.main "Acme launched Product Atlas in Singapore."
 ```
+
+Output includes entities, exact evidence, source offsets, and a SHA-256 fingerprint of the source string. Offsets are zero-based Python Unicode code-point offsets, not UTF-8 byte or JavaScript UTF-16 offsets.
 
 ## Test without Ollama
 
@@ -60,28 +55,21 @@ OLLAMA_MODEL=qwen3:4b OLLAMA_BASE_URL=http://localhost:11434 \
 pytest
 ```
 
-The tests use a fake generator and require no model server or API credentials.
+Tests use a fake structured generator and require no model server or credentials.
 
 ## Supported entity types
 
-- person
-- organization
-- product
-- service
-- location
-- date_or_time
-- identifier
+person, organization, product, service, location, date_or_time, identifier.
 
 ## Trust boundary
 
-Every entity must include an evidence string that is an exact substring of the supplied source. The entity value must itself occur in that evidence. Duplicate entities, unknown fields, invalid types, malformed JSON, empty input, and oversized input are rejected.
+Evidence must be an exact substring of the source; entity values must occur within their evidence quote. Unknown fields, invalid types, malformed JSON, duplicate entities, empty input, and oversized input are rejected. These checks do not prove semantic correctness, extraction completeness, or that a genuine quote supports the intended interpretation. Use evaluation data and human review for high-impact use cases.
 
-This is a useful grounding check, not a proof of semantic correctness. A model can still choose an incorrect type or omit entities. Use an evaluation dataset and human review for high-impact extraction. Exact substring matching is deliberately conservative and may reject normalized dates, aliases, or paraphrased evidence.
+## Operational boundaries
 
-## Limitations
-
-- One source document per request; no batch API or persistence.
-- No automatic repair/retry. Invalid results fail explicitly.
-- Character input limit is 20,000; tune it alongside the model context budget.
-- The bundled client uses Ollama's native `/api/chat` endpoint and JSON Schema `format`.
-- The application does not claim completeness or factual correctness beyond its deterministic evidence checks.
+- One source per request; no persistence or batch API.
+- No automatic repair/retry; invalid output fails explicitly (see AG-008).
+- Input/output payloads have configurable byte limits.
+- Uses Ollama native `/api/chat` and JSON Schema `format`.
+- JSON-string prompt framing helps avoid delimiter-breaking input but is not a complete prompt-injection defense.
+- Do not log source documents or full model outputs by default; they may contain sensitive data.
