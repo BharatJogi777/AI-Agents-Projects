@@ -27,8 +27,9 @@ def test_prompt_json_encodes_delimiter_injection_as_source_data():
     generator = FakeGenerator(json.dumps({"entities": []}))
     EvidenceBackedEntityExtractor(generator).extract(source)
     prompt = generator.messages[1]["content"]
-    assert "</source_text>" not in prompt
+    assert "SOURCE_JSON_STRING:" in prompt
     assert json.dumps(source, ensure_ascii=False) in prompt
+    assert "<source_text>" not in prompt
 
 def test_empty_extraction_returns_hash_and_no_evidence_matches():
     verified = EvidenceBackedEntityExtractor(FakeGenerator('{"entities": []}')).extract_with_evidence("Nothing to extract.")
