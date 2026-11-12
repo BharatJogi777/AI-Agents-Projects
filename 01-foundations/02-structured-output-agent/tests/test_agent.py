@@ -131,3 +131,22 @@ def test_explicit_owner_with_matching_evidence_is_accepted():
         "Checkout API latency increased. Alice will inspect the metrics."
     )
     assert result.action_items[0].owner == "Alice"
+
+def test_due_date_requires_matching_source_evidence():
+    payload = json.loads(VALID_OUTPUT)
+    payload["action_items"][0]["due_date"] = "2026-11-15"
+    payload["action_items"][0]["due_date_evidence"] = "The deadline is 2026-11-15."
+    with pytest.raises(OutputValidationError, match="due date is not supported"):
+        StructuredOutputAgent(FakeGenerator(json.dumps(payload))).analyze(
+            "Checkout API latency increased. Alice will inspect the metrics."
+        )
+
+
+def test_explicit_due_date_with_matching_evidence_is_accepted():
+    payload = json.loads(VALID_OUTPUT)
+    payload["action_items"][0]["due_date"] = "2026-11-15"
+    payload["action_items"][0]["due_date_evidence"] = "Complete by 2026-11-15."
+    result = StructuredOutputAgent(FakeGenerator(json.dumps(payload))).analyze(
+        "Checkout API latency increased. Complete by 2026-11-15."
+    )
+    assert result.action_items[0].due_date == "2026-11-15"
