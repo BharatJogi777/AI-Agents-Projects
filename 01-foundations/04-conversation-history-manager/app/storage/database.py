@@ -32,8 +32,6 @@ class Database:
         try:
             db.execute("PRAGMA foreign_keys=ON")
             db.execute("PRAGMA busy_timeout=10000")
-            if self.path != ":memory:":
-                db.execute("PRAGMA journal_mode=WAL")
             yield db
             db.commit()
         except Exception:
@@ -44,4 +42,6 @@ class Database:
 
     def initialize(self):
         with self.connect() as db:
+            if self.path != ":memory:":
+                db.execute("PRAGMA journal_mode=WAL")
             db.executescript(SCHEMA)
