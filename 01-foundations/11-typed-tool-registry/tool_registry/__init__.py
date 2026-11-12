@@ -1,4 +1,10 @@
 from .errors import ToolExecutionError, ToolRegistrationError
-from .registry import ToolRegistry, ToolSpec
+from .registry import RegistryLimits, ToolRegistry, ToolSpec
 
-__all__ = ["ToolExecutionError", "ToolRegistrationError", "ToolRegistry", "ToolSpec"]
+__all__ = [
+    "RegistryLimits",
+    "ToolExecutionError",
+    "ToolRegistrationError",
+    "ToolRegistry",
+    "ToolSpec",
+]
