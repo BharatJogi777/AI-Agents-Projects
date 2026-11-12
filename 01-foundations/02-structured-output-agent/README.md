@@ -3,13 +3,13 @@
 **Difficulty:** Beginner → Intermediate  
 **Status:** Expanded implementation; tests are authored but local execution and live Ollama compatibility still need verification.  
 **Model:** Ollama native chat API, default `qwen3:4b`  
-**Validation:** Pydantic v2
+**Validation:** Pydantic v2 plus exact source-evidence checks
 
 ## What it does
 
-Takes a plain-language work request and returns a validated `TaskAnalysis` object containing a summary, controlled priority and category, typed action items, a human-review flag, and uncertainty. The model must not invent an owner or deadline when the source does not provide one.
+Takes a plain-language work request and returns a validated `TaskAnalysis` object containing a summary, controlled priority and category, typed action items, a human-review flag, and uncertainty. Every action item must include an exact quote from the source request. Extracted owners and due dates must each have their own exact supporting quote.
 
-Ollama receives the Pydantic-generated JSON Schema through its native `/api/chat` `format` field. The application independently validates the returned content with Pydantic. Model-side constrained generation is useful, but application-side validation remains mandatory.
+The model can still produce an inaccurate summary or classification. Evidence checks reduce unsupported extraction; they do not prove that the model's interpretation is correct.
 
 ## Architecture
 
@@ -25,6 +25,8 @@ CLI -> StructuredOutputAgent -> StructuredGenerator protocol
        output byte limit
              |
        strict Pydantic validation
+             |
+       exact source-substring validation
              |
        TaskAnalysis object
 ```
@@ -47,7 +49,7 @@ cp .env.example .env
 ## Run
 
 ```bash
-python -m app.main "Checkout API latency increased after the latest deployment. The on-call engineer should inspect metrics."
+python -m app.main "Checkout API latency increased. Alice will inspect the metrics."
 pytest
 ```
 
@@ -57,15 +59,16 @@ The deterministic tests use a fake generator and an `httpx.MockTransport` adapte
 
 - **JSON Schema at generation time:** guides the model toward the required shape and allowed values.
 - **Pydantic at the application boundary:** rejects malformed JSON, unknown fields, invalid enums, and values outside declared constraints.
+- **Exact evidence validation:** verifies that evidence quotes are literal substrings of the original input and that extracted owners/dates occur in their own evidence quote.
 - **Business logic after validation:** consumes the typed `TaskAnalysis`, not raw model text.
 
-Schema validation checks shape and types, not truth. Do not treat a valid JSON object as factual evidence.
+Schema validation checks shape and types, not truth. Exact quote validation checks provenance, not whether the model's classification or interpretation is correct.
 
 ## Project layout
 
 ```text
 app/
-  agent.py       # orchestration, input/output limits, strict validation
+  agent.py       # orchestration, limits, schema and source-evidence validation
   config.py      # environment-backed settings
   llm.py         # Ollama HTTP adapter
   main.py        # CLI composition root
@@ -80,6 +83,7 @@ docs/
 ## Limitations
 
 - Invalid output fails explicitly; no automatic repair loop is performed.
-- Factual correctness is not verified against source documents.
+- Exact substring evidence can be overly strict for paraphrases and multilingual normalization.
+- Factual correctness of summaries, priority, and category is not guaranteed.
 - This is a CLI teaching project, not a multi-tenant service.
 - Add authentication, rate limits, metrics, tracing, and an evaluation dataset before exposing it as a service.
