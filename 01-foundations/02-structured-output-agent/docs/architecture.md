@@ -1,40 +1,36 @@
-# Architecture and trust boundaries
+# Architecture and validation boundaries
 
-## Components
+## Component responsibilities
 
-| Component | Responsibility |
-|---|---|
-| CLI (`app/main.py`) | Parse user input and compose dependencies |
-| StructuredOutputAgent | Build trusted instructions, request schema-constrained generation, enforce byte limits, validate output |
-| StructuredGenerator protocol | Provider-independent contract for structured generation |
-| OllamaClient | Translate the contract into Ollama's native `/api/chat` request |
-| TaskAnalysis | Pydantic contract consumed by downstream application code |
+| Component | Responsibility | Must not do |
+|---|---|---|
+| CLI composition root | Load settings, construct adapter and agent, print typed result | Contain extraction rules |
+| StructuredOutputAgent | Bound input/output, build messages, call generator, validate result | Trust raw model JSON |
+| StructuredGenerator protocol | Define provider-independent structured generation contract | Contain business rules |
+| OllamaClient | Map messages and JSON Schema to Ollama `/api/chat`; normalize transport errors | Decide whether extracted facts are true |
+| TaskAnalysis / ActionItem | Define strict output contract and field constraints | Perform network calls |
+| Evidence validator | Check source quote provenance and owner/date quote support | Claim semantic correctness |
 
-## Request lifecycle
+## Request sequence
 
-1. The CLI loads configuration and creates the Ollama adapter.
-2. The agent rejects empty or oversized user input before making a network call.
-3. The agent builds a system instruction and frames the user's text as untrusted data.
-4. The Pydantic model exports a JSON Schema.
-5. Ollama receives that schema in the native `format` field with streaming disabled and temperature zero.
-6. The adapter validates the provider response envelope and returns only the message content.
-7. The agent enforces an output byte limit.
-8. Pydantic parses and validates the response with strict validation and unknown fields forbidden.
-9. Only the typed `TaskAnalysis` object is returned to the caller.
+1. CLI receives the original request text.
+2. Agent rejects blank or oversized input before any model request.
+3. Agent sends a trusted task instruction and the request as untrusted data.
+4. Ollama receives the generated JSON Schema in its `format` field.
+5. Agent enforces a maximum response byte size.
+6. Pydantic rejects malformed JSON, unknown keys, invalid enums, and invalid field combinations.
+7. Evidence validation requires each action's quote to be an exact substring of the original input.
+8. If owner or due date is extracted, its own evidence quote must contain that value and also be an exact source substring.
+9. Only the validated Pydantic object is returned to the caller.
 
-## Important distinction
+## Trust boundaries
 
-JSON Schema constrains output shape. Pydantic verifies that shape again at the application boundary. Neither proves that the model's claims are true. Factual grounding requires source evidence and a separate verification step.
+- The model is an untrusted generator, not a validator.
+- User text is untrusted input and must not override the system task.
+- JSON Schema is a generation constraint, not an application security boundary.
+- Pydantic validation is deterministic but cannot establish factual truth.
+- Exact evidence matching establishes provenance, not entailment.
 
 ## Failure behavior
 
-- Provider timeout or connection failure: fail the request; no unvalidated result is returned.
-- Provider HTTP error: raise a sanitized error without echoing the response body.
-- Missing or empty `message.content`: reject the provider response.
-- Oversized input or output: reject before expensive parsing or further processing.
-- Invalid JSON, enum, or unknown field: raise `OutputValidationError`.
-- No silent fallback to free-form text is allowed.
-
-## Extension points
-
-Inject a different `StructuredGenerator` for another provider or deterministic tests. Keep provider-specific HTTP details out of the agent and keep business decisions out of the LLM adapter.
+The agent fails closed: invalid JSON, invalid schema, oversized output, fabricated evidence, or unsupported owner/date values raise `OutputValidationError`. No partially validated object is returned.
