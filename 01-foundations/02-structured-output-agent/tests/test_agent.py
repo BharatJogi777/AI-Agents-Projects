@@ -23,7 +23,14 @@ VALID_OUTPUT = json.dumps({
     "priority": "high",
     "category": "operations",
     "action_items": [
-        {"task": "Inspect API latency metrics and recent deployments", "owner": None, "due_date": None}
+        {
+            "task": "Inspect API latency metrics and recent deployments",
+            "evidence": "Checkout API latency increased.",
+            "owner": None,
+            "owner_evidence": None,
+            "due_date": None,
+            "due_date_evidence": None,
+        }
     ],
     "needs_human_review": True,
     "uncertainty": "The affected time window and customer impact are not specified.",
@@ -51,14 +58,14 @@ def test_invalid_enum_is_rejected():
     payload = json.loads(VALID_OUTPUT)
     payload["priority"] = "urgent-ish"
     with pytest.raises(OutputValidationError):
-        StructuredOutputAgent(FakeGenerator(json.dumps(payload))).analyze("Classify this request")
+        StructuredOutputAgent(FakeGenerator(json.dumps(payload))).analyze("Checkout API latency increased.")
 
 
 def test_unknown_fields_are_rejected():
     payload = json.loads(VALID_OUTPUT)
     payload["made_up_field"] = "not allowed"
     with pytest.raises(OutputValidationError):
-        StructuredOutputAgent(FakeGenerator(json.dumps(payload))).analyze("Classify this request")
+        StructuredOutputAgent(FakeGenerator(json.dumps(payload))).analyze("Checkout API latency increased.")
 
 
 def test_empty_input_is_rejected_before_model_call():
@@ -73,6 +80,8 @@ def test_schema_contract_has_required_fields():
     assert {"summary", "priority", "category", "action_items", "needs_human_review"} <= set(
         schema["properties"]
     )
+    action_schema = schema["$defs"]["ActionItem"]
+    assert "evidence" in action_schema["properties"]
 
 
 def test_input_size_is_bounded_before_model_call():
@@ -90,3 +99,35 @@ def test_oversized_model_output_is_rejected_before_json_parsing():
 def test_non_text_model_output_is_rejected():
     with pytest.raises(OutputValidationError, match="not text"):
         StructuredOutputAgent(FakeGenerator(None)).analyze("Classify this request")
+
+
+def test_fabricated_evidence_quote_is_rejected():
+    payload = json.loads(VALID_OUTPUT)
+    payload["action_items"][0]["evidence"] = "The database is corrupted."
+    with pytest.raises(OutputValidationError, match="not an exact source substring"):
+        StructuredOutputAgent(FakeGenerator(json.dumps(payload))).analyze("Checkout API latency increased.")
+
+
+def test_owner_without_owner_evidence_is_rejected_by_schema():
+    payload = json.loads(VALID_OUTPUT)
+    payload["action_items"][0]["owner"] = "Alice"
+    with pytest.raises(OutputValidationError, match="did not satisfy"):
+        StructuredOutputAgent(FakeGenerator(json.dumps(payload))).analyze("Checkout API latency increased.")
+
+
+def test_owner_must_appear_in_exact_source_evidence():
+    payload = json.loads(VALID_OUTPUT)
+    payload["action_items"][0]["owner"] = "Alice"
+    payload["action_items"][0]["owner_evidence"] = "The task is assigned to Alice."
+    with pytest.raises(OutputValidationError, match="owner is not supported"):
+        StructuredOutputAgent(FakeGenerator(json.dumps(payload))).analyze("Checkout API latency increased.")
+
+
+def test_explicit_owner_with_matching_evidence_is_accepted():
+    payload = json.loads(VALID_OUTPUT)
+    payload["action_items"][0]["owner"] = "Alice"
+    payload["action_items"][0]["owner_evidence"] = "Alice will inspect the metrics."
+    result = StructuredOutputAgent(FakeGenerator(json.dumps(payload))).analyze(
+        "Checkout API latency increased. Alice will inspect the metrics."
+    )
+    assert result.action_items[0].owner == "Alice"
