@@ -1,7 +1,7 @@
 """Safe arithmetic evaluation using a deliberately small Python AST allowlist."""
 
 import ast
-from decimal import Decimal, DivisionByZero, InvalidOperation, localcontext
+from decimal import Decimal, DecimalException, localcontext
 
 MAX_LENGTH, MAX_NODES, MAX_EXPONENT = 256, 40, 8
 MAX_RESULT = Decimal("1e100")
@@ -43,7 +43,7 @@ def _evaluate(node: ast.AST) -> Decimal:
                 raise CalculationError("exponent must be an integer from -8 to 8")
             return left ** int(right)
 
-    raise CalculationError(f"unsupported expression element: {type(node).__name__}")
+    raise CalculationError("unsupported arithmetic expression")
 
 
 def calculate(expression: str) -> str:
@@ -54,20 +54,19 @@ def calculate(expression: str) -> str:
 
     try:
         tree = ast.parse(expression, mode="eval")
-    except SyntaxError as exc:
+    except (SyntaxError, ValueError, MemoryError) as exc:
         raise CalculationError("invalid arithmetic expression") from exc
 
     if sum(1 for _ in ast.walk(tree)) > MAX_NODES:
         raise CalculationError("expression too complex")
 
-    with localcontext() as ctx:
-        ctx.prec = 28
-        try:
+    try:
+        with localcontext() as ctx:
+            ctx.prec = 28
             result = _evaluate(tree.body)
-        except (DivisionByZero, InvalidOperation, ZeroDivisionError, OverflowError) as exc:
-            raise CalculationError("undefined arithmetic operation") from exc
-
-    if not result.is_finite() or abs(result) > MAX_RESULT:
-        raise CalculationError("result outside supported range")
-    result = result.normalize()
-    return format(result, "f") if result else "0"
+            if not result.is_finite() or abs(result) > MAX_RESULT:
+                raise CalculationError("result outside supported range")
+            result = result.normalize()
+            return format(result, "f") if result else "0"
+    except DecimalException as exc:
+        raise CalculationError("undefined or out-of-range arithmetic operation") from exc
