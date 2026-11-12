@@ -4,13 +4,14 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "context-window-truncation"
-version = "0.1.0"
-description = "Safe recency-based truncation of complete conversation turns"
+version = "0.2.0"
+description = "Safe context truncation with complete tool exchanges"
 requires-python = ">=3.12"
 dependencies = []
 
 [project.optional-dependencies]
 dev = ["pytest>=8,<9"]
+tokenizer = ["tiktoken>=0.7,<1"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
