@@ -1,21 +1,25 @@
 # Design notes
 
-## Why an interface?
+## Counting is separate from policy
 
-Tokenization is a model property, not a universal property of text. The planner accepts a TokenCounter so that an exact model-specific implementation can replace the heuristic without changing admission policy.
+A token counter implements one method: count a string for a particular tokenizer. The planner only consumes that contract. This lets tests use deterministic counts, local demos use a heuristic, and production adapters use a tokenizer matching the target model.
 
-## Why whole-item admission?
+## Why heuristic counts are not production-safe
 
-Conversation turns, retrieved chunks, and tool results often have useful boundaries. Silently cutting arbitrary text can corrupt JSON, remove important qualifiers, or leave a partial tool transcript. This project drops an item as a whole and reports the decision. A later truncation project can implement explicit, content-aware strategies.
+A fixed characters-per-token ratio cannot accurately represent different languages, code, JSON, punctuation, or tokenizer versions. It is included only to make the example runnable without model SDKs or network access.
 
-## Admission order
+## Why reserve output tokens?
 
-1. Mandatory items in caller-supplied order.
-2. Optional items by descending priority, stable for ties.
-3. Output in original caller-supplied order.
+The context window is shared by the input and generated output. The planner therefore subtracts output reserve and safety margin before admitting prompt content. The reserve is not part of the input plan.
 
-This means selection priority does not reorder the final prompt. The caller remains responsible for mapping item kinds into provider message roles and preserving any provider-specific ordering constraints.
+## Why atomic context items?
 
-## Failure policy
+A retrieval chunk, tool result, or conversation turn has a semantic boundary. Arbitrary truncation can break JSON, remove qualifiers, or corrupt a tool-call/result pair. This project drops whole items and reports each decision. AG-006 implements explicit truncation strategies.
 
-If mandatory items do not fit, planning fails with MandatoryContextOverflow. The caller must choose a recovery strategy; the planner does not silently drop system instructions or the current user request.
+## Greedy priority policy
+
+Mandatory items are considered first in input order. Optional items are considered by descending priority with stable tie ordering. If a high-priority item is too large, it is dropped and later smaller items may still fit. This is deterministic and explainable; it is not a globally optimal knapsack solver.
+
+## Provider-specific framing
+
+Counting text alone does not count chat-message wrappers, tool schemas, images, audio, or provider metadata. A real integration should account for these separately and validate estimates against provider-reported usage.
