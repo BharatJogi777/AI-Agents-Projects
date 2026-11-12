@@ -1,5 +1,5 @@
 from uuid import uuid4
-from app.storage.repository import ConversationRepository
+from app.storage.repository import ConversationRepository, InvalidMessageOrder
 
 class ConversationNotFound(Exception):
     pass
@@ -30,19 +30,27 @@ class ConversationService:
         if len(content) > self.max_message_chars:
             raise ValueError(f"message exceeds {self.max_message_chars} characters")
 
+    def _append(self, conversation_id, role, content):
+        try:
+            return self.repository.append_checked(conversation_id, role, content)
+        except KeyError as exc:
+            raise ConversationNotFound(conversation_id) from exc
+        except InvalidMessageOrder as exc:
+            if role == "user":
+                message = "assistant response is required before the next user message"
+            else:
+                message = "assistant message requires a pending user message"
+            raise ConversationConflict(message) from exc
+
     def append_user(self, conversation_id, content):
         self._require(conversation_id)
         self._validate(content)
-        if self.repository.last_role(conversation_id) == "user":
-            raise ConversationConflict("assistant response is required before the next user message")
-        return self.repository.append(conversation_id, "user", content)
+        return self._append(conversation_id, "user", content)
 
     def append_assistant(self, conversation_id, content):
         item = self._require(conversation_id)
         self._validate(content)
-        if self.repository.last_role(conversation_id) != "user":
-            raise ConversationConflict("assistant message requires a pending user message")
-        message = self.repository.append(conversation_id, "assistant", content)
+        message = self._append(conversation_id, "assistant", content)
         self.repository.trim_completed_turns(conversation_id, item["max_turns"])
         return message
 
