@@ -1,41 +1,25 @@
-import argparse
-import json
+import os
+from functools import lru_cache
+from fastapi import FastAPI
+from app.storage.database import Database
+from app.storage.repository import ConversationRepository
+from app.services.conversation_service import ConversationService
 
-from app.history import ConversationHistory
+@lru_cache(maxsize=1)
+def get_service():
+    database = Database(os.getenv("CONVERSATION_DB_PATH", "./data/conversations.db"))
+    return ConversationService(ConversationRepository(database))
 
+def create_app(service=None):
+    application = FastAPI(title="Conversation History Manager", version="1.0.0")
+    if service is not None:
+        application.dependency_overrides[get_service] = lambda: service
+    from app.api.routes.conversations import router
+    application.include_router(router, prefix="/api/v1")
 
-def main() -> None:
-    parser = argparse.ArgumentParser(
-        description="Demonstrate bounded, session-scoped conversation history."
-    )
-    parser.add_argument(
-        "--max-turns",
-        type=int,
-        default=3,
-        help="Maximum number of completed user/assistant turns to retain.",
-    )
-    args = parser.parse_args()
+    @application.get("/health/live", tags=["health"])
+    def liveness():
+        return {"status": "alive"}
+    return application
 
-    history = ConversationHistory(
-        session_id="demo-session",
-        system_prompt="You are a concise programming tutor.",
-        max_turns=args.max_turns,
-    )
-
-    demo_turns = [
-        ("What is a Python list?", "A list is an ordered, mutable collection."),
-        ("Can it contain mixed types?", "Yes. A list can contain values of different types."),
-        ("How do I add an item?", "Use append() to add an item at the end."),
-        ("How do I remove an item?", "Use remove(value) or pop(index)."),
-    ]
-    for user_text, assistant_text in demo_turns:
-        history.add_user_message(user_text)
-        history.add_assistant_message(assistant_text)
-
-    print(f"Session: {history.session_id}")
-    print(f"Completed turns retained: {history.completed_turns}")
-    print(json.dumps(history.build_messages(), indent=2))
-
-
-if __name__ == "__main__":
-    main()
+app = create_app()
