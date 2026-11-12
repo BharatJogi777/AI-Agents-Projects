@@ -1,3 +1,4 @@
+from contextlib import contextmanager
 from pathlib import Path
 import sqlite3
 
@@ -24,14 +25,22 @@ class Database:
             Path(self.path).expanduser().parent.mkdir(parents=True, exist_ok=True)
         self.initialize()
 
+    @contextmanager
     def connect(self):
         db = sqlite3.connect(self.path, timeout=10)
         db.row_factory = sqlite3.Row
-        db.execute("PRAGMA foreign_keys=ON")
-        db.execute("PRAGMA busy_timeout=10000")
-        if self.path != ":memory:":
-            db.execute("PRAGMA journal_mode=WAL")
-        return db
+        try:
+            db.execute("PRAGMA foreign_keys=ON")
+            db.execute("PRAGMA busy_timeout=10000")
+            if self.path != ":memory:":
+                db.execute("PRAGMA journal_mode=WAL")
+            yield db
+            db.commit()
+        except Exception:
+            db.rollback()
+            raise
+        finally:
+            db.close()
 
     def initialize(self):
         with self.connect() as db:
