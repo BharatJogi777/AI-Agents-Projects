@@ -73,3 +73,41 @@ def test_ollama_adapter_merges_trusted_roles_but_keeps_user_separate(builder):
 def test_ollama_adapter_rejects_missing_trusted_messages():
     with pytest.raises(ValueError, match="trusted instruction"):
         to_ollama_messages([{"role": "user", "content": "hello"}])
+
+
+def test_policy_is_immutable_after_construction():
+    from dataclasses import FrozenInstanceError
+
+    policy = PromptPolicy("System policy", "Developer policy")
+    with pytest.raises(FrozenInstanceError):
+        policy.developer_instruction = "User-controlled replacement"
+
+
+def test_policy_rejects_non_positive_limit():
+    with pytest.raises(ValueError, match="must be positive"):
+        PromptPolicy("System", "Developer", max_user_chars=0)
+
+
+def test_adapter_preserves_multiple_user_messages_and_trusted_order():
+    messages = [
+        {"role": "system", "content": "System rules"},
+        {"role": "developer", "content": "Developer rules"},
+        {"role": "user", "content": "First user turn"},
+        {"role": "user", "content": "Second user turn"},
+    ]
+
+    mapped = to_ollama_messages(messages)
+
+    assert mapped == [
+        {"role": "system", "content": "System rules\\n\\nDeveloper rules"},
+        {"role": "user", "content": "First user turn"},
+        {"role": "user", "content": "Second user turn"},
+    ]
+
+
+def test_adapter_rejects_unsupported_runtime_role():
+    with pytest.raises(ValueError, match="unsupported message role"):
+        to_ollama_messages([
+            {"role": "system", "content": "Rules"},
+            {"role": "tool", "content": "Untrusted tool output"},
+        ])
