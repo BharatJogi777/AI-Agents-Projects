@@ -91,9 +91,9 @@ def test_oversized_model_output_is_rejected_and_retried():
 
 
 def test_utf8_byte_limit_is_enforced_even_when_character_limit_is_not_reached():
-    generator = SequenceGenerator(["é" * 60, VALID])
+    generator = SequenceGenerator(["é" * 160, VALID])
     result = SchemaRepairAgent(
-        generator, max_output_chars=500, max_output_bytes=100
+        generator, max_output_chars=500, max_output_bytes=300
     ).generate("Do work")
     assert result.attempts == 2
 
