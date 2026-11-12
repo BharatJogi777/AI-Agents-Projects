@@ -1,18 +1,36 @@
-# Design notes
+# Architecture and design
 
-## Invariants
+## Responsibilities
 
-1. A session has one application-owned system prompt.
-2. User and assistant messages are stored in complete pairs.
-3. A new user turn cannot begin until the previous turn receives an assistant response.
-4. Only the oldest complete turns are evicted.
-5. The system prompt is never evicted.
-6. Message length and history length are bounded.
+- API routes: HTTP contracts, status codes and pagination limits.
+- Pydantic schemas: reject unknown fields and constrain input sizes.
+- ConversationService: session lifecycle, turn ordering and bounded-history policy.
+- ConversationRepository: parameterized SQL and persistence operations.
+- Database: SQLite schema, foreign keys, WAL mode and busy timeout.
 
-## Why trim complete turns?
+## Data model
 
-Removing an arbitrary message can leave an assistant response without its question or leave an unanswered user message in the retained history. Trimming whole pairs preserves a simpler transcript invariant.
+The conversations table stores a UUID identifier, application-owned system prompt, turn limit and timestamps. The messages table stores ordered user/assistant messages. A foreign key cascades deletion. An index on conversation_id and message id supports ordered history reads.
 
-## Why not call this memory?
+## Turn state machine
 
-Conversation history is the recent transcript used to continue one interaction. Long-term memory is a separate capability with explicit extraction, consent, retention, retrieval, and deletion policies. This project intentionally implements neither persistent storage nor cross-session memory.
+    READY -- user message --> PENDING_USER
+    PENDING_USER -- assistant message --> COMPLETE
+    COMPLETE -- trim oldest complete pairs --> READY
+
+The service rejects consecutive user messages and assistant messages without a pending user. Trimming occurs after an assistant message, so a pending user turn is not evicted.
+
+## Persistence and concurrency
+
+SQLite keeps the project self-contained. Each repository operation opens its own connection. Foreign keys, WAL mode and a 10-second busy timeout are enabled. SQL values are parameterized. This is a local single-node design; use PostgreSQL for multi-node services or sustained concurrent writes.
+
+## Security boundaries
+
+- UUIDs are identifiers, not authorization.
+- There is no authentication or tenant ownership. Keep the API on localhost/private networks until authorization is implemented.
+- System prompts are set at conversation creation; callers cannot append system/developer roles.
+- Avoid logging conversation content. Define retention, deletion, backup and encryption policies before production use.
+
+## Context construction
+
+History returns the system prompt separately from ordered messages. The calling agent combines them for model input. Message count is not a token budget; token-aware truncation is a separate concern.
