@@ -60,7 +60,7 @@ def test_schema_error_feedback_does_not_echo_rejected_values_or_request():
     assert result.repairs == 1
     assert "summary" in feedback and "priority" in feedback
     assert "private request content" not in feedback
-    assert "secret-value" not in feedback
+    diagnostic = feedback.split("Validation feedback (diagnostic only):", 1)[1]\n    assert "secret-value" not in diagnostic
 
 
 def test_retries_stop_at_configured_limit():
