@@ -56,27 +56,27 @@ def _safe(
         warnings.add("maximum nesting depth reached")
         return "[DEPTH_LIMIT]"
 
-    if value is None or isinstance(value, bool):
+    if value is None or type(value) is bool:
         return value
-    if isinstance(value, int):
+    if type(value) is int:
         # Avoid huge integer-to-decimal conversions and giant model payloads.
         if value.bit_length() > 4_096:
             warnings.add("integer too large; value omitted")
             return "[INTEGER_OMITTED]"
         return value
-    if isinstance(value, float):
+    if type(value) is float:
         if math.isfinite(value):
             return value
         warnings.add("non-finite number replaced")
         return "[NON_FINITE_NUMBER]"
-    if isinstance(value, str):
+    if type(value) is str:
         if len(value) > policy.max_string_chars:
             warnings.add("string truncated")
             return value[:policy.max_string_chars] + "…[TRUNCATED]"
         return value
-    if isinstance(value, (datetime, date)):
+    if type(value) in (datetime, date):
         return value.isoformat()
-    if isinstance(value, Decimal):
+    if type(value) is Decimal:
         if not value.is_finite():
             warnings.add("non-finite decimal replaced")
             return "[NON_FINITE_NUMBER]"
@@ -85,15 +85,15 @@ def _safe(
             warnings.add("decimal string truncated")
             return rendered[:policy.max_string_chars] + "…[TRUNCATED]"
         return rendered
-    if isinstance(value, UUID):
+    if type(value) is UUID:
         return str(value)
-    if isinstance(value, bytes):
+    if type(value) is bytes:
         warnings.add("binary output represented as metadata")
         return {"type": "bytes", "length": len(value)}
 
     # Deliberately support only built-in dict/list/tuple containers. Avoid
     # arbitrary Mapping/Sequence protocols that can execute custom code.
-    if isinstance(value, dict):
+    if type(value) is dict:
         identity = id(value)
         if identity in active:
             warnings.add("circular reference replaced")
@@ -123,7 +123,7 @@ def _safe(
             active.remove(identity)
         return output
 
-    if isinstance(value, (list, tuple)):
+    if type(value) in (list, tuple):
         identity = id(value)
         if identity in active:
             warnings.add("circular reference replaced")
