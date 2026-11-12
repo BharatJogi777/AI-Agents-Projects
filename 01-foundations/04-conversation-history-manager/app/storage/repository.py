@@ -1,6 +1,9 @@
 from datetime import datetime, timezone
 from app.storage.database import Database
 
+class InvalidMessageOrder(Exception):
+    pass
+
 def utc_now():
     return datetime.now(timezone.utc).isoformat()
 
@@ -22,9 +25,22 @@ class ConversationRepository:
                              (conversation_id,)).fetchone()
             return dict(row) if row else None
 
-    def append(self, conversation_id, role, content):
+    def append_checked(self, conversation_id, role, content):
+        """Check turn state and insert under one write lock to prevent races."""
         now = utc_now()
         with self.database.connect() as db:
+            db.execute("BEGIN IMMEDIATE")
+            exists = db.execute("SELECT 1 FROM conversations WHERE id=?",
+                                (conversation_id,)).fetchone()
+            if not exists:
+                raise KeyError(conversation_id)
+            row = db.execute(
+                "SELECT role FROM messages WHERE conversation_id=? ORDER BY id DESC LIMIT 1",
+                (conversation_id,)).fetchone()
+            previous = row["role"] if row else None
+            valid = previous != "user" if role == "user" else previous == "user"
+            if not valid:
+                raise InvalidMessageOrder(role)
             cursor = db.execute(
                 "INSERT INTO messages(conversation_id,role,content,created_at) VALUES(?,?,?,?)",
                 (conversation_id, role, content, now))
@@ -32,12 +48,6 @@ class ConversationRepository:
                        (now, conversation_id))
             return dict(db.execute("SELECT * FROM messages WHERE id=?",
                                    (cursor.lastrowid,)).fetchone())
-
-    def last_role(self, conversation_id):
-        with self.database.connect() as db:
-            row = db.execute("SELECT role FROM messages WHERE conversation_id=? ORDER BY id DESC LIMIT 1",
-                             (conversation_id,)).fetchone()
-            return row["role"] if row else None
 
     def list_messages(self, conversation_id, limit, offset):
         with self.database.connect() as db:
