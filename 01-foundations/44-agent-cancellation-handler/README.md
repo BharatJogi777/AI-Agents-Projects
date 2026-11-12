@@ -1,18 +1,15 @@
 # AG-044 — Agent cancellation handler
 
-A cooperative cancellation token that carries a bounded reason and raises at explicit checkpoints.
+A cooperative cancellation token for long-running agent loops. It is thread-safe, first-reason-wins, and raises a typed exception at checkpoints.
 
-## Run
-
-Python 3.12+ is recommended.
-
-```bash
-python -m pip install -e '.[dev]'
-python -m pytest
+```python
+from agent_cancellation import CancellationToken
+token=CancellationToken()
+for step in plan:
+    token.checkpoint()
+    execute(step, cancellation=token)
 ```
 
-## Scope and limitations
+A request thread may call `token.cancel("user requested stop")`; `wait(timeout)` supports blocking coordination. Cancellation cannot forcibly stop arbitrary Python or interrupt a blocking tool that ignores the token. Propagate it to tools and configure network/database timeouts. Distributed workers need shared cancellation state.
 
-Cancellation cannot forcibly stop blocking code. Pass the token through every long-running boundary and clean up resources in finally blocks.
-
-The implementation is intentionally small so its control flow can be inspected. Tests are included but must be run locally before treating this project as verified.
+Test: `python -m pip install pytest && pytest`.

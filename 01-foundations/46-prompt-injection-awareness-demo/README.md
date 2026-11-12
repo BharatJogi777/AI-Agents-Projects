@@ -1,18 +1,14 @@
 # AG-046 — Prompt injection awareness demo
 
-A prompt builder labels policy, user request, and retrieved data separately, plus a deterministic allowlist/approval check.
+Demonstrates trust separation between application policy, user input, and retrieved documents. The builder labels untrusted sections and enforces a total character budget. The action policy independently enforces a server-side allowlist and optional approval requirement.
 
-## Run
-
-Python 3.12+ is recommended.
-
-```bash
-python -m pip install -e '.[dev]'
-python -m pytest
+```python
+from prompt_security import PromptBuilder,PromptParts,ActionPolicy
+prompt=PromptBuilder().build(PromptParts("Only search public docs","Find deployment guide","Retrieved page text"))
+policy=ActionPolicy({"search_docs","send_email"},{"send_email"})
+decision=policy.evaluate("send_email",approved=False)
 ```
 
-## Scope and limitations
+**Security warning:** delimiters and prompt wording are defense-in-depth, not prompt-injection prevention. Never let model output authorize tools. Validate action names/arguments in application code, scope credentials, isolate retrieved content, and require authenticated human approval for consequential actions. Tests cover the deterministic policy boundary, not model robustness.
 
-Delimiters are not a security boundary. Enforce authorization in trusted code, minimize tool privileges, and treat retrieved content as hostile.
-
-The implementation is intentionally small so its control flow can be inspected. Tests are included but must be run locally before treating this project as verified.
+Test: `python -m pip install pytest && pytest`.

@@ -1,18 +1,17 @@
 # AG-049 — CLI agent interface
 
-An argparse boundary around an injected callable with prompt limits and predictable exit codes.
-
-## Run
-
-Python 3.12+ is recommended.
+An argparse boundary around an injected agent function. It validates prompt size, keeps output/error streams injectable for tests, uses deterministic exit codes, and sanitizes exception details.
 
 ```bash
-python -m pip install -e '.[dev]'
-python -m pytest
+python main.py "Summarize the deployment logs"
 ```
 
-## Scope and limitations
+```python
+from cli_agent import run_cli
+import sys
+exit_code=run_cli(["Explain this incident"],agent,sys.stdout,sys.stderr)
+```
 
-The default is a deterministic echo stub. Inject your model adapter; do not expose arbitrary shell execution to an LLM.
+Exit codes: 0 success, 1 execution/response failure, 2 invalid or oversized input/argument parsing. The included `echo_agent` is only a runnable demonstration; replace it with a real provider-backed agent. Do not expose raw provider exception text to terminal logs.
 
-The implementation is intentionally small so its control flow can be inspected. Tests are included but must be run locally before treating this project as verified.
+Test: `python -m pip install pytest && pytest`.

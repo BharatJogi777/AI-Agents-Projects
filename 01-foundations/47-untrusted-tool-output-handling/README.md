@@ -1,18 +1,14 @@
 # AG-047 — Untrusted tool-output handling
 
-A bounded JSON envelope labels tool output as untrusted and redacts common credential-like key/value patterns.
+Normalizes arbitrary tool results into a bounded envelope labeled `untrusted`. It recursively redacts common credential fields, handles circular/unsupported values, caps nesting/collection size, and reports truncation.
 
-## Run
-
-Python 3.12+ is recommended.
-
-```bash
-python -m pip install -e '.[dev]'
-python -m pytest
+```python
+from tool_output import ToolOutputNormalizer
+envelope=ToolOutputNormalizer(max_chars=4000).normalize(
+    "ticket_search", {"items":[{"title":"Incident","api_key":"never forward"}]})
+# Pass envelope.content to the model only as untrusted data.
 ```
 
-## Scope and limitations
+This handles common structured secret fields, not every secret embedded in free text. Apply provider-specific secret scanning/DLP where required; never return raw tool exceptions or credentials to the model. Tool output remains untrusted even after normalization.
 
-Regex redaction is incomplete. Prefer structured schemas and dedicated secret scanning; never rely on this demo as the only DLP control.
-
-The implementation is intentionally small so its control flow can be inspected. Tests are included but must be run locally before treating this project as verified.
+Test: `python -m pip install pytest && pytest`.

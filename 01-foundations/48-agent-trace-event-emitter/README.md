@@ -1,18 +1,14 @@
 # AG-048 — Agent trace event emitter
 
-A small structured event emitter with per-instance sequence numbers, UTC timestamps, bounded attributes, and sensitive-name redaction.
+Emits ordered, structured lifecycle events with run correlation, sequence numbers, UTC timestamps, bounded attributes, and common sensitive-field redaction.
 
-## Run
-
-Python 3.12+ is recommended.
-
-```bash
-python -m pip install -e '.[dev]'
-python -m pytest
+```python
+events=[]
+trace=TraceEmitter("run-42",events.append)
+trace.emit("agent.started",{"model":"qwen3:4b"})
+trace.emit("tool.completed",{"tool":"search","api_key":"redacted"})
 ```
 
-## Scope and limitations
+The sink is injected (in-memory list in the example; use an OpenTelemetry exporter or queue in production). Sink calls are serialized per emitter. A failed sink call consumes its sequence number to avoid reusing an identifier after an uncertain partial write. This is not a complete OpenTelemetry SDK and does not guarantee durable delivery.
 
-This is not OpenTelemetry and sequence numbers are not distributed trace IDs. Add exporters, sampling, retention, and governance for production.
-
-The implementation is intentionally small so its control flow can be inspected. Tests are included but must be run locally before treating this project as verified.
+Test: `python -m pip install pytest && pytest`.

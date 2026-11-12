@@ -1,18 +1,13 @@
 # AG-043 — Idempotent tool execution
 
-An idempotency key is bound to a canonical JSON fingerprint. Repeated matching requests replay the stored result; changed payloads conflict.
+Canonical JSON fingerprints bind idempotency keys to tool arguments. Matching retries replay the first result; conflicting reuse fails. Concurrent calls with the same key share one in-flight execution in this process.
 
-## Run
-
-Python 3.12+ is recommended.
-
-```bash
-python -m pip install -e '.[dev]'
-python -m pytest
+```python
+from idempotent_tools import IdempotentExecutor
+executor=IdempotentExecutor()
+result=executor.execute("payment-123",{"amount":25,"currency":"INR"},charge)
 ```
 
-## Scope and limitations
+Rejects NaN/Infinity and non-JSON payloads. Failed handlers are not cached. This is not distributed exactly-once: persist the idempotency record and business effect in one transaction or use the downstream provider's idempotency key. Do not use this in-memory cache as the sole payment safety mechanism.
 
-The example cache is in-memory. Real side effects require a durable idempotency record and the side effect to commit atomically.
-
-The implementation is intentionally small so its control flow can be inspected. Tests are included but must be run locally before treating this project as verified.
+Test: `python -m pip install pytest && pytest`.

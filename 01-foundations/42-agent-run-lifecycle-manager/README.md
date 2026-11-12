@@ -1,18 +1,16 @@
 # AG-042 — Agent run lifecycle manager
 
-An in-memory, thread-safe registry for isolated runs with UTC timestamps and guarded lifecycle changes.
+A bounded, thread-safe in-memory registry with isolated run IDs, UTC timestamps, and validated state changes.
 
-## Run
-
-Python 3.12+ is recommended.
-
-```bash
-python -m pip install -e '.[dev]'
-python -m pytest
+```python
+from agent_run_manager import RunManager,Status
+runs=RunManager(max_runs=5000)
+run=runs.create()
+runs.start(run.id)
+completed=runs.finish(run.id,Status.SUCCEEDED)
+print(completed.finished_at)
 ```
 
-## Scope and limitations
+Records are frozen snapshots; active runs cannot be deleted; terminal status is mandatory for completion. Capacity is explicit and records are never silently evicted. The manager is process-local, not a durable distributed queue. Production workers need transactional conditional updates, persistence, and retention.
 
-This registry is process-local. Use a database transaction and optimistic locking for multi-process deployments.
-
-The implementation is intentionally small so its control flow can be inspected. Tests are included but must be run locally before treating this project as verified.
+Test: `python -m pip install pytest && pytest`.
