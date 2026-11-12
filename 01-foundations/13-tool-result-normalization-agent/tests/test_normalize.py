@@ -108,8 +108,9 @@ def test_policy_is_validated_and_conflicting_options_rejected():
 
 
 def test_warning_count_is_bounded():
+    values = [type(f"Unsupported{i}", (), {})() for i in range(100)]
     result = normalize_tool_result(
-        [object() for _ in range(100)],
+        values,
         policy=NormalizationPolicy(max_warnings=2),
     )
     assert len(result["warnings"]) <= 3
