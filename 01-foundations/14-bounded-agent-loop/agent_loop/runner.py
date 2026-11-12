@@ -1,17 +1,90 @@
-from typing import Callable
-from .contracts import AgentStepLimitExceeded,AgentToolLimitExceeded,LoopConfig,LoopReport,StepResult
+from __future__ import annotations
 
-def run_bounded_loop(step:Callable[[int],StepResult],config:LoopConfig|None=None)->LoopReport:
-    """Execute injected agent iterations under independent budgets."""
-    config=config or LoopConfig(); calls=errors=consecutive=0; last=None
-    for index in range(1,config.max_steps+1):
-        result=step(index)
-        if not isinstance(result,StepResult): raise TypeError("step callback must return StepResult")
-        if type(result.tool_calls) is not int or type(result.errors) is not int: raise TypeError("step counters must be integers")
-        if result.tool_calls<0 or result.errors<0: raise ValueError("step counters cannot be negative")
-        if calls+result.tool_calls>config.max_tool_calls: raise AgentToolLimitExceeded("tool-call budget exceeded")
-        calls+=result.tool_calls; errors+=result.errors
-        consecutive=consecutive+result.errors if result.errors else 0; last=result.value
-        if consecutive>=config.max_consecutive_errors: return LoopReport(last,index,calls,errors,"consecutive_error_limit")
-        if result.final: return LoopReport(last,index,calls,errors,"final_answer")
-    raise AgentStepLimitExceeded(f"agent exceeded {config.max_steps} steps")
+from collections.abc import Callable
+from typing import TypeAlias
+
+from .contracts import (
+    AgentErrorLimitExceeded,
+    AgentStepLimitExceeded,
+    AgentToolLimitExceeded,
+    LoopConfig,
+    LoopReport,
+    StepResult,
+    StepSummary,
+)
+
+StepCallback: TypeAlias = Callable[[int], StepResult]
+
+
+def run_bounded_loop(
+    step: StepCallback,
+    config: LoopConfig | None = None,
+) -> LoopReport:
+    """Run an agent's single-iteration callback under independent budgets.
+
+    The callback is responsible for one model interaction and any tool
+    dispatches it performs. It must report actual tool-call and error counts.
+    Provider/network exceptions intentionally propagate; this controller
+    does not silently retry failed infrastructure calls.
+    """
+    if not callable(step):
+        raise TypeError("step must be callable")
+
+    active_config = config or LoopConfig()
+    total_calls = 0
+    total_errors = 0
+    consecutive_errors = 0
+    last_value = None
+    history: list[StepSummary] = []
+
+    for index in range(1, active_config.max_steps + 1):
+        result = step(index)
+        if not isinstance(result, StepResult):
+            raise TypeError("step callback must return StepResult")
+
+        if result.tool_calls > active_config.max_tool_calls_per_step:
+            raise AgentToolLimitExceeded(
+                f"step {index} attempted {result.tool_calls} tool calls; "
+                f"per-step limit is {active_config.max_tool_calls_per_step}"
+            )
+        if total_calls + result.tool_calls > active_config.max_tool_calls:
+            raise AgentToolLimitExceeded(
+                f"total tool-call budget would be exceeded at step {index}"
+            )
+
+        total_calls += result.tool_calls
+        total_errors += result.errors
+        consecutive_errors = (
+            consecutive_errors + result.errors if result.errors else 0
+        )
+        last_value = result.value
+        history.append(
+            StepSummary(
+                index=index,
+                tool_calls=result.tool_calls,
+                errors=result.errors,
+                final=result.final,
+            )
+        )
+
+        if total_errors >= active_config.max_total_errors:
+            return LoopReport(
+                last_value, index, total_calls, total_errors,
+                consecutive_errors, "total_error_limit", tuple(history)
+            )
+
+        if consecutive_errors >= active_config.max_consecutive_errors:
+            return LoopReport(
+                last_value, index, total_calls, total_errors,
+                consecutive_errors, "consecutive_error_limit", tuple(history)
+            )
+
+        if result.final:
+            return LoopReport(
+                last_value, index, total_calls, total_errors,
+                consecutive_errors, "final_answer", tuple(history)
+            )
+
+    raise AgentStepLimitExceeded(
+        f"agent did not finish within {active_config.max_steps} steps"
+    )
