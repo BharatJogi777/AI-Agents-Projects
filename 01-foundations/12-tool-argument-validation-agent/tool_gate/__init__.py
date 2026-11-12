@@ -1,4 +1,4 @@
 from .errors import ToolCallRejected, ToolHandlerFailed
-from .gate import ArgumentGate
+from .gate import ArgumentGate, GateLimits
 
-__all__ = ["ToolCallRejected", "ToolHandlerFailed", "ArgumentGate"]
+__all__ = ["ArgumentGate", "GateLimits", "ToolCallRejected", "ToolHandlerFailed"]
