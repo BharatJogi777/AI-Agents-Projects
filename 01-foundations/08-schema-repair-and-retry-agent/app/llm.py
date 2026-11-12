@@ -4,7 +4,7 @@ import httpx
 
 
 class OllamaClient:
-    """Persistent HTTP adapter for Ollama structured generation."""
+    """Persistent HTTP adapter for Ollama's native schema-constrained chat API."""
 
     def __init__(
         self,
@@ -63,3 +63,9 @@ class OllamaClient:
     def close(self) -> None:
         if self._owns_client:
             self._http.close()
+
+    def __enter__(self) -> "OllamaClient":
+        return self
+
+    def __exit__(self, *_: object) -> None:
+        self.close()
