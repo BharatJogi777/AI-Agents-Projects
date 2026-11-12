@@ -9,7 +9,6 @@ from calculator_core.arithmetic import CalculationError, calculate
     "1e-100 ** -8",
     "1 / (2 - 2)",
     "1e100 ** 8",
-    "1e-100 ** 8",
 ])
 def test_out_of_range_or_undefined_results_fail_closed(expression):
     with pytest.raises(CalculationError):
@@ -30,3 +29,9 @@ def test_attribute_and_container_access_are_rejected():
     for expression in ["(1).__class__", "(1, 2)[0]", "1 if 1 else 2"]:
         with pytest.raises(CalculationError):
             calculate(expression)
+
+
+def test_small_finite_decimal_result_is_supported():
+    result = calculate("1e-100 ** 8")
+    assert result.startswith("0.")
+    assert len(result) > 700
