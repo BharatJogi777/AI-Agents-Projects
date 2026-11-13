@@ -6106,7 +6106,7 @@
       "description": "Measure and improve agent security, reliability, privacy, and quality with repeatable tests and evidence.",
       "pattern": "Threat modeling, policy enforcement, testing, evaluation, and auditability",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "09-security-evaluation/01-agent-threat-modeling-assistant",
       "tags": [
         "security-governance-and-evaluation",
@@ -6121,7 +6121,7 @@
       "description": "Measure and improve agent security, reliability, privacy, and quality with repeatable tests and evidence.",
       "pattern": "Threat modeling, policy enforcement, testing, evaluation, and auditability",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "09-security-evaluation/02-prompt-injection-test-harness",
       "tags": [
         "security-governance-and-evaluation",
@@ -6136,7 +6136,7 @@
       "description": "Measure and improve agent security, reliability, privacy, and quality with repeatable tests and evidence.",
       "pattern": "Threat modeling, policy enforcement, testing, evaluation, and auditability",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "09-security-evaluation/03-indirect-prompt-injection-evaluator",
       "tags": [
         "security-governance-and-evaluation",
@@ -6151,7 +6151,7 @@
       "description": "Measure and improve agent security, reliability, privacy, and quality with repeatable tests and evidence.",
       "pattern": "Threat modeling, policy enforcement, testing, evaluation, and auditability",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "09-security-evaluation/04-jailbreak-regression-suite",
       "tags": [
         "security-governance-and-evaluation",
@@ -6166,7 +6166,7 @@
       "description": "Measure and improve agent security, reliability, privacy, and quality with repeatable tests and evidence.",
       "pattern": "Threat modeling, policy enforcement, testing, evaluation, and auditability",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "09-security-evaluation/05-tool-permission-boundary-tester",
       "tags": [
         "security-governance-and-evaluation",
