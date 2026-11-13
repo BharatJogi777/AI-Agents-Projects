@@ -1,0 +1,13 @@
+[project]
+name = "36-supply-chain-disruption-monitor"
+version = "0.1.0"
+description = "Supply-chain disruption monitor"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
