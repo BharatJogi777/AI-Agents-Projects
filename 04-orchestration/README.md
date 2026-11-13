@@ -69,3 +69,14 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-183 | Conflict resolution coordinator | Evidence-backed claims, confidence policy, and resolution audit trail |
 | AG-184 | Multi-agent memory isolation | Agent/namespace-scoped memory with isolated reads and deletion |
 | AG-185 | Shared knowledge workspace | Attributed knowledge, confidence filtering, revisions, and optimistic updates |
+
+
+## Implemented projects (AG-186–AG-190)
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-186 | Agent result aggregator | Confidence filtering, error rejection, duplicate-agent validation, aggregate metrics |
+| AG-187 | Subtask dependency scheduler | Topological ordering, ready-task discovery, cycle and unknown-dependency checks |
+| AG-188 | Workflow deadline manager | Injectable clock, deadline tracking, expiration, cancellation |
+| AG-189 | Workflow cancellation coordinator | Cooperative cancellation tokens with recursive child propagation |
+| AG-190 | Workflow event streaming API | Per-workflow ordered events, replay cursors, and bounded reads |
