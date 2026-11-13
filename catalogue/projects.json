@@ -4006,7 +4006,7 @@
       "description": "Investigate operational signals with read-only access by default. Any remediation must be narrowly scoped and approval-gated.",
       "pattern": "Read-only diagnostics first, bounded remediation, incident workflows",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "06-devops-agents/11-kubernetes-event-explainer",
       "tags": [
         "devops-sre-and-cloud-operations-agents",
@@ -4021,7 +4021,7 @@
       "description": "Investigate operational signals with read-only access by default. Any remediation must be narrowly scoped and approval-gated.",
       "pattern": "Read-only diagnostics first, bounded remediation, incident workflows",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "06-devops-agents/12-kubernetes-deployment-reviewer",
       "tags": [
         "devops-sre-and-cloud-operations-agents",
@@ -4036,7 +4036,7 @@
       "description": "Investigate operational signals with read-only access by default. Any remediation must be narrowly scoped and approval-gated.",
       "pattern": "Read-only diagnostics first, bounded remediation, incident workflows",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "06-devops-agents/13-kubernetes-resource-advisor",
       "tags": [
         "devops-sre-and-cloud-operations-agents",
@@ -4051,7 +4051,7 @@
       "description": "Investigate operational signals with read-only access by default. Any remediation must be narrowly scoped and approval-gated.",
       "pattern": "Read-only diagnostics first, bounded remediation, incident workflows",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "06-devops-agents/14-kubernetes-capacity-planner",
       "tags": [
         "devops-sre-and-cloud-operations-agents",
@@ -4066,7 +4066,7 @@
       "description": "Investigate operational signals with read-only access by default. Any remediation must be narrowly scoped and approval-gated.",
       "pattern": "Read-only diagnostics first, bounded remediation, incident workflows",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "06-devops-agents/15-kubernetes-manifest-security-reviewer",
       "tags": [
         "devops-sre-and-cloud-operations-agents",
