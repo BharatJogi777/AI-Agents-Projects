@@ -1,0 +1,1 @@
+"""Safe pagination primitives for MCP tools."""
