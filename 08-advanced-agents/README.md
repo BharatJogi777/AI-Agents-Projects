@@ -99,3 +99,11 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-388 | Presentation research assistant | [38-presentation-research-assistant](./38-presentation-research-assistant/) |
 | AG-389 | Presentation outline builder | [39-presentation-outline-builder](./39-presentation-outline-builder/) |
 | AG-390 | Interactive data exploration agent | [40-interactive-data-exploration-agent](./40-interactive-data-exploration-agent/) |
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-391 | Natural-language dashboard assistant | [41-natural-language-dashboard-assistant](./41-natural-language-dashboard-assistant/) |
+| AG-392 | Mobile app task assistant prototype | [42-mobile-app-task-assistant-prototype](./42-mobile-app-task-assistant-prototype/) |
+| AG-393 | Desktop workflow assistant prototype | [43-desktop-workflow-assistant-prototype](./43-desktop-workflow-assistant-prototype/) |
+| AG-394 | IoT device monitoring assistant | [44-iot-device-monitoring-assistant](./44-iot-device-monitoring-assistant/) |
+| AG-395 | Smart home routine planner | [45-smart-home-routine-planner](./45-smart-home-routine-planner/) |
