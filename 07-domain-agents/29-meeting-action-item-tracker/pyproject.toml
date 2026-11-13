@@ -1,0 +1,13 @@
+[project]
+name = "29-meeting-action-item-tracker"
+version = "0.1.0"
+description = "Meeting action-item tracker"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
