@@ -1,0 +1,1 @@
+"""Agent Handoff Contract Validator."""
