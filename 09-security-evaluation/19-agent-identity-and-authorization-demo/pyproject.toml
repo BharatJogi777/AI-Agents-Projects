@@ -1,0 +1,13 @@
+[project]
+name = "agent-authorization"
+version = "0.1.0"
+description = "Demonstrates identity-bound authorization with explicit action scopes, expiry, and default denial."
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
