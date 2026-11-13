@@ -1,0 +1,1 @@
+Locate clause-like sections by configurable keyword groups and return source line references for legal review.
