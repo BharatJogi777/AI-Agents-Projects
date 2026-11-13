@@ -1,9 +1,9 @@
-from app.canary import analyze_canary
 import pytest
+from app.canary import analyze_canary
 
 def test_detects_regression():
-    result=analyze_canary({"errors":{"value":.01,"samples":1000}},{"errors":{"value":.03,"samples":1000}},tolerances={"errors":10})
-    assert result.decision=="investigate_regression"
+ r=analyze_canary({'errors':1},{'errors':3},limits={'errors':10})
+ assert r.decision=='hold_or_rollback_review'
 
-def test_rejects_mismatched_metrics():
-    with pytest.raises(ValueError): analyze_canary({"a":{"value":1,"samples":10}},{"b":{"value":1,"samples":10}})
+def test_rejects_different_metric_sets():
+ with pytest.raises(ValueError): analyze_canary({'a':1},{'b':2})
