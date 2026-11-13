@@ -50,3 +50,14 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-363 | [Meeting audio summarizer](./13-meeting-audio-summarizer/) | In progress |
 | AG-364 | [Call quality analysis assistant](./14-call-quality-analysis-assistant/) | In progress |
 | AG-365 | [Image understanding assistant](./15-image-understanding-assistant/) | In progress |
+
+
+## Implemented project batch: AG-366–AG-370
+
+| ID | Project | Catalogue status |
+|---|---|---|
+| AG-366 | [Chart and diagram interpreter](./16-chart-and-diagram-interpreter/) | In progress |
+| AG-367 | [Receipt image extraction agent](./17-receipt-image-extraction-agent/) | In progress |
+| AG-368 | [Product image catalog assistant](./18-product-image-catalog-assistant/) | In progress |
+| AG-369 | [Video chapter summarizer](./19-video-chapter-summarizer/) | In progress |
+| AG-370 | [Video event timeline assistant](./20-video-event-timeline-assistant/) | In progress |
