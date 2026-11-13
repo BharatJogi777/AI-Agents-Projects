@@ -18,17 +18,16 @@ RULES = [
 ]
 
 def diagnose_ci_log(log: str, *, max_chars: int = 200_000) -> list[Finding]:
-    if not isinstance(log, str):
-        raise TypeError("log must be a string")
-    if not 1 <= max_chars <= 1_000_000:
-        raise ValueError("max_chars must be between 1 and 1000000")
+    if not isinstance(log, str): raise TypeError("log must be a string")
+    if not 1 <= max_chars <= 1_000_000: raise ValueError("max_chars must be between 1 and 1000000")
     text = log[-max_chars:]
     findings = []
     for category, pattern, recommendation in RULES:
         match = pattern.search(text)
         if match:
-            line = text[max(0, text.rfind("\\n", 0, match.start()) + 1):text.find("\\n", match.start()) if text.find("\\n", match.start()) >= 0 else len(text)].strip()
-            findings.append(Finding(category, line[:500], recommendation))
-    if not findings and text.strip():
-        findings.append(Finding("unknown", "No known failure signature matched.", "Inspect the earliest error rather than the final cascade of messages."))
+            start = text.rfind("\n", 0, match.start()) + 1
+            end = text.find("\n", match.start())
+            evidence = text[start:end if end >= 0 else len(text)].strip()
+            findings.append(Finding(category, evidence[:500], recommendation))
+    if not findings and text.strip(): findings.append(Finding("unknown", "No known failure signature matched.", "Inspect the earliest error rather than the final cascade of messages."))
     return findings
