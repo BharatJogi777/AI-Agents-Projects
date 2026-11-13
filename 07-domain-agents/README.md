@@ -73,3 +73,9 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-328 | Meeting preparation assistant | [28-meeting-preparation-assistant](28-meeting-preparation-assistant/) |
 | AG-329 | Meeting action-item tracker | [29-meeting-action-item-tracker](29-meeting-action-item-tracker/) |
 | AG-330 | Calendar scheduling assistant | [30-calendar-scheduling-assistant](30-calendar-scheduling-assistant/) |
+
+| AG-331 | Travel itinerary planner | [31-travel-itinerary-planner](31-travel-itinerary-planner/) |
+| AG-332 | Travel expense audit assistant | [32-travel-expense-audit-assistant](32-travel-expense-audit-assistant/) |
+| AG-333 | Retail product discovery assistant | [33-retail-product-discovery-assistant](33-retail-product-discovery-assistant/) |
+| AG-334 | Retail inventory exception agent | [34-retail-inventory-exception-agent](34-retail-inventory-exception-agent/) |
+| AG-335 | Demand planning assistant | [35-demand-planning-assistant](35-demand-planning-assistant/) |
