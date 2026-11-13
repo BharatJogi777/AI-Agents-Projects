@@ -1,14 +1,24 @@
 [build-system]
-requires=["setuptools>=69","wheel"]
-build-backend="setuptools.build_meta"
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
-name="model-fallback-router"
-version="0.1.0"
-requires-python=">=3.12"
-dependencies=[]
+name = "model-fallback-router"
+version = "0.2.0"
+description = "Bounded capability-aware multi-provider LLM fallback routing"
+requires-python = ">=3.12"
+dependencies = []
+
 [project.optional-dependencies]
-dev=["pytest>=8,<9"]
+dev = ["pytest>=8,<9"]
+
+[tool.setuptools]
+py-modules = ["app", "registry"]
+
+[tool.setuptools.packages.find]
+include = ["model_router*"]
+
 [tool.pytest.ini_options]
-testpaths=["tests"]
-pythonpath=["."]
-addopts="-q"
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
