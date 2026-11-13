@@ -56,3 +56,19 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-223 | Type error diagnosis agent | `23-type-error-diagnosis-agent` |
 | AG-224 | Dependency upgrade planner | `24-dependency-upgrade-planner` |
 | AG-225 | Dependency vulnerability explainer | `25-dependency-vulnerability-explainer` |
+
+
+## Implemented projects (AG-226–AG-235)
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-226 | License compliance assistant | [26-license-compliance-assistant](26-license-compliance-assistant/) |
+| AG-227 | API contract drift detector | [27-api-contract-drift-detector](27-api-contract-drift-detector/) |
+| AG-228 | OpenAPI spec reviewer | [28-openapi-spec-reviewer](28-openapi-spec-reviewer/) |
+| AG-229 | Database migration reviewer | [29-database-migration-reviewer](29-database-migration-reviewer/) |
+| AG-230 | SQL query review assistant | [30-sql-query-review-assistant](30-sql-query-review-assistant/) |
+| AG-231 | Performance hotspot investigator | [31-performance-hotspot-investigator](31-performance-hotspot-investigator/) |
+| AG-232 | Go code review assistant | [32-go-code-review-assistant](32-go-code-review-assistant/) |
+| AG-233 | Python code review assistant | [33-python-code-review-assistant](33-python-code-review-assistant/) |
+| AG-234 | TypeScript code review assistant | [34-typescript-code-review-assistant](34-typescript-code-review-assistant/) |
+| AG-235 | Concurrency bug investigator | [35-concurrency-bug-investigator](35-concurrency-bug-investigator/) |
