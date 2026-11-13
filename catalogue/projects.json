@@ -2581,7 +2581,7 @@
       "description": "Coordinate bounded steps and specialist workers with explicit state, retries, cancellation, and human approval where needed.",
       "pattern": "Stateful graphs, routing, delegation, planning, and human control",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "04-orchestration/16-human-in-the-loop-approval-graph",
       "tags": [
         "orchestration-and-multi-agent-systems",
@@ -2596,7 +2596,7 @@
       "description": "Coordinate bounded steps and specialist workers with explicit state, retries, cancellation, and human approval where needed.",
       "pattern": "Stateful graphs, routing, delegation, planning, and human control",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "04-orchestration/17-escalation-and-handoff-workflow",
       "tags": [
         "orchestration-and-multi-agent-systems",
@@ -2611,7 +2611,7 @@
       "description": "Coordinate bounded steps and specialist workers with explicit state, retries, cancellation, and human approval where needed.",
       "pattern": "Stateful graphs, routing, delegation, planning, and human control",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "04-orchestration/18-checkpointed-workflow-agent",
       "tags": [
         "orchestration-and-multi-agent-systems",
@@ -2626,7 +2626,7 @@
       "description": "Coordinate bounded steps and specialist workers with explicit state, retries, cancellation, and human approval where needed.",
       "pattern": "Stateful graphs, routing, delegation, planning, and human control",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "04-orchestration/19-persistent-workflow-state-store",
       "tags": [
         "orchestration-and-multi-agent-systems",
@@ -2641,7 +2641,7 @@
       "description": "Coordinate bounded steps and specialist workers with explicit state, retries, cancellation, and human approval where needed.",
       "pattern": "Stateful graphs, routing, delegation, planning, and human control",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "04-orchestration/20-workflow-resume-after-restart",
       "tags": [
         "orchestration-and-multi-agent-systems",
