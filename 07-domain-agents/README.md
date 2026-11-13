@@ -67,3 +67,9 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-323 | HR policy Q&A assistant | [23-hr-policy-q-a-assistant](23-hr-policy-q-a-assistant/) |
 | AG-324 | Resume screening workflow assistant | [24-resume-screening-workflow-assistant](24-resume-screening-workflow-assistant/) |
 | AG-325 | Interview question planner | [25-interview-question-planner](25-interview-question-planner/) |
+
+| AG-326 | Employee onboarding assistant | [26-employee-onboarding-assistant](26-employee-onboarding-assistant/) |
+| AG-327 | Training plan recommender | [27-training-plan-recommender](27-training-plan-recommender/) |
+| AG-328 | Meeting preparation assistant | [28-meeting-preparation-assistant](28-meeting-preparation-assistant/) |
+| AG-329 | Meeting action-item tracker | [29-meeting-action-item-tracker](29-meeting-action-item-tracker/) |
+| AG-330 | Calendar scheduling assistant | [30-calendar-scheduling-assistant](30-calendar-scheduling-assistant/) |
