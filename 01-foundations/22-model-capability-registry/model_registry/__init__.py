@@ -1,3 +1,6 @@
-from .contracts import ModelCapabilities
+from .contracts import CapabilityRequirement, ModelCapabilities
+from .errors import CapabilityRegistryError, DuplicateModelError, ModelNotFoundError
 from .registry import CapabilityRegistry
-__all__=["ModelCapabilities","CapabilityRegistry"]
+
+__all__ = ["CapabilityRegistry", "CapabilityRequirement", "ModelCapabilities",
+           "CapabilityRegistryError", "DuplicateModelError", "ModelNotFoundError"]
