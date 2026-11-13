@@ -3781,7 +3781,7 @@
       "description": "Assist a software engineering task using repository context and controlled tools. Never apply or merge consequential changes without review.",
       "pattern": "Repository understanding, coding support, testing, review, and delivery",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "05-developer-agents/46-ci-log-diagnosis-assistant",
       "tags": [
         "developer-and-software-engineering-agents",
@@ -3796,7 +3796,7 @@
       "description": "Assist a software engineering task using repository context and controlled tools. Never apply or merge consequential changes without review.",
       "pattern": "Repository understanding, coding support, testing, review, and delivery",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "05-developer-agents/47-monorepo-impact-analyzer",
       "tags": [
         "developer-and-software-engineering-agents",
@@ -3811,7 +3811,7 @@
       "description": "Assist a software engineering task using repository context and controlled tools. Never apply or merge consequential changes without review.",
       "pattern": "Repository understanding, coding support, testing, review, and delivery",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "05-developer-agents/48-code-ownership-routing-agent",
       "tags": [
         "developer-and-software-engineering-agents",
@@ -3826,7 +3826,7 @@
       "description": "Assist a software engineering task using repository context and controlled tools. Never apply or merge consequential changes without review.",
       "pattern": "Repository understanding, coding support, testing, review, and delivery",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "05-developer-agents/49-developer-knowledge-base-assistant",
       "tags": [
         "developer-and-software-engineering-agents",
@@ -3841,7 +3841,7 @@
       "description": "Assist a software engineering task using repository context and controlled tools. Never apply or merge consequential changes without review.",
       "pattern": "Repository understanding, coding support, testing, review, and delivery",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "05-developer-agents/50-secure-coding-review-assistant",
       "tags": [
         "developer-and-software-engineering-agents",
