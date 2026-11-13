@@ -46,6 +46,9 @@ This track contains 50 project specifications in the root [project catalogue](..
 | AG-145 | [MCP secret redaction middleware](45-mcp-secret-redaction-middleware/) | In progress — implementation and tests authored; execution verification pending |
 | AG-146 | [MCP multi-tenant isolation demo](46-mcp-multi-tenant-isolation-demo/) | In progress — implementation and tests authored; execution verification pending |
 | AG-147 | [MCP server deployment template](47-mcp-server-deployment-template/) | In progress — implementation and tests authored; execution verification pending |
+| AG-148 | [MCP tool latency monitor](48-mcp-tool-latency-monitor/) | In progress — implementation and tests authored; execution verification pending |
+| AG-149 | [MCP server policy simulator](49-mcp-server-policy-simulator/) | In progress — implementation and tests authored; execution verification pending |
+| AG-150 | [MCP tool registry catalog](50-mcp-tool-registry-catalog/) | In progress — implementation and tests authored; execution verification pending |
 | AG-148–AG-150 | Remaining MCP projects | Planned |
 
 ## How to run AG-101
