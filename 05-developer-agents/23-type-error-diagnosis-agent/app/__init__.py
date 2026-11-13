@@ -1,0 +1,1 @@
+"""Type error diagnosis package."""
