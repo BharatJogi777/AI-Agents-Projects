@@ -72,3 +72,14 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-273 | Cloud IAM policy reviewer | [23-cloud-iam-policy-reviewer](23-cloud-iam-policy-reviewer/) |
 | AG-274 | Cloud security posture assistant | [24-cloud-security-posture-assistant](24-cloud-security-posture-assistant/) |
 | AG-275 | VPC connectivity diagnosis agent | [25-vpc-connectivity-diagnosis-agent](25-vpc-connectivity-diagnosis-agent/) |
+
+
+## Implemented projects (AG-276–AG-280)
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-276 | Load balancer health investigator | [26-load-balancer-health-investigator](26-load-balancer-health-investigator/) |
+| AG-277 | DNS failure investigator | [27-dns-failure-investigator](27-dns-failure-investigator/) |
+| AG-278 | TLS certificate expiry monitor | [28-tls-certificate-expiry-monitor](28-tls-certificate-expiry-monitor/) |
+| AG-279 | Database connection issue investigator | [29-database-connection-issue-investigator](29-database-connection-issue-investigator/) |
+| AG-280 | PostgreSQL performance assistant | [30-postgresql-performance-assistant](30-postgresql-performance-assistant/) |
