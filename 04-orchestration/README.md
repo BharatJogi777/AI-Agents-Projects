@@ -80,3 +80,9 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-188 | Workflow deadline manager | Injectable clock, deadline tracking, expiration, cancellation |
 | AG-189 | Workflow cancellation coordinator | Cooperative cancellation tokens with recursive child propagation |
 | AG-190 | Workflow event streaming API | Per-workflow ordered events, replay cursors, and bounded reads |
+
+| AG-191 | Graph visualization exporter | `41-graph-visualization-exporter` | In progress |
+| AG-192 | Workflow replay debugger | `42-workflow-replay-debugger` | In progress |
+| AG-193 | Deterministic workflow test harness | `43-deterministic-workflow-test-harness` | In progress |
+| AG-194 | Agent handoff contract validator | `44-agent-handoff-contract-validator` | In progress |
+| AG-195 | Multi-agent cost budget manager | `45-multi-agent-cost-budget-manager` | In progress |
