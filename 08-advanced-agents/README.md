@@ -91,3 +91,11 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-383 | Personal Knowledge Assistant | [33-personal-knowledge-assistant](./33-personal-knowledge-assistant/) |
 | AG-384 | Personal Task Prioritization Assistant | [34-personal-task-prioritization-assistant](./34-personal-task-prioritization-assistant/) |
 | AG-385 | Daily Briefing Agent | [35-daily-briefing-agent](./35-daily-briefing-agent/) |
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-386 | Proactive anomaly notification agent | [36-proactive-anomaly-notification-agent](./36-proactive-anomaly-notification-agent/) |
+| AG-387 | Agentic spreadsheet assistant | [37-agentic-spreadsheet-assistant](./37-agentic-spreadsheet-assistant/) |
+| AG-388 | Presentation research assistant | [38-presentation-research-assistant](./38-presentation-research-assistant/) |
+| AG-389 | Presentation outline builder | [39-presentation-outline-builder](./39-presentation-outline-builder/) |
+| AG-390 | Interactive data exploration agent | [40-interactive-data-exploration-agent](./40-interactive-data-exploration-agent/) |
