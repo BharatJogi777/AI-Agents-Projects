@@ -85,3 +85,9 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-338 | Delivery route planning assistant | [38-delivery-route-planning-assistant](38-delivery-route-planning-assistant/) |
 | AG-339 | Fleet maintenance assistant | [39-fleet-maintenance-assistant](39-fleet-maintenance-assistant/) |
 | AG-340 | Warehouse slotting assistant | [40-warehouse-slotting-assistant](40-warehouse-slotting-assistant/) |
+
+| AG-341 | Agriculture field observation assistant | [41-agriculture-field-observation-assistant](41-agriculture-field-observation-assistant/) |
+| AG-342 | Farm operations planning agent | [42-farm-operations-planning-agent](42-farm-operations-planning-agent/) |
+| AG-343 | Irrigation schedule advisor | [43-irrigation-schedule-advisor](43-irrigation-schedule-advisor/) |
+| AG-344 | Crop disease literature assistant | [44-crop-disease-literature-assistant](44-crop-disease-literature-assistant/) |
+| AG-345 | Education tutor workflow | [45-education-tutor-workflow](45-education-tutor-workflow/) |
