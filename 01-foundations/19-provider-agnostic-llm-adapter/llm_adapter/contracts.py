@@ -3,13 +3,22 @@ from __future__ import annotations
 
 import json
 import math
+from collections.abc import Mapping
 from dataclasses import dataclass, field
 from types import MappingProxyType
-from typing import Any, Mapping
+from typing import Any
 
 _ALLOWED_ROLES = frozenset({"system", "user", "assistant", "tool"})
 _MAX_METADATA_BYTES = 64_000
 _MAX_RAW_BYTES = 64_000
+
+
+def _freeze(value: Any) -> Any:
+    if isinstance(value, dict):
+        return MappingProxyType({key: _freeze(item) for key, item in value.items()})
+    if isinstance(value, list):
+        return tuple(_freeze(item) for item in value)
+    return value
 
 
 def _json_mapping(value: Mapping[str, Any], *, label: str, max_bytes: int) -> Mapping[str, Any]:
@@ -21,9 +30,7 @@ def _json_mapping(value: Mapping[str, Any], *, label: str, max_bytes: int) -> Ma
         raise ValueError(f"{label} must contain finite JSON-compatible values") from exc
     if len(encoded.encode("utf-8")) > max_bytes:
         raise ValueError(f"{label} exceeds {max_bytes} UTF-8 bytes")
-    # A JSON round trip detaches nested mutable values and rejects custom objects.
-    detached = json.loads(encoded)
-    return MappingProxyType(detached)
+    return _freeze(json.loads(encoded))
 
 
 @dataclass(frozen=True, slots=True)
