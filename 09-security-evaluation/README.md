@@ -90,3 +90,13 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-433 | Golden dataset regression runner | [Project](33-golden-dataset-regression-runner/) |
 | AG-434 | Synthetic task dataset generator | [Project](34-synthetic-task-dataset-generator/) |
 | AG-435 | Adversarial test case generator | [Project](35-adversarial-test-case-generator/) |
+
+## Implemented projects (AG-436–AG-440)
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-436 | Agent red-team scenario runner | [Project](36-agent-red-team-scenario-runner/) |
+| AG-437 | Model drift monitor | [Project](37-model-drift-monitor/) |
+| AG-438 | Prompt version regression tester | [Project](38-prompt-version-regression-tester/) |
+| AG-439 | Cost and token usage evaluator | [Project](39-cost-and-token-usage-evaluator/) |
+| AG-440 | Latency and throughput benchmark | [Project](40-latency-and-throughput-benchmark/) |
