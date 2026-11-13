@@ -17,3 +17,14 @@ This track contains 50 project specifications in the root [project catalogue](..
 ## Project status
 
 Projects are implemented in priority order. Check the catalogue for current status; do not infer status from a folder existing.
+
+
+## Implemented project batch: AG-351–AG-355
+
+| ID | Project | Catalogue status |
+|---|---|---|
+| AG-351 | [Browser research assistant](./01-browser-research-assistant/) | In progress |
+| AG-352 | [Browser form-filling assistant with approval](./02-browser-form-filling-assistant-with-approval/) | In progress |
+| AG-353 | [Browser navigation state tracker](./03-browser-navigation-state-tracker/) | In progress |
+| AG-354 | [Web page change monitor](./04-web-page-change-monitor/) | In progress |
+| AG-355 | [Multi-site comparison agent](./05-multi-site-comparison-agent/) | In progress |
