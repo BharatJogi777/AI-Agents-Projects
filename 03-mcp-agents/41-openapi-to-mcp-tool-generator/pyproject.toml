@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "41openapitomcptoolgenerator"
+version = "0.1.0"
+description = "OpenAPI-to-MCP tool generator"
+requires-python = ">=3.11"
+dependencies = ["mcp>=1.2", "PyYAML>=6.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-asyncio>=0.24"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
