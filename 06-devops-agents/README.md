@@ -83,3 +83,14 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-278 | TLS certificate expiry monitor | [28-tls-certificate-expiry-monitor](28-tls-certificate-expiry-monitor/) |
 | AG-279 | Database connection issue investigator | [29-database-connection-issue-investigator](29-database-connection-issue-investigator/) |
 | AG-280 | PostgreSQL performance assistant | [30-postgresql-performance-assistant](30-postgresql-performance-assistant/) |
+
+
+## Implemented projects (AG-281–AG-285)
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-281 | Redis latency investigator | [31-redis-latency-investigator](31-redis-latency-investigator/) |
+| AG-282 | Kafka consumer lag investigator | [32-kafka-consumer-lag-investigator](32-kafka-consumer-lag-investigator/) |
+| AG-283 | Kafka topic configuration reviewer | [33-kafka-topic-configuration-reviewer](33-kafka-topic-configuration-reviewer/) |
+| AG-284 | Queue backlog diagnosis agent | [34-queue-backlog-diagnosis-agent](34-queue-backlog-diagnosis-agent/) |
+| AG-285 | Service dependency map builder | [35-service-dependency-map-builder](35-service-dependency-map-builder/) |
