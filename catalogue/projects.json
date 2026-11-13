@@ -3,7 +3,7 @@
   "catalogue_version": "1.0.0",
   "total_projects": 500,
   "generated_at": "2026-11-12",
-  "status_policy": "Planned entries are catalogue records, not implementation claims. AG-001 through AG-080 have implementation files pending local verification; AG-101 through AG-122 have implementation files and authored tests pending local verification.",
+  "status_policy": "Planned entries are catalogue records, not implementation claims. AG-001 through AG-080 have implementation files pending local verification; AG-101 through AG-127 have implementation files and authored tests pending local verification.",
   "tracks": [
     {
       "id": "01-foundations",
@@ -1936,7 +1936,7 @@
       "description": "Expose or consume a typed capability through MCP. Enforce authorization, timeouts, validation, and auditable tool execution.",
       "pattern": "MCP servers, clients, discovery, transport, permissions, and resilience",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "03-mcp-agents/23-safe-document-search-mcp-server",
       "tags": [
         "mcp-and-tool-integration",
@@ -1951,7 +1951,7 @@
       "description": "Expose or consume a typed capability through MCP. Enforce authorization, timeouts, validation, and auditable tool execution.",
       "pattern": "MCP servers, clients, discovery, transport, permissions, and resilience",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "03-mcp-agents/24-postgresql-read-only-mcp-server",
       "tags": [
         "mcp-and-tool-integration",
@@ -1966,7 +1966,7 @@
       "description": "Expose or consume a typed capability through MCP. Enforce authorization, timeouts, validation, and auditable tool execution.",
       "pattern": "MCP servers, clients, discovery, transport, permissions, and resilience",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "03-mcp-agents/25-redis-diagnostics-mcp-server",
       "tags": [
         "mcp-and-tool-integration",
@@ -1981,7 +1981,7 @@
       "description": "Expose or consume a typed capability through MCP. Enforce authorization, timeouts, validation, and auditable tool execution.",
       "pattern": "MCP servers, clients, discovery, transport, permissions, and resilience",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "03-mcp-agents/26-git-repository-mcp-server",
       "tags": [
         "mcp-and-tool-integration",
@@ -1996,7 +1996,7 @@
       "description": "Expose or consume a typed capability through MCP. Enforce authorization, timeouts, validation, and auditable tool execution.",
       "pattern": "MCP servers, clients, discovery, transport, permissions, and resilience",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "03-mcp-agents/27-github-issue-mcp-integration",
       "tags": [
         "mcp-and-tool-integration",
