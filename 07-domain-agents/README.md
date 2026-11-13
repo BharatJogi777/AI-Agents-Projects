@@ -28,3 +28,14 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-303 | Order status assistant | [03-order-status-assistant](03-order-status-assistant/) |
 | AG-304 | Refund eligibility checker | [04-refund-eligibility-checker](04-refund-eligibility-checker/) |
 | AG-305 | Returns workflow assistant | [05-returns-workflow-assistant](05-returns-workflow-assistant/) |
+
+
+## Implemented projects (AG-306–AG-310)
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-306 | Subscription cancellation assistant | [06-subscription-cancellation-assistant](06-subscription-cancellation-assistant/) |
+| AG-307 | Sales lead qualification agent | [07-sales-lead-qualification-agent](07-sales-lead-qualification-agent/) |
+| AG-308 | Sales call preparation assistant | [08-sales-call-preparation-assistant](08-sales-call-preparation-assistant/) |
+| AG-309 | CRM data enrichment agent | [09-crm-data-enrichment-agent](09-crm-data-enrichment-agent/) |
+| AG-310 | Account health summarizer | [10-account-health-summarizer](10-account-health-summarizer/) |
