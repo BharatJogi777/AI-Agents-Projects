@@ -1,12 +1,7 @@
 import json
 import pytest
 
-
-def parse_payload(raw):
-    value = json.loads(raw)
-    if not isinstance(value, dict):
-        raise ValueError("arguments must be a JSON object")
-    return value
+from app.client import parse_payload
 
 
 def test_accepts_object_payload():
