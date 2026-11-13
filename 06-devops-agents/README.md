@@ -61,3 +61,14 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-268 | Helm values reviewer | [18-helm-values-reviewer](18-helm-values-reviewer/) |
 | AG-269 | Terraform plan reviewer | [19-terraform-plan-reviewer](19-terraform-plan-reviewer/) |
 | AG-270 | Terraform drift explainer | [20-terraform-drift-explainer](20-terraform-drift-explainer/) |
+
+
+## Implemented projects (AG-271–AG-275)
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-271 | AWS inventory assistant | [21-aws-inventory-assistant](21-aws-inventory-assistant/) |
+| AG-272 | AWS cost anomaly investigator | [22-aws-cost-anomaly-investigator](22-aws-cost-anomaly-investigator/) |
+| AG-273 | Cloud IAM policy reviewer | [23-cloud-iam-policy-reviewer](23-cloud-iam-policy-reviewer/) |
+| AG-274 | Cloud security posture assistant | [24-cloud-security-posture-assistant](24-cloud-security-posture-assistant/) |
+| AG-275 | VPC connectivity diagnosis agent | [25-vpc-connectivity-diagnosis-agent](25-vpc-connectivity-diagnosis-agent/) |
