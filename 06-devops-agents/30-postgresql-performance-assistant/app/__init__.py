@@ -1,0 +1,1 @@
+"""PostgreSQL performance assistant package."""
