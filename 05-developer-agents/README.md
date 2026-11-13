@@ -33,3 +33,9 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-208 | Issue triage classifier | `08-issue-triage-classifier` |
 | AG-209 | Issue-to-plan agent | `09-issue-to-plan-agent` |
 | AG-210 | Feature implementation planner | `10-feature-implementation-planner` |
+
+| AG-211 | Code change proposal agent | `11-code-change-proposal-agent` |
+| AG-212 | Patch generation assistant | `12-patch-generation-assistant` |
+| AG-213 | Patch validation agent | `13-patch-validation-agent` |
+| AG-214 | Unit test generator | `14-unit-test-generator` |
+| AG-215 | Integration test planner | `15-integration-test-planner` |
