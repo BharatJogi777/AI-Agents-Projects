@@ -1,0 +1,1 @@
+"""AWS inventory assistant."""
