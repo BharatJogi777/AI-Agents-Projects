@@ -28,3 +28,14 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-403 | Indirect prompt injection evaluator | [Open project](../09-security-evaluation/03-indirect-prompt-injection-evaluator) |
 | AG-404 | Jailbreak regression suite | [Open project](../09-security-evaluation/04-jailbreak-regression-suite) |
 | AG-405 | Tool permission boundary tester | [Open project](../09-security-evaluation/05-tool-permission-boundary-tester) |
+
+
+## Implemented projects (AG-406–AG-410)
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-406 | Tool argument fuzz tester | [Open project](../09-security-evaluation/06-tool-argument-fuzz-tester) |
+| AG-407 | Tool output poisoning detector | [Open project](../09-security-evaluation/07-tool-output-poisoning-detector) |
+| AG-408 | Memory poisoning detector | [Open project](../09-security-evaluation/08-memory-poisoning-detector) |
+| AG-409 | Sensitive data redaction middleware | [Open project](../09-security-evaluation/09-sensitive-data-redaction-middleware) |
+| AG-410 | PII detection and masking agent | [Open project](../09-security-evaluation/10-pii-detection-and-masking-agent) |
