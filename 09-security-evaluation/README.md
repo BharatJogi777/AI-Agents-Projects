@@ -60,3 +60,13 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-418 | Cross-tenant memory leakage test | [Open](./18-cross-tenant-memory-leakage-test/) |
 | AG-419 | Agent identity and authorization demo | [Open](./19-agent-identity-and-authorization-demo/) |
 | AG-420 | Audit trail integrity verifier | [Open](./20-audit-trail-integrity-verifier/) |
+
+## Implemented projects (AG-421–AG-425)
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-421 | Model output schema conformance suite | [Project](21-model-output-schema-conformance-suite/) |
+| AG-422 | Hallucination evaluation harness | [Project](22-hallucination-evaluation-harness/) |
+| AG-423 | Groundedness scoring evaluator | [Project](23-groundedness-scoring-evaluator/) |
+| AG-424 | Citation correctness evaluator | [Project](24-citation-correctness-evaluator/) |
+| AG-425 | Answer relevance evaluator | [Project](25-answer-relevance-evaluator/) |
