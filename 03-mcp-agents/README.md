@@ -35,3 +35,8 @@ This track contains 50 project specifications in the root [project catalogue](..
 ## How to run AG-101
 
 See [AG-101 README](01-first-mcp-server-with-typed-tools/README.md). It uses the Python MCP SDK over stdio and keeps its order-domain logic independently testable.
+
+
+| AG-115 | MCP cancellation propagation | Shared cancellation signal and task cancellation handling |
+| AG-116 | MCP authorization gateway | Fail-closed principal and role authorization with audit events |
+| AG-117 | Per-tool permission policy | Exact tool/action/role policy evaluation |
