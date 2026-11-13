@@ -50,3 +50,13 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-413 | Policy-as-code tool gateway | [Open project](../09-security-evaluation/13-policy-as-code-tool-gateway) |
 | AG-414 | Human approval policy engine | [Open project](../09-security-evaluation/14-human-approval-policy-engine) |
 | AG-415 | High-impact action classifier | [Open project](../09-security-evaluation/15-high-impact-action-classifier) |
+
+## Implemented projects (AG-416–AG-420)
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-416 | Least-privilege tool planner | [Open](./16-least-privilege-tool-planner/) |
+| AG-417 | Tenant isolation test harness | [Open](./17-tenant-isolation-test-harness/) |
+| AG-418 | Cross-tenant memory leakage test | [Open](./18-cross-tenant-memory-leakage-test/) |
+| AG-419 | Agent identity and authorization demo | [Open](./19-agent-identity-and-authorization-demo/) |
+| AG-420 | Audit trail integrity verifier | [Open](./20-audit-trail-integrity-verifier/) |
