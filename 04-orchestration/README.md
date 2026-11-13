@@ -86,3 +86,8 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-193 | Deterministic workflow test harness | Controlled clock, retry execution, trace assertions for reproducible workflow tests |
 | AG-194 | Agent handoff contract validator | Versioned payload contracts with required, optional, typed, and unexpected-field checks |
 | AG-195 | Multi-agent cost budget manager | Per-agent spend authorization, charge recording, remaining budget, overrun reporting |
+| AG-196 | Multi-agent observability trace | Correlated trace spans, parent validation, duration metrics |
+| AG-197 | Agent workflow version migration | Sequential, explicit state migrations with missing-step and return-type checks |
+| AG-198 | Approval-aware tool orchestration | Tool-scoped, single-use approval gates before execution |
+| AG-199 | Parallel retrieval and synthesis | Concurrent retrieval with deterministic result ordering and isolated errors |
+| AG-200 | Fallback workflow orchestration | Ordered strategy fallback with structured attempt history |
