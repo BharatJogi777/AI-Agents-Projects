@@ -37,3 +37,8 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-163 | [Tool router graph](13-tool-router-graph/) | In progress — implementation and tests authored; execution verification pending |
 | AG-164 | [Intent-based specialist router](14-intent-based-specialist-router/) | In progress — implementation and tests authored; execution verification pending |
 | AG-165 | [Mixture-of-experts agent router](15-mixture-of-experts-agent-router/) | In progress — implementation and tests authored; execution verification pending |
+| AG-166 | [Human-in-the-loop approval graph](16-human-in-the-loop-approval-graph/) | In progress — implementation and tests authored; execution verification pending |
+| AG-167 | [Escalation and handoff workflow](17-escalation-and-handoff-workflow/) | In progress — implementation and tests authored; execution verification pending |
+| AG-168 | [Checkpointed workflow agent](18-checkpointed-workflow-agent/) | In progress — implementation and tests authored; execution verification pending |
+| AG-169 | [Persistent workflow state store](19-persistent-workflow-state-store/) | In progress — implementation and tests authored; execution verification pending |
+| AG-170 | [Workflow resume after restart](20-workflow-resume-after-restart/) | In progress — implementation and tests authored; execution verification pending |
