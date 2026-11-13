@@ -1,0 +1,1 @@
+"""Video chapter summarizer package."""
