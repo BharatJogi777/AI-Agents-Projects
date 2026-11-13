@@ -45,3 +45,14 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-218 | Flaky test investigator | `18-flaky-test-investigator` |
 | AG-219 | Test failure diagnosis agent | `19-test-failure-diagnosis-agent` |
 | AG-220 | Coverage gap analyst | `20-coverage-gap-analyst` |
+
+| AG-216 | Property-based test generator | `16-property-based-test-generator` |
+| AG-217 | Regression test selector | `17-regression-test-selector` |
+| AG-218 | Flaky test investigator | `18-flaky-test-investigator` |
+| AG-219 | Test failure diagnosis agent | `19-test-failure-diagnosis-agent` |
+| AG-220 | Coverage gap analyst | `20-coverage-gap-analyst` |
+| AG-221 | Static analysis explanation agent | `21-static-analysis-explanation-agent` |
+| AG-222 | Linter remediation assistant | `22-linter-remediation-assistant` |
+| AG-223 | Type error diagnosis agent | `23-type-error-diagnosis-agent` |
+| AG-224 | Dependency upgrade planner | `24-dependency-upgrade-planner` |
+| AG-225 | Dependency vulnerability explainer | `25-dependency-vulnerability-explainer` |
