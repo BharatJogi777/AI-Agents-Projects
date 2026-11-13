@@ -105,3 +105,14 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-288 | Capacity forecasting assistant | [38-capacity-forecasting-assistant](38-capacity-forecasting-assistant/) |
 | AG-289 | Autoscaling recommendation agent | [39-autoscaling-recommendation-agent](39-autoscaling-recommendation-agent/) |
 | AG-290 | Deployment risk assessor | [40-deployment-risk-assessor](40-deployment-risk-assessor/) |
+
+
+## Implemented projects (AG-291–AG-295)
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-291 | Canary analysis assistant | [41-canary-analysis-assistant](41-canary-analysis-assistant/) |
+| AG-292 | Rollback recommendation agent | [42-rollback-recommendation-agent](42-rollback-recommendation-agent/) |
+| AG-293 | Change impact analyzer | [43-change-impact-analyzer](43-change-impact-analyzer/) |
+| AG-294 | Backup verification assistant | [44-backup-verification-assistant](44-backup-verification-assistant/) |
+| AG-295 | Disaster recovery drill planner | [45-disaster-recovery-drill-planner](45-disaster-recovery-drill-planner/) |
