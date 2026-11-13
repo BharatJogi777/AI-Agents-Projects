@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcp-secret-redaction-middleware"
+version = "0.1.0"
+description = "Redact common secrets from MCP diagnostic data"
+requires-python = ">=3.11"
+dependencies = ["mcp>=1.2"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
