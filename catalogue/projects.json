@@ -2956,7 +2956,7 @@
       "description": "Coordinate bounded steps and specialist workers with explicit state, retries, cancellation, and human approval where needed.",
       "pattern": "Stateful graphs, routing, delegation, planning, and human control",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "04-orchestration/41-graph-visualization-exporter",
       "tags": [
         "orchestration-and-multi-agent-systems",
@@ -2971,7 +2971,7 @@
       "description": "Coordinate bounded steps and specialist workers with explicit state, retries, cancellation, and human approval where needed.",
       "pattern": "Stateful graphs, routing, delegation, planning, and human control",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "04-orchestration/42-workflow-replay-debugger",
       "tags": [
         "orchestration-and-multi-agent-systems",
@@ -2986,7 +2986,7 @@
       "description": "Coordinate bounded steps and specialist workers with explicit state, retries, cancellation, and human approval where needed.",
       "pattern": "Stateful graphs, routing, delegation, planning, and human control",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "04-orchestration/43-deterministic-workflow-test-harness",
       "tags": [
         "orchestration-and-multi-agent-systems",
@@ -3001,7 +3001,7 @@
       "description": "Coordinate bounded steps and specialist workers with explicit state, retries, cancellation, and human approval where needed.",
       "pattern": "Stateful graphs, routing, delegation, planning, and human control",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "04-orchestration/44-agent-handoff-contract-validator",
       "tags": [
         "orchestration-and-multi-agent-systems",
@@ -3016,7 +3016,7 @@
       "description": "Coordinate bounded steps and specialist workers with explicit state, retries, cancellation, and human approval where needed.",
       "pattern": "Stateful graphs, routing, delegation, planning, and human control",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "04-orchestration/45-multi-agent-cost-budget-manager",
       "tags": [
         "orchestration-and-multi-agent-systems",
