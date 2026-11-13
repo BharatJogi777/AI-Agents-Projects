@@ -1,10 +1,6 @@
-# Rollback recommendation agent
+# 42 Rollback Recommendation Agent
 
-Recommend whether to hold, investigate, or consider rollback using release health signals and rollback readiness.
-
-## Safety boundary
-
-This is deterministic decision support over user-supplied evidence. It does not access production systems, change traffic, roll back releases, restore backups, or run disaster-recovery drills. Human owners must validate findings and approve operational actions.
+Read-only analysis and planning utility. Produces recommendations or plans from supplied evidence; it does not execute production changes.
 
 ## Run
 
@@ -13,6 +9,4 @@ python -m pip install -e '.[dev]'
 pytest
 ```
 
-## Limitations
-
-Results are only as reliable as the supplied metrics, dependency map, backup metadata, and objectives. Validate thresholds and runbooks for each environment.
+Validate inputs and outputs with service owners before operational use.
