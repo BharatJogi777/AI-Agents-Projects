@@ -39,3 +39,14 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-308 | Sales call preparation assistant | [08-sales-call-preparation-assistant](08-sales-call-preparation-assistant/) |
 | AG-309 | CRM data enrichment agent | [09-crm-data-enrichment-agent](09-crm-data-enrichment-agent/) |
 | AG-310 | Account health summarizer | [10-account-health-summarizer](10-account-health-summarizer/) |
+
+
+## Implemented projects (AG-311–AG-315)
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-311 | Customer feedback theme analyzer | [11-customer-feedback-theme-analyzer](11-customer-feedback-theme-analyzer/) |
+| AG-312 | Voice-of-customer insight agent | [12-voice-of-customer-insight-agent](12-voice-of-customer-insight-agent/) |
+| AG-313 | Invoice extraction assistant | [13-invoice-extraction-assistant](13-invoice-extraction-assistant/) |
+| AG-314 | Invoice matching exception agent | [14-invoice-matching-exception-agent](14-invoice-matching-exception-agent/) |
+| AG-315 | Accounts payable review assistant | [15-accounts-payable-review-assistant](15-accounts-payable-review-assistant/) |
