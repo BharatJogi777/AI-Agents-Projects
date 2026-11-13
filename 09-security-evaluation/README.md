@@ -39,3 +39,14 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-408 | Memory poisoning detector | [Open project](../09-security-evaluation/08-memory-poisoning-detector) |
 | AG-409 | Sensitive data redaction middleware | [Open project](../09-security-evaluation/09-sensitive-data-redaction-middleware) |
 | AG-410 | PII detection and masking agent | [Open project](../09-security-evaluation/10-pii-detection-and-masking-agent) |
+
+
+## Implemented projects (AG-411–AG-415)
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-411 | Secret leakage scanner for prompts | [Open project](../09-security-evaluation/11-secret-leakage-scanner-for-prompts) |
+| AG-412 | Credential exposure test suite | [Open project](../09-security-evaluation/12-credential-exposure-test-suite) |
+| AG-413 | Policy-as-code tool gateway | [Open project](../09-security-evaluation/13-policy-as-code-tool-gateway) |
+| AG-414 | Human approval policy engine | [Open project](../09-security-evaluation/14-human-approval-policy-engine) |
+| AG-415 | High-impact action classifier | [Open project](../09-security-evaluation/15-high-impact-action-classifier) |
