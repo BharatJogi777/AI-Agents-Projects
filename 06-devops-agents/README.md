@@ -17,3 +17,14 @@ This track contains 50 project specifications in the root [project catalogue](..
 ## Project status
 
 Projects are implemented in priority order. Check the catalogue for current status; do not infer status from a folder existing.
+
+
+## Implemented projects (AG-251–AG-255)
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-251 | Application log investigation agent | [01-application-log-investigation-agent](01-application-log-investigation-agent/) |
+| AG-252 | Structured log anomaly explainer | [02-structured-log-anomaly-explainer](02-structured-log-anomaly-explainer/) |
+| AG-253 | Trace investigation assistant | [03-trace-investigation-assistant](03-trace-investigation-assistant/) |
+| AG-254 | Metrics query assistant | [04-metrics-query-assistant](04-metrics-query-assistant/) |
+| AG-255 | Incident timeline builder | [05-incident-timeline-builder](05-incident-timeline-builder/) |
