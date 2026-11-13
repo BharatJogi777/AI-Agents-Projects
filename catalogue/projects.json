@@ -6481,7 +6481,7 @@
       "description": "Measure and improve agent security, reliability, privacy, and quality with repeatable tests and evidence.",
       "pattern": "Threat modeling, policy enforcement, testing, evaluation, and auditability",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "09-security-evaluation/26-retrieval-quality-benchmark",
       "tags": [
         "security-governance-and-evaluation",
@@ -6496,7 +6496,7 @@
       "description": "Measure and improve agent security, reliability, privacy, and quality with repeatable tests and evidence.",
       "pattern": "Threat modeling, policy enforcement, testing, evaluation, and auditability",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "09-security-evaluation/27-tool-selection-accuracy-evaluator",
       "tags": [
         "security-governance-and-evaluation",
@@ -6511,7 +6511,7 @@
       "description": "Measure and improve agent security, reliability, privacy, and quality with repeatable tests and evidence.",
       "pattern": "Threat modeling, policy enforcement, testing, evaluation, and auditability",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "09-security-evaluation/28-tool-execution-success-evaluator",
       "tags": [
         "security-governance-and-evaluation",
@@ -6526,7 +6526,7 @@
       "description": "Measure and improve agent security, reliability, privacy, and quality with repeatable tests and evidence.",
       "pattern": "Threat modeling, policy enforcement, testing, evaluation, and auditability",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "09-security-evaluation/29-agent-task-completion-evaluator",
       "tags": [
         "security-governance-and-evaluation",
@@ -6541,7 +6541,7 @@
       "description": "Measure and improve agent security, reliability, privacy, and quality with repeatable tests and evidence.",
       "pattern": "Threat modeling, policy enforcement, testing, evaluation, and auditability",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "09-security-evaluation/30-multi-step-trajectory-evaluator",
       "tags": [
         "security-governance-and-evaluation",
