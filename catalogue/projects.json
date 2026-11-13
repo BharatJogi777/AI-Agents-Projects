@@ -4831,7 +4831,7 @@
       "description": "Support a domain workflow with traceable inputs, policy boundaries, and human review for consequential decisions.",
       "pattern": "Human-supervised domain workflows with explicit evidence and permissions",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "07-domain-agents/16-expense-policy-checker",
       "tags": [
         "business-and-industry-domain-agents",
@@ -4846,7 +4846,7 @@
       "description": "Support a domain workflow with traceable inputs, policy boundaries, and human review for consequential decisions.",
       "pattern": "Human-supervised domain workflows with explicit evidence and permissions",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "07-domain-agents/17-purchase-order-assistant",
       "tags": [
         "business-and-industry-domain-agents",
@@ -4861,7 +4861,7 @@
       "description": "Support a domain workflow with traceable inputs, policy boundaries, and human review for consequential decisions.",
       "pattern": "Human-supervised domain workflows with explicit evidence and permissions",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "07-domain-agents/18-procurement-comparison-agent",
       "tags": [
         "business-and-industry-domain-agents",
@@ -4876,7 +4876,7 @@
       "description": "Support a domain workflow with traceable inputs, policy boundaries, and human review for consequential decisions.",
       "pattern": "Human-supervised domain workflows with explicit evidence and permissions",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "07-domain-agents/19-contract-clause-finder",
       "tags": [
         "business-and-industry-domain-agents",
@@ -4891,7 +4891,7 @@
       "description": "Support a domain workflow with traceable inputs, policy boundaries, and human review for consequential decisions.",
       "pattern": "Human-supervised domain workflows with explicit evidence and permissions",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "07-domain-agents/20-contract-obligation-tracker",
       "tags": [
         "business-and-industry-domain-agents",
