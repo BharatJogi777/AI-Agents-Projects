@@ -17,3 +17,13 @@ This track contains 50 project specifications in the root [project catalogue](..
 ## Project status
 
 Projects are implemented in priority order. Check the catalogue for current status; do not infer status from a folder existing.
+
+## Implemented project batches
+
+| ID | Project | Status |
+|---|---|---|
+| AG-151 | [Sequential workflow agent](01-sequential-workflow-agent/) | In progress — implementation and tests authored; execution verification pending |
+| AG-152 | [Conditional workflow router](02-conditional-workflow-router/) | In progress — implementation and tests authored; execution verification pending |
+| AG-153 | [Parallel task executor](03-parallel-task-executor/) | In progress — implementation and tests authored; execution verification pending |
+| AG-154 | [Fan-out fan-in research workflow](04-fan-out-fan-in-research-workflow/) | In progress — implementation and tests authored; execution verification pending |
+| AG-155 | [Planner-executor graph](05-planner-executor-graph/) | In progress — implementation and tests authored; execution verification pending |
