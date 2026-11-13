@@ -1,0 +1,13 @@
+[project]
+name = "33-retail-product-discovery-assistant"
+version = "0.1.0"
+description = "Retail product discovery assistant"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
