@@ -27,7 +27,10 @@ This track contains 50 project specifications in the root [project catalogue](..
 | AG-106 | [MCP stdio transport client](06-mcp-stdio-transport-client/) | In progress — implementation and tests authored; execution verification pending |
 | AG-107 | [MCP HTTP transport client](07-mcp-http-transport-client/) | In progress — implementation and tests authored; execution verification pending |
 | AG-108 | [MCP server health inspector](08-mcp-server-health-inspector/) | In progress — implementation and tests authored; execution verification pending |
-| AG-109–AG-150 | Remaining MCP projects | Planned |
+| AG-109 | [MCP tool schema validator](09-mcp-tool-schema-validator/) | In progress — implementation and tests authored; execution verification pending |
+| AG-110 | [MCP tool namespace manager](10-mcp-tool-namespace-manager/) | In progress — implementation and tests authored; execution verification pending |
+| AG-111 | [Multi-server MCP client](11-multi-server-mcp-client/) | In progress — implementation and tests authored; execution verification pending |
+| AG-112–AG-150 | Remaining MCP projects | Planned |
 
 ## How to run AG-101
 
