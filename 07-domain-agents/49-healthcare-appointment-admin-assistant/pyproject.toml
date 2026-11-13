@@ -1,0 +1,13 @@
+[project]
+name = "49-healthcare-appointment-admin-assistant"
+version = "0.1.0"
+description = "Healthcare appointment admin assistant"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
