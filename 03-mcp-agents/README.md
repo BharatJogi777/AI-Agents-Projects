@@ -21,7 +21,9 @@ This track contains 50 project specifications in the root [project catalogue](..
 |---|---|---|
 | AG-101 | [First MCP server with typed tools](01-first-mcp-server-with-typed-tools/) | In progress — implementation and tests authored; execution verification pending |
 | AG-102 | [MCP server resource browser](02-mcp-server-resource-browser/) | In progress — implementation and tests authored; execution verification pending |
-| AG-103–AG-150 | Remaining MCP projects | Planned |
+| AG-103 | [MCP prompt-template server](03-mcp-prompt-template-server/) | In progress — implementation and tests authored; execution verification pending |
+| AG-104 | [MCP client tool discovery](04-mcp-client-tool-discovery/) | In progress — implementation and tests authored; execution verification pending |
+| AG-105–AG-150 | Remaining MCP projects | Planned |
 
 ## How to run AG-101
 
