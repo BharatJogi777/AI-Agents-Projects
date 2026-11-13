@@ -1,3 +1,4 @@
+import asyncio
 import pytest
 from app.reconnecting import ReconnectingClient
 
