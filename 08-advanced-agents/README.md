@@ -71,3 +71,13 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-373 | Event Triggered Inbox Agent | [23-event-triggered-inbox-agent](./23-event-triggered-inbox-agent/) |
 | AG-374 | Scheduled Report Generation Agent | [24-scheduled-report-generation-agent](./24-scheduled-report-generation-agent/) |
 | AG-375 | Webhook Triggered Workflow Agent | [25-webhook-triggered-workflow-agent](./25-webhook-triggered-workflow-agent/) |
+
+## Projects 26–30
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-376 | Email Event Triage Agent | [26-email-event-triage-agent](./26-email-event-triage-agent/) |
+| AG-377 | Long Running Research Agent | [27-long-running-research-agent](./27-long-running-research-agent/) |
+| AG-378 | Long Running Workflow Monitor | [28-long-running-workflow-monitor](./28-long-running-workflow-monitor/) |
+| AG-379 | Background Task Progress Reporter | [29-background-task-progress-reporter](./29-background-task-progress-reporter/) |
+| AG-380 | Human Takeover Browser Workflow | [30-human-takeover-browser-workflow](./30-human-takeover-browser-workflow/) |
