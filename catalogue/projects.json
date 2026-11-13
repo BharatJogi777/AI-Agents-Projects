@@ -6631,7 +6631,7 @@
       "description": "Measure and improve agent security, reliability, privacy, and quality with repeatable tests and evidence.",
       "pattern": "Threat modeling, policy enforcement, testing, evaluation, and auditability",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "09-security-evaluation/36-agent-red-team-scenario-runner",
       "tags": [
         "security-governance-and-evaluation",
@@ -6646,7 +6646,7 @@
       "description": "Measure and improve agent security, reliability, privacy, and quality with repeatable tests and evidence.",
       "pattern": "Threat modeling, policy enforcement, testing, evaluation, and auditability",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "09-security-evaluation/37-model-drift-monitor",
       "tags": [
         "security-governance-and-evaluation",
@@ -6661,7 +6661,7 @@
       "description": "Measure and improve agent security, reliability, privacy, and quality with repeatable tests and evidence.",
       "pattern": "Threat modeling, policy enforcement, testing, evaluation, and auditability",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "09-security-evaluation/38-prompt-version-regression-tester",
       "tags": [
         "security-governance-and-evaluation",
@@ -6676,7 +6676,7 @@
       "description": "Measure and improve agent security, reliability, privacy, and quality with repeatable tests and evidence.",
       "pattern": "Threat modeling, policy enforcement, testing, evaluation, and auditability",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "09-security-evaluation/39-cost-and-token-usage-evaluator",
       "tags": [
         "security-governance-and-evaluation",
@@ -6691,7 +6691,7 @@
       "description": "Measure and improve agent security, reliability, privacy, and quality with repeatable tests and evidence.",
       "pattern": "Threat modeling, policy enforcement, testing, evaluation, and auditability",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "09-security-evaluation/40-latency-and-throughput-benchmark",
       "tags": [
         "security-governance-and-evaluation",
