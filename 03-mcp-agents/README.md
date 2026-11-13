@@ -54,3 +54,10 @@ See [AG-101 README](01-first-mcp-server-with-typed-tools/README.md). It uses the
 | AG-125 | Redis diagnostics MCP server | Allowlisted INFO metrics and hit-rate calculation |
 | AG-126 | Git repository MCP server | Read-only Git metadata inspection with subprocess timeout |
 | AG-127 | GitHub issue MCP integration | Typed issue API client with token handling and PR filtering |
+
+
+| AG-128 | GitHub pull-request MCP assistant | Read-only typed pull-request metadata |
+| AG-129 | Jira MCP integration | Read-only typed Jira issue lookup |
+| AG-130 | Slack MCP integration | Bounded read-only message search |
+| AG-131 | Email drafting MCP server | Validated drafts; sending intentionally excluded |
+| AG-132 | Calendar availability MCP server | Timezone-aware free-slot calculation |
