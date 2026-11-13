@@ -1,0 +1,1 @@
+"""Shared knowledge workspace package."""
