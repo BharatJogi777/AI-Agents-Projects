@@ -88,3 +88,14 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-243 | Commit message assistant | [43-commit-message-assistant](43-commit-message-assistant/) |
 | AG-244 | Git conflict resolution guide | [44-git-conflict-resolution-guide](44-git-conflict-resolution-guide/) |
 | AG-245 | Build failure investigator | [45-build-failure-investigator](45-build-failure-investigator/) |
+
+
+## Implemented projects (AG-246–AG-250)
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-246 | CI log diagnosis assistant | [46-ci-log-diagnosis-assistant](46-ci-log-diagnosis-assistant/) |
+| AG-247 | Monorepo impact analyzer | [47-monorepo-impact-analyzer](47-monorepo-impact-analyzer/) |
+| AG-248 | Code ownership routing agent | [48-code-ownership-routing-agent](48-code-ownership-routing-agent/) |
+| AG-249 | Developer knowledge-base assistant | [49-developer-knowledge-base-assistant](49-developer-knowledge-base-assistant/) |
+| AG-250 | Secure coding review assistant | [50-secure-coding-review-assistant](50-secure-coding-review-assistant/) |
