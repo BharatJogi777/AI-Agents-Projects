@@ -91,3 +91,9 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-343 | Irrigation schedule advisor | [43-irrigation-schedule-advisor](43-irrigation-schedule-advisor/) |
 | AG-344 | Crop disease literature assistant | [44-crop-disease-literature-assistant](44-crop-disease-literature-assistant/) |
 | AG-345 | Education tutor workflow | [45-education-tutor-workflow](45-education-tutor-workflow/) |
+
+| AG-346 | Learning plan coach | [46-learning-plan-coach](46-learning-plan-coach/) |
+| AG-347 | Course content assistant | [47-course-content-assistant](47-course-content-assistant/) |
+| AG-348 | Research grant administration assistant | [48-research-grant-administration-assistant](48-research-grant-administration-assistant/) |
+| AG-349 | Healthcare appointment admin assistant | [49-healthcare-appointment-admin-assistant](49-healthcare-appointment-admin-assistant/) |
+| AG-350 | Clinical document summarization with review | [50-clinical-document-summarization-with-review](50-clinical-document-summarization-with-review/) |
