@@ -32,3 +32,8 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-158 | [Hierarchical agent team](08-hierarchical-agent-team/) | In progress — implementation and tests authored; execution verification pending |
 | AG-159 | [Researcher-writer-editor team](09-researcher-writer-editor-team/) | In progress — implementation and tests authored; execution verification pending |
 | AG-160 | [Debate and consensus workflow](10-debate-and-consensus-workflow/) | In progress — implementation and tests authored; execution verification pending |
+| AG-161 | [Critic-revision workflow](11-critic-revision-workflow/) | In progress — implementation and tests authored; execution verification pending |
+| AG-162 | [Self-reflection loop with limits](12-self-reflection-loop-with-limits/) | In progress — implementation and tests authored; execution verification pending |
+| AG-163 | [Tool router graph](13-tool-router-graph/) | In progress — implementation and tests authored; execution verification pending |
+| AG-164 | [Intent-based specialist router](14-intent-based-specialist-router/) | In progress — implementation and tests authored; execution verification pending |
+| AG-165 | [Mixture-of-experts agent router](15-mixture-of-experts-agent-router/) | In progress — implementation and tests authored; execution verification pending |
