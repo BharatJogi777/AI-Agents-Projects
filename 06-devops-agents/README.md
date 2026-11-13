@@ -94,3 +94,14 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-283 | Kafka topic configuration reviewer | [33-kafka-topic-configuration-reviewer](33-kafka-topic-configuration-reviewer/) |
 | AG-284 | Queue backlog diagnosis agent | [34-queue-backlog-diagnosis-agent](34-queue-backlog-diagnosis-agent/) |
 | AG-285 | Service dependency map builder | [35-service-dependency-map-builder](35-service-dependency-map-builder/) |
+
+
+## Implemented projects (AG-286–AG-290)
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-286 | SLO burn-rate explainer | [36-slo-burn-rate-explainer](36-slo-burn-rate-explainer/) |
+| AG-287 | Error budget status assistant | [37-error-budget-status-assistant](37-error-budget-status-assistant/) |
+| AG-288 | Capacity forecasting assistant | [38-capacity-forecasting-assistant](38-capacity-forecasting-assistant/) |
+| AG-289 | Autoscaling recommendation agent | [39-autoscaling-recommendation-agent](39-autoscaling-recommendation-agent/) |
+| AG-290 | Deployment risk assessor | [40-deployment-risk-assessor](40-deployment-risk-assessor/) |
