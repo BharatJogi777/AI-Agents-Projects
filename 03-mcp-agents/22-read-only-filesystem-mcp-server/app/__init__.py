@@ -1,0 +1,1 @@
+"""Read-only workspace filesystem primitives."""
