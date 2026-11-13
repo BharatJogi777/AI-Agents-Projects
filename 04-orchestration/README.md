@@ -47,3 +47,14 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-173 | [Compensating action workflow](23-compensating-action-workflow/) | In progress — implementation and tests authored; execution verification pending |
 | AG-174 | [Saga-style agent workflow](24-saga-style-agent-workflow/) | In progress — implementation and tests authored; execution verification pending |
 | AG-175 | [Idempotent workflow step runner](25-idempotent-workflow-step-runner/) | In progress — implementation and tests authored; execution verification pending |
+
+
+## Implemented projects (AG-176–AG-180)
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-176 | Distributed task delegation | Capability-aware workers, bounded capacity, leases, retries, and completion validation |
+| AG-177 | Agent message envelope protocol | Validated envelopes, correlation IDs, expiry, routing, and inbox deduplication |
+| AG-178 | Multi-agent shared blackboard | Thread-safe versioned state, optimistic concurrency, snapshots, and observation history |
+| AG-179 | Role-based agent collaboration | Role assignment, contribution authorization, required-role checks, and lifecycle states |
+| AG-180 | Dynamic team composition agent | Deterministic capability coverage with cost-aware team selection and size constraints |
