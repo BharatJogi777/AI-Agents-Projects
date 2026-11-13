@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcp-tool-contract-test-harness"
+version = "0.1.0"
+description = "Validate MCP tool contracts and arguments"
+requires-python = ">=3.11"
+dependencies = ["mcp>=1.2", "jsonschema>=4.23"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
