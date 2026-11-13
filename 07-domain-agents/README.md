@@ -17,3 +17,14 @@ This track contains 50 project specifications in the root [project catalogue](..
 ## Project status
 
 Projects are implemented in priority order. Check the catalogue for current status; do not infer status from a folder existing.
+
+
+## Implemented projects (AG-301–AG-305)
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-301 | Customer support triage agent | [01-customer-support-triage-agent](01-customer-support-triage-agent/) |
+| AG-302 | Customer support response drafter | [02-customer-support-response-drafter](02-customer-support-response-drafter/) |
+| AG-303 | Order status assistant | [03-order-status-assistant](03-order-status-assistant/) |
+| AG-304 | Refund eligibility checker | [04-refund-eligibility-checker](04-refund-eligibility-checker/) |
+| AG-305 | Returns workflow assistant | [05-returns-workflow-assistant](05-returns-workflow-assistant/) |
