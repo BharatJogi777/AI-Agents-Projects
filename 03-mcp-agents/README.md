@@ -47,3 +47,10 @@ See [AG-101 README](01-first-mcp-server-with-typed-tools/README.md). It uses the
 | AG-120 | MCP pagination tool server | Bounded page metadata and validated offsets |
 | AG-121 | MCP file metadata server | Root-confined file metadata inspection |
 | AG-122 | Read-only filesystem MCP server | Confined, bounded, read-only workspace access |
+
+
+| AG-123 | Safe document search MCP server | Principal-filtered retrieval with bounded snippets |
+| AG-124 | PostgreSQL read-only MCP server | Conservative SQL gate; production safety relies on DB privileges |
+| AG-125 | Redis diagnostics MCP server | Allowlisted INFO metrics and hit-rate calculation |
+| AG-126 | Git repository MCP server | Read-only Git metadata inspection with subprocess timeout |
+| AG-127 | GitHub issue MCP integration | Typed issue API client with token handling and PR filtering |
