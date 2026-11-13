@@ -58,3 +58,14 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-178 | Multi-agent shared blackboard | Thread-safe versioned state, optimistic concurrency, snapshots, and observation history |
 | AG-179 | Role-based agent collaboration | Role assignment, contribution authorization, required-role checks, and lifecycle states |
 | AG-180 | Dynamic team composition agent | Deterministic capability coverage with cost-aware team selection and size constraints |
+
+
+## Implemented projects (AG-181–AG-185)
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-181 | Agent task auction prototype | Sealed-bid eligibility checks, budget/time constraints, deterministic winner selection |
+| AG-182 | Agent negotiation simulator | Bounded alternating-offer negotiation and reservation constraints |
+| AG-183 | Conflict resolution coordinator | Evidence-backed claims, confidence policy, and resolution audit trail |
+| AG-184 | Multi-agent memory isolation | Agent/namespace-scoped memory with isolated reads and deletion |
+| AG-185 | Shared knowledge workspace | Attributed knowledge, confidence filtering, revisions, and optimistic updates |
