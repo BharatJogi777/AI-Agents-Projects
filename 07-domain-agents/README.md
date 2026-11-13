@@ -50,3 +50,14 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-313 | Invoice extraction assistant | [13-invoice-extraction-assistant](13-invoice-extraction-assistant/) |
 | AG-314 | Invoice matching exception agent | [14-invoice-matching-exception-agent](14-invoice-matching-exception-agent/) |
 | AG-315 | Accounts payable review assistant | [15-accounts-payable-review-assistant](15-accounts-payable-review-assistant/) |
+
+
+## Implemented projects (AG-316–AG-320)
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-316 | Expense policy checker | [16-expense-policy-checker](16-expense-policy-checker/) |
+| AG-317 | Purchase order assistant | [17-purchase-order-assistant](17-purchase-order-assistant/) |
+| AG-318 | Procurement comparison agent | [18-procurement-comparison-agent](18-procurement-comparison-agent/) |
+| AG-319 | Contract clause finder | [19-contract-clause-finder](19-contract-clause-finder/) |
+| AG-320 | Contract obligation tracker | [20-contract-obligation-tracker](20-contract-obligation-tracker/) |
