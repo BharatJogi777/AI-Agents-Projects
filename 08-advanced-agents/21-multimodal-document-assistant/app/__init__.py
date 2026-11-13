@@ -1,0 +1,1 @@
+"""Multimodal Document Assistant package."""
