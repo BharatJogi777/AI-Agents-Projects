@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "33cloudinventorymcpserver"
+version = "0.1.0"
+description = "Cloud inventory MCP server"
+requires-python = ">=3.11"
+dependencies = ["mcp>=1.2", "boto3>=1.35"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-asyncio>=0.24"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
