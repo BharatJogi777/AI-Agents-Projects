@@ -41,7 +41,12 @@ This track contains 50 project specifications in the root [project catalogue](..
 | AG-140 | [Internal REST API MCP adapter](40-internal-rest-api-mcp-adapter/) | In progress — implementation and tests authored; execution verification pending |
 | AG-141 | [OpenAPI-to-MCP tool generator](41-openapi-to-mcp-tool-generator/) | In progress — implementation and tests authored; execution verification pending |
 | AG-142 | [MCP tool contract test harness](42-mcp-tool-contract-test-harness/) | In progress — implementation and tests authored; execution verification pending |
-| AG-143–AG-150 | Remaining MCP projects | Planned |
+| AG-143 | [MCP server conformance tester](43-mcp-server-conformance-tester/) | In progress — implementation and tests authored; execution verification pending |
+| AG-144 | [MCP prompt-injection boundary demo](44-mcp-prompt-injection-boundary-demo/) | In progress — implementation and tests authored; execution verification pending |
+| AG-145 | [MCP secret redaction middleware](45-mcp-secret-redaction-middleware/) | In progress — implementation and tests authored; execution verification pending |
+| AG-146 | [MCP multi-tenant isolation demo](46-mcp-multi-tenant-isolation-demo/) | In progress — implementation and tests authored; execution verification pending |
+| AG-147 | [MCP server deployment template](47-mcp-server-deployment-template/) | In progress — implementation and tests authored; execution verification pending |
+| AG-148–AG-150 | Remaining MCP projects | Planned |
 
 ## How to run AG-101
 
