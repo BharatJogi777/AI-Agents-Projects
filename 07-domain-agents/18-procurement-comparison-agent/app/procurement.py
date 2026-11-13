@@ -1,0 +1,1 @@
+Compare vendor quotations across price, lead time and compliance evidence while surfacing incomplete bids.
