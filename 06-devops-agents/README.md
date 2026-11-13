@@ -39,3 +39,14 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-258 | Runbook retrieval assistant | [08-runbook-retrieval-assistant](08-runbook-retrieval-assistant/) |
 | AG-259 | Runbook recommendation agent | [09-runbook-recommendation-agent](09-runbook-recommendation-agent/) |
 | AG-260 | Kubernetes pod diagnosis agent | [10-kubernetes-pod-diagnosis-agent](10-kubernetes-pod-diagnosis-agent/) |
+
+
+## Implemented projects (AG-261–AG-265)
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-261 | Kubernetes event explainer | [11-kubernetes-event-explainer](11-kubernetes-event-explainer/) |
+| AG-262 | Kubernetes deployment reviewer | [12-kubernetes-deployment-reviewer](12-kubernetes-deployment-reviewer/) |
+| AG-263 | Kubernetes resource advisor | [13-kubernetes-resource-advisor](13-kubernetes-resource-advisor/) |
+| AG-264 | Kubernetes capacity planner | [14-kubernetes-capacity-planner](14-kubernetes-capacity-planner/) |
+| AG-265 | Kubernetes manifest security reviewer | [15-kubernetes-manifest-security-reviewer](15-kubernetes-manifest-security-reviewer/) |
