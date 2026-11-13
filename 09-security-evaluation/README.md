@@ -70,3 +70,13 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-423 | Groundedness scoring evaluator | [Project](23-groundedness-scoring-evaluator/) |
 | AG-424 | Citation correctness evaluator | [Project](24-citation-correctness-evaluator/) |
 | AG-425 | Answer relevance evaluator | [Project](25-answer-relevance-evaluator/) |
+
+## Implemented projects (AG-426–AG-430)
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-426 | Retrieval quality benchmark | [Project](26-retrieval-quality-benchmark/) |
+| AG-427 | Tool selection accuracy evaluator | [Project](27-tool-selection-accuracy-evaluator/) |
+| AG-428 | Tool execution success evaluator | [Project](28-tool-execution-success-evaluator/) |
+| AG-429 | Agent task completion evaluator | [Project](29-agent-task-completion-evaluator/) |
+| AG-430 | Multi-step trajectory evaluator | [Project](30-multi-step-trajectory-evaluator/) |
