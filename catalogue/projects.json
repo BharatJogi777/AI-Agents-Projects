@@ -4081,7 +4081,7 @@
       "description": "Investigate operational signals with read-only access by default. Any remediation must be narrowly scoped and approval-gated.",
       "pattern": "Read-only diagnostics first, bounded remediation, incident workflows",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "06-devops-agents/16-docker-image-inspection-agent",
       "tags": [
         "devops-sre-and-cloud-operations-agents",
@@ -4096,7 +4096,7 @@
       "description": "Investigate operational signals with read-only access by default. Any remediation must be narrowly scoped and approval-gated.",
       "pattern": "Read-only diagnostics first, bounded remediation, incident workflows",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "06-devops-agents/17-container-startup-failure-investigator",
       "tags": [
         "devops-sre-and-cloud-operations-agents",
@@ -4111,7 +4111,7 @@
       "description": "Investigate operational signals with read-only access by default. Any remediation must be narrowly scoped and approval-gated.",
       "pattern": "Read-only diagnostics first, bounded remediation, incident workflows",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "06-devops-agents/18-helm-values-reviewer",
       "tags": [
         "devops-sre-and-cloud-operations-agents",
@@ -4126,7 +4126,7 @@
       "description": "Investigate operational signals with read-only access by default. Any remediation must be narrowly scoped and approval-gated.",
       "pattern": "Read-only diagnostics first, bounded remediation, incident workflows",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "06-devops-agents/19-terraform-plan-reviewer",
       "tags": [
         "devops-sre-and-cloud-operations-agents",
@@ -4141,7 +4141,7 @@
       "description": "Investigate operational signals with read-only access by default. Any remediation must be narrowly scoped and approval-gated.",
       "pattern": "Read-only diagnostics first, bounded remediation, incident workflows",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "06-devops-agents/20-terraform-drift-explainer",
       "tags": [
         "devops-sre-and-cloud-operations-agents",
