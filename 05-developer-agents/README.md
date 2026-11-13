@@ -39,3 +39,9 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-213 | Patch validation agent | `13-patch-validation-agent` |
 | AG-214 | Unit test generator | `14-unit-test-generator` |
 | AG-215 | Integration test planner | `15-integration-test-planner` |
+
+| AG-216 | Property-based test generator | `16-property-based-test-generator` |
+| AG-217 | Regression test selector | `17-regression-test-selector` |
+| AG-218 | Flaky test investigator | `18-flaky-test-investigator` |
+| AG-219 | Test failure diagnosis agent | `19-test-failure-diagnosis-agent` |
+| AG-220 | Coverage gap analyst | `20-coverage-gap-analyst` |
