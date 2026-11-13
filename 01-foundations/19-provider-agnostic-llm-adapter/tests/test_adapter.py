@@ -68,7 +68,11 @@ def test_metadata_is_json_validated_and_detached():
     metadata = {"trace": {"tags": ["a"]}}
     req = request(metadata=metadata)
     metadata["trace"]["tags"].append("mutated")
-    assert req.metadata["trace"]["tags"] == ["a"]
+    assert req.metadata["trace"]["tags"] == ("a",)
+    with pytest.raises(TypeError):
+        req.metadata["trace"]["new"] = "value"
+    with pytest.raises(AttributeError):
+        req.metadata["trace"]["tags"].append("blocked")
     with pytest.raises(TypeError):
         req.metadata["new"] = "value"
     with pytest.raises(ValueError):
