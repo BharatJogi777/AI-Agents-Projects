@@ -1,10 +1,10 @@
 # MCP and Tool Integration
 
-Expose or consume a typed capability through MCP. Enforce authorization, timeouts, validation, and auditable tool execution.
+Expose or consume typed capabilities through the Model Context Protocol (MCP). This track covers servers, clients, transports, discovery, authorization, resilience, and safe integrations.
 
 ## Catalogue scope
 
-This track contains 50 project specifications in the root [project catalogue](../docs/PROJECT_CATALOG.md) and machine-readable [JSON catalogue](../catalogue/projects.json). Catalogue entries are not claims of completed implementations.
+This track contains 50 project specifications in the root [project catalogue](../docs/PROJECT_CATALOG.md) and machine-readable [JSON catalogue](../catalogue/projects.json). Catalogue status is authoritative; a directory existing does not mean its implementation is complete.
 
 ## Implementation expectations
 
@@ -12,8 +12,16 @@ This track contains 50 project specifications in the root [project catalogue](..
 - Keep model calls behind a small adapter; keep validation, permissions, and side effects in deterministic code.
 - Add unit tests for normal behavior and important failure paths.
 - Document model requirements, resource usage, limitations, and safety boundaries.
-- Use the maturity labels in [PROJECT_STANDARD.md](../docs/PROJECT_STANDARD.md).
+- Follow [PROJECT_STANDARD.md](../docs/PROJECT_STANDARD.md).
+- Do not mark a project Implemented until its main path and basic tests have been executed successfully.
 
-## Project status
+## Current implementation
 
-Projects are implemented in priority order. Check the catalogue for current status; do not infer status from a folder existing.
+| ID | Project | Status |
+|---|---|---|
+| AG-101 | [First MCP server with typed tools](01-first-mcp-server-with-typed-tools/) | In progress — implementation and tests authored; execution verification pending |
+| AG-102–AG-150 | Remaining MCP projects | Planned |
+
+## How to run AG-101
+
+See [AG-101 README](01-first-mcp-server-with-typed-tools/README.md). It uses the Python MCP SDK over stdio and keeps its order-domain logic independently testable.
