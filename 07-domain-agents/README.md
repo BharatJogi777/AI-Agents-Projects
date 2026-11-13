@@ -61,3 +61,9 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-318 | Procurement comparison agent | [18-procurement-comparison-agent](18-procurement-comparison-agent/) |
 | AG-319 | Contract clause finder | [19-contract-clause-finder](19-contract-clause-finder/) |
 | AG-320 | Contract obligation tracker | [20-contract-obligation-tracker](20-contract-obligation-tracker/) |
+
+| AG-321 | Legal intake triage assistant | [21-legal-intake-triage-assistant](21-legal-intake-triage-assistant/) |
+| AG-322 | Compliance evidence collector | [22-compliance-evidence-collector](22-compliance-evidence-collector/) |
+| AG-323 | HR policy Q&A assistant | [23-hr-policy-q-a-assistant](23-hr-policy-q-a-assistant/) |
+| AG-324 | Resume screening workflow assistant | [24-resume-screening-workflow-assistant](24-resume-screening-workflow-assistant/) |
+| AG-325 | Interview question planner | [25-interview-question-planner](25-interview-question-planner/) |
