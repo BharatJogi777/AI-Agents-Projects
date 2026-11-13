@@ -1,0 +1,13 @@
+[project]
+name = "44-crop-disease-literature-assistant"
+version = "0.1.0"
+description = "Crop disease literature assistant"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
