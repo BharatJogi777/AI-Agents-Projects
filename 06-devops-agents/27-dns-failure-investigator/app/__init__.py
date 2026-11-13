@@ -1,0 +1,1 @@
+"""DNS failure investigator package."""
