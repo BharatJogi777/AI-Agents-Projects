@@ -5206,7 +5206,7 @@
       "description": "Support a domain workflow with traceable inputs, policy boundaries, and human review for consequential decisions.",
       "pattern": "Human-supervised domain workflows with explicit evidence and permissions",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "07-domain-agents/41-agriculture-field-observation-assistant",
       "tags": [
         "business-and-industry-domain-agents",
@@ -5221,7 +5221,7 @@
       "description": "Support a domain workflow with traceable inputs, policy boundaries, and human review for consequential decisions.",
       "pattern": "Human-supervised domain workflows with explicit evidence and permissions",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "07-domain-agents/42-farm-operations-planning-agent",
       "tags": [
         "business-and-industry-domain-agents",
@@ -5236,7 +5236,7 @@
       "description": "Support a domain workflow with traceable inputs, policy boundaries, and human review for consequential decisions.",
       "pattern": "Human-supervised domain workflows with explicit evidence and permissions",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "07-domain-agents/43-irrigation-schedule-advisor",
       "tags": [
         "business-and-industry-domain-agents",
@@ -5251,7 +5251,7 @@
       "description": "Support a domain workflow with traceable inputs, policy boundaries, and human review for consequential decisions.",
       "pattern": "Human-supervised domain workflows with explicit evidence and permissions",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "07-domain-agents/44-crop-disease-literature-assistant",
       "tags": [
         "business-and-industry-domain-agents",
@@ -5266,7 +5266,7 @@
       "description": "Support a domain workflow with traceable inputs, policy boundaries, and human review for consequential decisions.",
       "pattern": "Human-supervised domain workflows with explicit evidence and permissions",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "07-domain-agents/45-education-tutor-workflow",
       "tags": [
         "business-and-industry-domain-agents",
