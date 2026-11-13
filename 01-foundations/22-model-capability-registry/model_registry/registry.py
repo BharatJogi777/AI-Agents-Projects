@@ -1,25 +1,81 @@
-from .contracts import ModelCapabilities
+"""Thread-safe capability catalogue with deterministic selection."""
+from __future__ import annotations
+
+from threading import RLock
+from typing import Iterable
+
+from .contracts import CapabilityRequirement, ModelCapabilities
+from .errors import DuplicateModelError, ModelNotFoundError
+
 
 class CapabilityRegistry:
-    """In-memory registry populated from verified provider metadata."""
-    def __init__(self): self._models={}
-    def register(self,item:ModelCapabilities):
-        if not isinstance(item,ModelCapabilities): raise TypeError("item must be ModelCapabilities")
-        if item.model_id in self._models: raise ValueError(f"duplicate model: {item.model_id}")
-        self._models[item.model_id]=item
-    def get(self,model_id:str)->ModelCapabilities:
-        try: return self._models[model_id]
-        except KeyError as exc: raise KeyError(f"unknown model: {model_id}") from exc
-    def select(self,*,provider:str|None=None,tools:bool=False,json_schema:bool=False,vision:bool=False,streaming:bool=False,min_context:int=1)->list[ModelCapabilities]:
-        if type(min_context) is not int or min_context<1: raise ValueError("min_context must be a positive integer")
-        requirements=(tools,json_schema,vision,streaming)
-        if any(type(v) is not bool for v in requirements): raise TypeError("capability filters must be booleans")
-        matches=[]
-        for model in self._models.values():
-            if provider and provider not in model.providers: continue
-            if tools and not model.supports_tools: continue
-            if json_schema and not model.supports_json_schema: continue
-            if vision and not model.supports_vision: continue
-            if streaming and not model.supports_streaming: continue
-            if model.context_tokens>=min_context: matches.append(model)
-        return sorted(matches,key=lambda item:(-item.context_tokens,item.model_id))
+    """In-memory registry. Registration is explicit; there is no name-based guessing."""
+
+    def __init__(self, models: Iterable[ModelCapabilities] = ()) -> None:
+        self._lock = RLock()
+        self._models: dict[str, ModelCapabilities] = {}
+        self.register_many(models)
+
+    def register(self, item: ModelCapabilities, *, replace: bool = False) -> None:
+        self.register_many((item,), replace=replace)
+
+    def register_many(self, items: Iterable[ModelCapabilities], *, replace: bool = False) -> None:
+        """Validate the whole batch before mutating, so a bad batch is atomic."""
+        batch = tuple(items)
+        if any(not isinstance(item, ModelCapabilities) for item in batch):
+            raise TypeError("all registry entries must be ModelCapabilities")
+        ids = [item.model_id for item in batch]
+        if len(ids) != len(set(ids)):
+            raise DuplicateModelError("batch contains duplicate model IDs")
+        with self._lock:
+            conflicts = set(ids).intersection(self._models)
+            if conflicts and not replace:
+                raise DuplicateModelError(f"models already registered: {', '.join(sorted(conflicts))}")
+            updated = dict(self._models)
+            updated.update((item.model_id, item) for item in batch)
+            self._models = updated
+
+    def get(self, model_id: str) -> ModelCapabilities:
+        with self._lock:
+            try:
+                return self._models[model_id]
+            except KeyError as exc:
+                raise ModelNotFoundError(model_id) from exc
+
+    def remove(self, model_id: str) -> ModelCapabilities:
+        with self._lock:
+            try:
+                return self._models.pop(model_id)
+            except KeyError as exc:
+                raise ModelNotFoundError(model_id) from exc
+
+    def list_models(self) -> tuple[ModelCapabilities, ...]:
+        with self._lock:
+            return tuple(self._models[key] for key in sorted(self._models))
+
+    def select(self, requirement: CapabilityRequirement) -> tuple[ModelCapabilities, ...]:
+        if not isinstance(requirement, CapabilityRequirement):
+            raise TypeError("requirement must be CapabilityRequirement")
+        with self._lock:
+            candidates = tuple(self._models.values())
+        matches = [
+            model for model in candidates
+            if (requirement.provider is None or requirement.provider in model.providers)
+            and requirement.required_capabilities.issubset(model.capabilities)
+            and requirement.required_input_modalities.issubset(model.input_modalities)
+            and requirement.required_output_modalities.issubset(model.output_modalities)
+            and model.context_tokens >= requirement.min_context_tokens
+            and model.max_output_tokens >= requirement.min_output_tokens
+        ]
+        # Prefer the smallest model that satisfies the request only if the caller
+        # can supply a cost signal; absent that, maximize usable context/output.
+        return tuple(sorted(matches, key=lambda m: (-m.context_tokens, -m.max_output_tokens, m.model_id)))
+
+    def resolve(self, model_id: str, provider: str) -> tuple[ModelCapabilities, str]:
+        """Resolve canonical identity to the concrete provider model identifier."""
+        model = self.get(model_id)
+        return model, model.provider_model_id(provider)
+
+    def __len__(self) -> int:
+        with self._lock:
+            return len(self._models)
