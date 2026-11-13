@@ -1,0 +1,1 @@
+Validate purchase request line items, calculate totals and produce a draft PO summary without submitting it.
