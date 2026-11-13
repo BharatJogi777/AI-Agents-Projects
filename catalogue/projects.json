@@ -4906,7 +4906,7 @@
       "description": "Support a domain workflow with traceable inputs, policy boundaries, and human review for consequential decisions.",
       "pattern": "Human-supervised domain workflows with explicit evidence and permissions",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "07-domain-agents/21-legal-intake-triage-assistant",
       "tags": [
         "business-and-industry-domain-agents",
@@ -4921,7 +4921,7 @@
       "description": "Support a domain workflow with traceable inputs, policy boundaries, and human review for consequential decisions.",
       "pattern": "Human-supervised domain workflows with explicit evidence and permissions",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "07-domain-agents/22-compliance-evidence-collector",
       "tags": [
         "business-and-industry-domain-agents",
@@ -4936,7 +4936,7 @@
       "description": "Support a domain workflow with traceable inputs, policy boundaries, and human review for consequential decisions.",
       "pattern": "Human-supervised domain workflows with explicit evidence and permissions",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "07-domain-agents/23-hr-policy-q-a-assistant",
       "tags": [
         "business-and-industry-domain-agents",
@@ -4951,7 +4951,7 @@
       "description": "Support a domain workflow with traceable inputs, policy boundaries, and human review for consequential decisions.",
       "pattern": "Human-supervised domain workflows with explicit evidence and permissions",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "07-domain-agents/24-resume-screening-workflow-assistant",
       "tags": [
         "business-and-industry-domain-agents",
@@ -4966,7 +4966,7 @@
       "description": "Support a domain workflow with traceable inputs, policy boundaries, and human review for consequential decisions.",
       "pattern": "Human-supervised domain workflows with explicit evidence and permissions",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "07-domain-agents/25-interview-question-planner",
       "tags": [
         "business-and-industry-domain-agents",
