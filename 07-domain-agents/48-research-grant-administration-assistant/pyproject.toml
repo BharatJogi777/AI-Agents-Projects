@@ -1,0 +1,13 @@
+[project]
+name = "48-research-grant-administration-assistant"
+version = "0.1.0"
+description = "Research grant administration assistant"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
