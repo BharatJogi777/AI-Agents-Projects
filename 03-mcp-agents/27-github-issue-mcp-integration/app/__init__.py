@@ -1,0 +1,1 @@
+"""GitHub issue API boundary primitives."""
