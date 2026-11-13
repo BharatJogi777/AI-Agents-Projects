@@ -4381,7 +4381,7 @@
       "description": "Investigate operational signals with read-only access by default. Any remediation must be narrowly scoped and approval-gated.",
       "pattern": "Read-only diagnostics first, bounded remediation, incident workflows",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "06-devops-agents/36-slo-burn-rate-explainer",
       "tags": [
         "devops-sre-and-cloud-operations-agents",
@@ -4396,7 +4396,7 @@
       "description": "Investigate operational signals with read-only access by default. Any remediation must be narrowly scoped and approval-gated.",
       "pattern": "Read-only diagnostics first, bounded remediation, incident workflows",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "06-devops-agents/37-error-budget-status-assistant",
       "tags": [
         "devops-sre-and-cloud-operations-agents",
@@ -4411,7 +4411,7 @@
       "description": "Investigate operational signals with read-only access by default. Any remediation must be narrowly scoped and approval-gated.",
       "pattern": "Read-only diagnostics first, bounded remediation, incident workflows",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "06-devops-agents/38-capacity-forecasting-assistant",
       "tags": [
         "devops-sre-and-cloud-operations-agents",
@@ -4426,7 +4426,7 @@
       "description": "Investigate operational signals with read-only access by default. Any remediation must be narrowly scoped and approval-gated.",
       "pattern": "Read-only diagnostics first, bounded remediation, incident workflows",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "06-devops-agents/39-autoscaling-recommendation-agent",
       "tags": [
         "devops-sre-and-cloud-operations-agents",
@@ -4441,7 +4441,7 @@
       "description": "Investigate operational signals with read-only access by default. Any remediation must be narrowly scoped and approval-gated.",
       "pattern": "Read-only diagnostics first, bounded remediation, incident workflows",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "06-devops-agents/40-deployment-risk-assessor",
       "tags": [
         "devops-sre-and-cloud-operations-agents",
