@@ -4681,7 +4681,7 @@
       "description": "Support a domain workflow with traceable inputs, policy boundaries, and human review for consequential decisions.",
       "pattern": "Human-supervised domain workflows with explicit evidence and permissions",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "07-domain-agents/06-subscription-cancellation-assistant",
       "tags": [
         "business-and-industry-domain-agents",
@@ -4696,7 +4696,7 @@
       "description": "Support a domain workflow with traceable inputs, policy boundaries, and human review for consequential decisions.",
       "pattern": "Human-supervised domain workflows with explicit evidence and permissions",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "07-domain-agents/07-sales-lead-qualification-agent",
       "tags": [
         "business-and-industry-domain-agents",
@@ -4711,7 +4711,7 @@
       "description": "Support a domain workflow with traceable inputs, policy boundaries, and human review for consequential decisions.",
       "pattern": "Human-supervised domain workflows with explicit evidence and permissions",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "07-domain-agents/08-sales-call-preparation-assistant",
       "tags": [
         "business-and-industry-domain-agents",
@@ -4726,7 +4726,7 @@
       "description": "Support a domain workflow with traceable inputs, policy boundaries, and human review for consequential decisions.",
       "pattern": "Human-supervised domain workflows with explicit evidence and permissions",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "07-domain-agents/09-crm-data-enrichment-agent",
       "tags": [
         "business-and-industry-domain-agents",
@@ -4741,7 +4741,7 @@
       "description": "Support a domain workflow with traceable inputs, policy boundaries, and human review for consequential decisions.",
       "pattern": "Human-supervised domain workflows with explicit evidence and permissions",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "07-domain-agents/10-account-health-summarizer",
       "tags": [
         "business-and-industry-domain-agents",
