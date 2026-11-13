@@ -50,3 +50,14 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-263 | Kubernetes resource advisor | [13-kubernetes-resource-advisor](13-kubernetes-resource-advisor/) |
 | AG-264 | Kubernetes capacity planner | [14-kubernetes-capacity-planner](14-kubernetes-capacity-planner/) |
 | AG-265 | Kubernetes manifest security reviewer | [15-kubernetes-manifest-security-reviewer](15-kubernetes-manifest-security-reviewer/) |
+
+
+## Implemented projects (AG-266–AG-270)
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-266 | Docker image inspection agent | [16-docker-image-inspection-agent](16-docker-image-inspection-agent/) |
+| AG-267 | Container startup failure investigator | [17-container-startup-failure-investigator](17-container-startup-failure-investigator/) |
+| AG-268 | Helm values reviewer | [18-helm-values-reviewer](18-helm-values-reviewer/) |
+| AG-269 | Terraform plan reviewer | [19-terraform-plan-reviewer](19-terraform-plan-reviewer/) |
+| AG-270 | Terraform drift explainer | [20-terraform-drift-explainer](20-terraform-drift-explainer/) |
