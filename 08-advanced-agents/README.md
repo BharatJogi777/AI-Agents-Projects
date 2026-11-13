@@ -39,3 +39,14 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-358 | [Visual UI regression investigator](./08-visual-ui-regression-investigator/) | In progress |
 | AG-359 | [Voice conversation agent](./09-voice-conversation-agent/) | In progress |
 | AG-360 | [Speech transcription task agent](./10-speech-transcription-task-agent/) | In progress |
+
+
+## Implemented project batch: AG-361–AG-365
+
+| ID | Project | Catalogue status |
+|---|---|---|
+| AG-361 | [Voice command intent router](./11-voice-command-intent-router/) | In progress |
+| AG-362 | [Text-to-speech response agent](./12-text-to-speech-response-agent/) | In progress |
+| AG-363 | [Meeting audio summarizer](./13-meeting-audio-summarizer/) | In progress |
+| AG-364 | [Call quality analysis assistant](./14-call-quality-analysis-assistant/) | In progress |
+| AG-365 | [Image understanding assistant](./15-image-understanding-assistant/) | In progress |
