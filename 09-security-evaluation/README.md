@@ -100,3 +100,13 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-438 | Prompt version regression tester | [Project](38-prompt-version-regression-tester/) |
 | AG-439 | Cost and token usage evaluator | [Project](39-cost-and-token-usage-evaluator/) |
 | AG-440 | Latency and throughput benchmark | [Project](40-latency-and-throughput-benchmark/) |
+
+## Implemented projects (AG-441–AG-445)
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-441 | Model comparison benchmark | [Project](41-model-comparison-benchmark/) |
+| AG-442 | Small-model capability benchmark | [Project](42-small-model-capability-benchmark/) |
+| AG-443 | Fallback behavior test suite | [Project](43-fallback-behavior-test-suite/) |
+| AG-444 | Timeout and cancellation test suite | [Project](44-timeout-and-cancellation-test-suite/) |
+| AG-445 | Rate limit resilience test suite | [Project](45-rate-limit-resilience-test-suite/) |
