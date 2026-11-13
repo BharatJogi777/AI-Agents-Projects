@@ -5056,7 +5056,7 @@
       "description": "Support a domain workflow with traceable inputs, policy boundaries, and human review for consequential decisions.",
       "pattern": "Human-supervised domain workflows with explicit evidence and permissions",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "07-domain-agents/31-travel-itinerary-planner",
       "tags": [
         "business-and-industry-domain-agents",
@@ -5071,7 +5071,7 @@
       "description": "Support a domain workflow with traceable inputs, policy boundaries, and human review for consequential decisions.",
       "pattern": "Human-supervised domain workflows with explicit evidence and permissions",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "07-domain-agents/32-travel-expense-audit-assistant",
       "tags": [
         "business-and-industry-domain-agents",
@@ -5086,7 +5086,7 @@
       "description": "Support a domain workflow with traceable inputs, policy boundaries, and human review for consequential decisions.",
       "pattern": "Human-supervised domain workflows with explicit evidence and permissions",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "07-domain-agents/33-retail-product-discovery-assistant",
       "tags": [
         "business-and-industry-domain-agents",
@@ -5101,7 +5101,7 @@
       "description": "Support a domain workflow with traceable inputs, policy boundaries, and human review for consequential decisions.",
       "pattern": "Human-supervised domain workflows with explicit evidence and permissions",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "07-domain-agents/34-retail-inventory-exception-agent",
       "tags": [
         "business-and-industry-domain-agents",
@@ -5116,7 +5116,7 @@
       "description": "Support a domain workflow with traceable inputs, policy boundaries, and human review for consequential decisions.",
       "pattern": "Human-supervised domain workflows with explicit evidence and permissions",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "07-domain-agents/35-demand-planning-assistant",
       "tags": [
         "business-and-industry-domain-agents",
