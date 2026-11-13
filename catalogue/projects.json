@@ -2236,7 +2236,7 @@
       "description": "Expose or consume a typed capability through MCP. Enforce authorization, timeouts, validation, and auditable tool execution.",
       "pattern": "MCP servers, clients, discovery, transport, permissions, and resilience",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "03-mcp-agents/43-mcp-server-conformance-tester",
       "tags": [
         "mcp-and-tool-integration",
@@ -2251,7 +2251,7 @@
       "description": "Expose or consume a typed capability through MCP. Enforce authorization, timeouts, validation, and auditable tool execution.",
       "pattern": "MCP servers, clients, discovery, transport, permissions, and resilience",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "03-mcp-agents/44-mcp-prompt-injection-boundary-demo",
       "tags": [
         "mcp-and-tool-integration",
@@ -2266,7 +2266,7 @@
       "description": "Expose or consume a typed capability through MCP. Enforce authorization, timeouts, validation, and auditable tool execution.",
       "pattern": "MCP servers, clients, discovery, transport, permissions, and resilience",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "03-mcp-agents/45-mcp-secret-redaction-middleware",
       "tags": [
         "mcp-and-tool-integration",
@@ -2281,7 +2281,7 @@
       "description": "Expose or consume a typed capability through MCP. Enforce authorization, timeouts, validation, and auditable tool execution.",
       "pattern": "MCP servers, clients, discovery, transport, permissions, and resilience",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "03-mcp-agents/46-mcp-multi-tenant-isolation-demo",
       "tags": [
         "mcp-and-tool-integration",
@@ -2296,7 +2296,7 @@
       "description": "Expose or consume a typed capability through MCP. Enforce authorization, timeouts, validation, and auditable tool execution.",
       "pattern": "MCP servers, clients, discovery, transport, permissions, and resilience",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "03-mcp-agents/47-mcp-server-deployment-template",
       "tags": [
         "mcp-and-tool-integration",
