@@ -79,3 +79,9 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-333 | Retail product discovery assistant | [33-retail-product-discovery-assistant](33-retail-product-discovery-assistant/) |
 | AG-334 | Retail inventory exception agent | [34-retail-inventory-exception-agent](34-retail-inventory-exception-agent/) |
 | AG-335 | Demand planning assistant | [35-demand-planning-assistant](35-demand-planning-assistant/) |
+
+| AG-336 | Supply-chain disruption monitor | [36-supply-chain-disruption-monitor](36-supply-chain-disruption-monitor/) |
+| AG-337 | Shipment exception investigator | [37-shipment-exception-investigator](37-shipment-exception-investigator/) |
+| AG-338 | Delivery route planning assistant | [38-delivery-route-planning-assistant](38-delivery-route-planning-assistant/) |
+| AG-339 | Fleet maintenance assistant | [39-fleet-maintenance-assistant](39-fleet-maintenance-assistant/) |
+| AG-340 | Warehouse slotting assistant | [40-warehouse-slotting-assistant](40-warehouse-slotting-assistant/) |
