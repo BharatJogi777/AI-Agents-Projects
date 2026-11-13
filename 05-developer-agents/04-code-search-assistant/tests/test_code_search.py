@@ -10,5 +10,5 @@ def test_literal_search_and_limits(tmp_path):
 def test_regex_and_bad_pattern(tmp_path):
     import pytest
     (tmp_path/"a.py").write_text("item_123")
-    assert len(search_code(tmp_path,r"item_\\d+",regex=True)) == 1
+    assert len(search_code(tmp_path,r"item_\d+",regex=True)) == 1
     with pytest.raises(ValueError): search_code(tmp_path,"[",regex=True)
