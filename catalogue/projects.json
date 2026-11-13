@@ -5956,7 +5956,7 @@
       "description": "Explore advanced interaction modes and durable workflows while preserving clear user control and safe interruption.",
       "pattern": "Browser, voice, multimodal, event-driven, and long-running agents",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "08-advanced-agents/41-natural-language-dashboard-assistant",
       "tags": [
         "advanced-interfaces-and-autonomous-workflows",
@@ -5971,7 +5971,7 @@
       "description": "Explore advanced interaction modes and durable workflows while preserving clear user control and safe interruption.",
       "pattern": "Browser, voice, multimodal, event-driven, and long-running agents",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "08-advanced-agents/42-mobile-app-task-assistant-prototype",
       "tags": [
         "advanced-interfaces-and-autonomous-workflows",
@@ -5986,7 +5986,7 @@
       "description": "Explore advanced interaction modes and durable workflows while preserving clear user control and safe interruption.",
       "pattern": "Browser, voice, multimodal, event-driven, and long-running agents",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "08-advanced-agents/43-desktop-workflow-assistant-prototype",
       "tags": [
         "advanced-interfaces-and-autonomous-workflows",
@@ -6001,7 +6001,7 @@
       "description": "Explore advanced interaction modes and durable workflows while preserving clear user control and safe interruption.",
       "pattern": "Browser, voice, multimodal, event-driven, and long-running agents",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "08-advanced-agents/44-iot-device-monitoring-assistant",
       "tags": [
         "advanced-interfaces-and-autonomous-workflows",
@@ -6016,7 +6016,7 @@
       "description": "Explore advanced interaction modes and durable workflows while preserving clear user control and safe interruption.",
       "pattern": "Browser, voice, multimodal, event-driven, and long-running agents",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "08-advanced-agents/45-smart-home-routine-planner",
       "tags": [
         "advanced-interfaces-and-autonomous-workflows",
