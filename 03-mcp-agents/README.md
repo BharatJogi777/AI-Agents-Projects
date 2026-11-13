@@ -40,3 +40,10 @@ See [AG-101 README](01-first-mcp-server-with-typed-tools/README.md). It uses the
 | AG-115 | MCP cancellation propagation | Shared cancellation signal and task cancellation handling |
 | AG-116 | MCP authorization gateway | Fail-closed principal and role authorization with audit events |
 | AG-117 | Per-tool permission policy | Exact tool/action/role policy evaluation |
+
+
+| AG-118 | MCP audit logging server | Allowlisted JSONL audit events and protected file creation |
+| AG-119 | MCP rate-limited tool server | Per-principal/tool token bucket limiter |
+| AG-120 | MCP pagination tool server | Bounded page metadata and validated offsets |
+| AG-121 | MCP file metadata server | Root-confined file metadata inspection |
+| AG-122 | Read-only filesystem MCP server | Confined, bounded, read-only workspace access |
