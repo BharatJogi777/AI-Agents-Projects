@@ -27,3 +27,8 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-153 | [Parallel task executor](03-parallel-task-executor/) | In progress — implementation and tests authored; execution verification pending |
 | AG-154 | [Fan-out fan-in research workflow](04-fan-out-fan-in-research-workflow/) | In progress — implementation and tests authored; execution verification pending |
 | AG-155 | [Planner-executor graph](05-planner-executor-graph/) | In progress — implementation and tests authored; execution verification pending |
+| AG-156 | [Plan-and-replan workflow](06-plan-and-replan-workflow/) | In progress — implementation and tests authored; execution verification pending |
+| AG-157 | [Supervisor-worker team](07-supervisor-worker-team/) | In progress — implementation and tests authored; execution verification pending |
+| AG-158 | [Hierarchical agent team](08-hierarchical-agent-team/) | In progress — implementation and tests authored; execution verification pending |
+| AG-159 | [Researcher-writer-editor team](09-researcher-writer-editor-team/) | In progress — implementation and tests authored; execution verification pending |
+| AG-160 | [Debate and consensus workflow](10-debate-and-consensus-workflow/) | In progress — implementation and tests authored; execution verification pending |
