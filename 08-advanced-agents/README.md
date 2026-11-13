@@ -107,3 +107,11 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-393 | Desktop workflow assistant prototype | [43-desktop-workflow-assistant-prototype](./43-desktop-workflow-assistant-prototype/) |
 | AG-394 | IoT device monitoring assistant | [44-iot-device-monitoring-assistant](./44-iot-device-monitoring-assistant/) |
 | AG-395 | Smart home routine planner | [45-smart-home-routine-planner](./45-smart-home-routine-planner/) |
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-396 | Robotics task planner simulator | [46-robotics-task-planner-simulator](./46-robotics-task-planner-simulator/) |
+| AG-397 | Game-playing strategy agent | [47-game-playing-strategy-agent](./47-game-playing-strategy-agent/) |
+| AG-398 | Simulation environment operator | [48-simulation-environment-operator](./48-simulation-environment-operator/) |
+| AG-399 | Digital twin query assistant | [49-digital-twin-query-assistant](./49-digital-twin-query-assistant/) |
+| AG-400 | Autonomous workflow sandbox | [50-autonomous-workflow-sandbox](./50-autonomous-workflow-sandbox/) |
