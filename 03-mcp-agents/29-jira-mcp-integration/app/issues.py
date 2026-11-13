@@ -1,5 +1,6 @@
 """Typed, read-only Jira issue lookup using an injected transport."""
 from dataclasses import dataclass
+from base64 import b64encode
 from typing import Protocol
 
 class Response(Protocol):
@@ -24,7 +25,7 @@ class JiraIssues:
     def get_issue(self,key:str)->JiraIssue:
         if not key or len(key)>64 or not all(c.isalnum() or c in "-_" for c in key):
             raise ValueError("invalid Jira issue key")
-        response=self.client.get(f"{self.base_url}/rest/api/3/issue/{key}",headers={"Authorization":f"Basic {self.email}:{self.token}","Accept":"application/json"},params={"fields":"summary,status,issuetype"})
+        response=self.client.get(f"{self.base_url}/rest/api/3/issue/{key}",headers={"Authorization":"Basic "+b64encode(f"{self.email}:{self.token}".encode()).decode(),"Accept":"application/json"},params={"fields":"summary,status,issuetype"})
         if response.status_code!=200: raise RuntimeError(f"Jira returned HTTP {response.status_code}")
         data=response.json()
         try:
