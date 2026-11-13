@@ -1,0 +1,13 @@
+[project]
+name = "35-demand-planning-assistant"
+version = "0.1.0"
+description = "Demand planning assistant"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
