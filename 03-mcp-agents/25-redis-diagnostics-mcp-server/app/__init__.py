@@ -1,0 +1,1 @@
+"""Redis diagnostics output sanitization."""
