@@ -80,3 +80,13 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-428 | Tool execution success evaluator | [Project](28-tool-execution-success-evaluator/) |
 | AG-429 | Agent task completion evaluator | [Project](29-agent-task-completion-evaluator/) |
 | AG-430 | Multi-step trajectory evaluator | [Project](30-multi-step-trajectory-evaluator/) |
+
+## Implemented projects (AG-431–AG-435)
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-431 | LLM-as-judge calibration harness | [Project](31-llm-as-judge-calibration-harness/) |
+| AG-432 | Human evaluation review queue | [Project](32-human-evaluation-review-queue/) |
+| AG-433 | Golden dataset regression runner | [Project](33-golden-dataset-regression-runner/) |
+| AG-434 | Synthetic task dataset generator | [Project](34-synthetic-task-dataset-generator/) |
+| AG-435 | Adversarial test case generator | [Project](35-adversarial-test-case-generator/) |
