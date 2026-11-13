@@ -127,3 +127,14 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-293 | Change impact analyzer | [43-change-impact-analyzer](43-change-impact-analyzer/) |
 | AG-294 | Backup verification assistant | [44-backup-verification-assistant](44-backup-verification-assistant/) |
 | AG-295 | Disaster recovery drill planner | [45-disaster-recovery-drill-planner](45-disaster-recovery-drill-planner/) |
+
+
+## Implemented projects (AG-296–AG-300)
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-296 | Secrets rotation planner | [46-secrets-rotation-planner](46-secrets-rotation-planner/) |
+| AG-297 | Patch compliance assistant | [47-patch-compliance-assistant](47-patch-compliance-assistant/) |
+| AG-298 | Cloud cost optimization planner | [48-cloud-cost-optimization-planner](48-cloud-cost-optimization-planner/) |
+| AG-299 | Production readiness reviewer | [49-production-readiness-reviewer](49-production-readiness-reviewer/) |
+| AG-300 | Incident postmortem drafter | [50-incident-postmortem-drafter](50-incident-postmortem-drafter/) |
