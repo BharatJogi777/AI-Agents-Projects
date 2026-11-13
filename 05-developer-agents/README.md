@@ -72,3 +72,19 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-233 | Python code review assistant | [33-python-code-review-assistant](33-python-code-review-assistant/) |
 | AG-234 | TypeScript code review assistant | [34-typescript-code-review-assistant](34-typescript-code-review-assistant/) |
 | AG-235 | Concurrency bug investigator | [35-concurrency-bug-investigator](35-concurrency-bug-investigator/) |
+
+
+## Implemented projects (AG-236–AG-245)
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-236 | Deadlock explanation agent | [36-deadlock-explanation-agent](36-deadlock-explanation-agent/) |
+| AG-237 | Memory leak investigation assistant | [37-memory-leak-investigation-assistant](37-memory-leak-investigation-assistant/) |
+| AG-238 | Refactoring planner | [38-refactoring-planner](38-refactoring-planner/) |
+| AG-239 | Design pattern advisor | [39-design-pattern-advisor](39-design-pattern-advisor/) |
+| AG-240 | Documentation generator | [40-documentation-generator](40-documentation-generator/) |
+| AG-241 | Changelog generator | [41-changelog-generator](41-changelog-generator/) |
+| AG-242 | Release note assistant | [42-release-note-assistant](42-release-note-assistant/) |
+| AG-243 | Commit message assistant | [43-commit-message-assistant](43-commit-message-assistant/) |
+| AG-244 | Git conflict resolution guide | [44-git-conflict-resolution-guide](44-git-conflict-resolution-guide/) |
+| AG-245 | Build failure investigator | [45-build-failure-investigator](45-build-failure-investigator/) |
