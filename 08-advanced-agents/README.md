@@ -81,3 +81,13 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-378 | Long Running Workflow Monitor | [28-long-running-workflow-monitor](./28-long-running-workflow-monitor/) |
 | AG-379 | Background Task Progress Reporter | [29-background-task-progress-reporter](./29-background-task-progress-reporter/) |
 | AG-380 | Human Takeover Browser Workflow | [30-human-takeover-browser-workflow](./30-human-takeover-browser-workflow/) |
+
+## Projects 31–35
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-381 | Agent Session Handoff Manager | [31-agent-session-handoff-manager](./31-agent-session-handoff-manager/) |
+| AG-382 | Cross Session Task Continuation | [32-cross-session-task-continuation](./32-cross-session-task-continuation/) |
+| AG-383 | Personal Knowledge Assistant | [33-personal-knowledge-assistant](./33-personal-knowledge-assistant/) |
+| AG-384 | Personal Task Prioritization Assistant | [34-personal-task-prioritization-assistant](./34-personal-task-prioritization-assistant/) |
+| AG-385 | Daily Briefing Agent | [35-daily-briefing-agent](./35-daily-briefing-agent/) |
