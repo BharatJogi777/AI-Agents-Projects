@@ -17,3 +17,13 @@ This track contains 50 project specifications in the root [project catalogue](..
 ## Project status
 
 Projects are implemented in priority order. Check the catalogue for current status; do not infer status from a folder existing.
+
+## Implemented projects (AG-201–AG-205)
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-201 | Repository onboarding assistant | Bounded repository inventory, entrypoint and manifest discovery, generated-directory exclusions |
+| AG-202 | Codebase architecture explainer | Static Python AST analysis of imports, classes, functions, and modules |
+| AG-203 | Symbol and dependency explorer | Nested symbol extraction and import dependency discovery |
+| AG-204 | Code search assistant | Bounded literal/regex search across source files with line references |
+| AG-205 | Pull request summarizer | Unified-diff parsing, per-file change counts, binary-file detection |
