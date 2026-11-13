@@ -17,3 +17,14 @@ This track contains 50 project specifications in the root [project catalogue](..
 ## Project status
 
 Projects are implemented in priority order. Check the catalogue for current status; do not infer status from a folder existing.
+
+
+## Implemented projects (AG-401–AG-405)
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-401 | Agent threat modeling assistant | [Open project](../09-security-evaluation/01-agent-threat-modeling-assistant) |
+| AG-402 | Prompt injection test harness | [Open project](../09-security-evaluation/02-prompt-injection-test-harness) |
+| AG-403 | Indirect prompt injection evaluator | [Open project](../09-security-evaluation/03-indirect-prompt-injection-evaluator) |
+| AG-404 | Jailbreak regression suite | [Open project](../09-security-evaluation/04-jailbreak-regression-suite) |
+| AG-405 | Tool permission boundary tester | [Open project](../09-security-evaluation/05-tool-permission-boundary-tester) |
