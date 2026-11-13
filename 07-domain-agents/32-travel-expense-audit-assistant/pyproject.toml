@@ -1,0 +1,13 @@
+[project]
+name = "32-travel-expense-audit-assistant"
+version = "0.1.0"
+description = "Travel expense audit assistant"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
