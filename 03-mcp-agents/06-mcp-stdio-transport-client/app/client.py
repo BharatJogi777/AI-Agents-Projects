@@ -12,6 +12,13 @@ from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
 
 
+def parse_payload(raw: str) -> dict[str, Any]:
+    value = json.loads(raw)
+    if not isinstance(value, dict):
+        raise ValueError("arguments must decode to a JSON object")
+    return value
+
+
 def parse_arguments() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="MCP stdio transport demonstration")
     group = parser.add_mutually_exclusive_group(required=True)
@@ -42,11 +49,9 @@ async def run_client(*, tool_name: str | None = None, arguments: dict[str, Any] 
 async def main() -> None:
     args = parse_arguments()
     try:
-        payload = json.loads(args.arguments)
-    except json.JSONDecodeError as exc:
-        raise SystemExit(f"--arguments must be valid JSON: {exc}") from exc
-    if not isinstance(payload, dict):
-        raise SystemExit("--arguments must decode to a JSON object")
+        payload = parse_payload(args.arguments)
+    except (json.JSONDecodeError, ValueError) as exc:
+        raise SystemExit(f"--arguments must be a JSON object: {exc}") from exc
     result = await run_client(tool_name=args.tool if not args.list else None, arguments=payload)
     print(result)
 
