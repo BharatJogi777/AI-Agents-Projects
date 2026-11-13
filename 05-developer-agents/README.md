@@ -27,3 +27,9 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-203 | Symbol and dependency explorer | Nested symbol extraction and import dependency discovery |
 | AG-204 | Code search assistant | Bounded literal/regex search across source files with line references |
 | AG-205 | Pull request summarizer | Unified-diff parsing, per-file change counts, binary-file detection |
+
+| AG-206 | Pull request review assistant | `06-pull-request-review-assistant` |
+| AG-207 | Bug reproduction planner | `07-bug-reproduction-planner` |
+| AG-208 | Issue triage classifier | `08-issue-triage-classifier` |
+| AG-209 | Issue-to-plan agent | `09-issue-to-plan-agent` |
+| AG-210 | Feature implementation planner | `10-feature-implementation-planner` |
