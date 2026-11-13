@@ -61,3 +61,13 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-368 | [Product image catalog assistant](./18-product-image-catalog-assistant/) | In progress |
 | AG-369 | [Video chapter summarizer](./19-video-chapter-summarizer/) | In progress |
 | AG-370 | [Video event timeline assistant](./20-video-event-timeline-assistant/) | In progress |
+
+## Projects 21–25
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-371 | Multimodal Document Assistant | [21-multimodal-document-assistant](./21-multimodal-document-assistant/) |
+| AG-372 | Audio Video Meeting Assistant | [22-audio-video-meeting-assistant](./22-audio-video-meeting-assistant/) |
+| AG-373 | Event Triggered Inbox Agent | [23-event-triggered-inbox-agent](./23-event-triggered-inbox-agent/) |
+| AG-374 | Scheduled Report Generation Agent | [24-scheduled-report-generation-agent](./24-scheduled-report-generation-agent/) |
+| AG-375 | Webhook Triggered Workflow Agent | [25-webhook-triggered-workflow-agent](./25-webhook-triggered-workflow-agent/) |
