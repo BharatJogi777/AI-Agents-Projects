@@ -6406,7 +6406,7 @@
       "description": "Measure and improve agent security, reliability, privacy, and quality with repeatable tests and evidence.",
       "pattern": "Threat modeling, policy enforcement, testing, evaluation, and auditability",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "09-security-evaluation/21-model-output-schema-conformance-suite",
       "tags": [
         "security-governance-and-evaluation",
@@ -6421,7 +6421,7 @@
       "description": "Measure and improve agent security, reliability, privacy, and quality with repeatable tests and evidence.",
       "pattern": "Threat modeling, policy enforcement, testing, evaluation, and auditability",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "09-security-evaluation/22-hallucination-evaluation-harness",
       "tags": [
         "security-governance-and-evaluation",
@@ -6436,7 +6436,7 @@
       "description": "Measure and improve agent security, reliability, privacy, and quality with repeatable tests and evidence.",
       "pattern": "Threat modeling, policy enforcement, testing, evaluation, and auditability",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "09-security-evaluation/23-groundedness-scoring-evaluator",
       "tags": [
         "security-governance-and-evaluation",
@@ -6451,7 +6451,7 @@
       "description": "Measure and improve agent security, reliability, privacy, and quality with repeatable tests and evidence.",
       "pattern": "Threat modeling, policy enforcement, testing, evaluation, and auditability",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "09-security-evaluation/24-citation-correctness-evaluator",
       "tags": [
         "security-governance-and-evaluation",
@@ -6466,7 +6466,7 @@
       "description": "Measure and improve agent security, reliability, privacy, and quality with repeatable tests and evidence.",
       "pattern": "Threat modeling, policy enforcement, testing, evaluation, and auditability",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "09-security-evaluation/25-answer-relevance-evaluator",
       "tags": [
         "security-governance-and-evaluation",
