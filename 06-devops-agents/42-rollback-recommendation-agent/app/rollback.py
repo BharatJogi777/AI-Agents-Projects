@@ -1,24 +1,20 @@
-"""Decision support for rollback; never executes a rollback."""
 from dataclasses import dataclass
-
 @dataclass(frozen=True)
-class RollbackAdvice:
-    action: str
-    reasons: tuple[str,...]
-    requires_human_approval: bool=True
-
-def recommend_rollback(*, error_rate: float, baseline_error_rate: float, latency_p95_ms: float, baseline_latency_p95_ms: float, impact_minutes: int, rollback_tested: bool, data_compatible: bool, customer_impact: bool=False) -> RollbackAdvice:
-    for name,v in (("error_rate",error_rate),("baseline_error_rate",baseline_error_rate)):
-        if isinstance(v,bool) or not isinstance(v,(int,float)) or not 0<=v<=1: raise ValueError(f"{name} must be in [0,1]")
-    for name,v in (("latency_p95_ms",latency_p95_ms),("baseline_latency_p95_ms",baseline_latency_p95_ms)):
-        if isinstance(v,bool) or not isinstance(v,(int,float)) or v<0: raise ValueError(f"{name} must be non-negative")
-    if isinstance(impact_minutes,bool) or not isinstance(impact_minutes,int) or impact_minutes<0: raise ValueError("impact_minutes must be non-negative")
-    if any(not isinstance(v,bool) for v in (rollback_tested,data_compatible,customer_impact)): raise ValueError("readiness and impact flags must be booleans")
-    reasons=[]
-    if error_rate>max(baseline_error_rate*2,baseline_error_rate+0.01): reasons.append("Error rate is materially above baseline.")
-    if latency_p95_ms>max(baseline_latency_p95_ms*1.5,baseline_latency_p95_ms+100): reasons.append("P95 latency is materially above baseline.")
-    if impact_minutes>=5: reasons.append("Impact has persisted for at least five minutes.")
-    if customer_impact: reasons.append("Customer impact is reported.")
-    if not reasons: return RollbackAdvice("continue_monitoring",("No configured regression trigger was detected.",))
-    if not rollback_tested or not data_compatible: return RollbackAdvice("hold_and_escalate",tuple(reasons+["Rollback readiness or data compatibility is not confirmed; assess a safe mitigation with the owner."]))
-    return RollbackAdvice("consider_rollback_with_approval",tuple(reasons+["Rollback appears technically prepared but requires incident-owner approval."]))
+class RollbackRecommendation:
+ decision:str
+ score:int
+ reasons:tuple[str,...]
+ requires_human_approval:bool=True
+def recommend_rollback(*,error_rate_percent:float,baseline_error_rate_percent:float,latency_p95_ms:float,baseline_latency_p95_ms:float,failed_health_checks:int,customer_impact:bool,rollback_available:bool)->RollbackRecommendation:
+ nums=(error_rate_percent,baseline_error_rate_percent,latency_p95_ms,baseline_latency_p95_ms)
+ if any(isinstance(x,bool) or not isinstance(x,(int,float)) or x<0 for x in nums): raise ValueError('rates and latency must be non-negative')
+ if isinstance(failed_health_checks,bool) or not isinstance(failed_health_checks,int) or failed_health_checks<0: raise ValueError('failed_health_checks must be non-negative integer')
+ if not isinstance(customer_impact,bool) or not isinstance(rollback_available,bool): raise ValueError('flags must be boolean')
+ score=0; reasons=[]
+ if error_rate_percent>max(baseline_error_rate_percent*2,baseline_error_rate_percent+1): score+=35; reasons.append('Error rate materially exceeds baseline')
+ if latency_p95_ms>max(baseline_latency_p95_ms*1.5,baseline_latency_p95_ms+100): score+=25; reasons.append('p95 latency materially exceeds baseline')
+ if failed_health_checks>=2: score+=25; reasons.append('Multiple health checks are failing')
+ if customer_impact: score+=25; reasons.append('Customer impact reported')
+ if not rollback_available: reasons.append('Rollback unavailable; escalate to incident command')
+ decision='rollback_review_urgent' if score>=50 and rollback_available else 'investigate_and_hold' if score>=25 or not rollback_available else 'continue_observation'
+ return RollbackRecommendation(decision,min(score,100),tuple(reasons))
