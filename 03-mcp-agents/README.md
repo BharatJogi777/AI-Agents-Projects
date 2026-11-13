@@ -36,7 +36,12 @@ This track contains 50 project specifications in the root [project catalogue](..
 | AG-135 | [Docker inspection MCP server](35-docker-inspection-mcp-server/) | In progress — implementation and tests authored; execution verification pending |
 | AG-136 | [Observability query MCP server](36-observability-query-mcp-server/) | In progress — implementation and tests authored; execution verification pending |
 | AG-137 | [Prometheus MCP integration](37-prometheus-mcp-integration/) | In progress — implementation and tests authored; execution verification pending |
-| AG-138–AG-150 | Remaining MCP projects | Planned |
+| AG-138 | [Grafana dashboard MCP tool](38-grafana-dashboard-mcp-tool/) | In progress — implementation and tests authored; execution verification pending |
+| AG-139 | [Browser search MCP server](39-browser-search-mcp-server/) | In progress — implementation and tests authored; execution verification pending |
+| AG-140 | [Internal REST API MCP adapter](40-internal-rest-api-mcp-adapter/) | In progress — implementation and tests authored; execution verification pending |
+| AG-141 | [OpenAPI-to-MCP tool generator](41-openapi-to-mcp-tool-generator/) | In progress — implementation and tests authored; execution verification pending |
+| AG-142 | [MCP tool contract test harness](42-mcp-tool-contract-test-harness/) | In progress — implementation and tests authored; execution verification pending |
+| AG-143–AG-150 | Remaining MCP projects | Planned |
 
 ## How to run AG-101
 
