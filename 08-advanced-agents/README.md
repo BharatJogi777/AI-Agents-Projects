@@ -28,3 +28,14 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-353 | [Browser navigation state tracker](./03-browser-navigation-state-tracker/) | In progress |
 | AG-354 | [Web page change monitor](./04-web-page-change-monitor/) | In progress |
 | AG-355 | [Multi-site comparison agent](./05-multi-site-comparison-agent/) | In progress |
+
+
+## Implemented project batch: AG-356–AG-360
+
+| ID | Project | Catalogue status |
+|---|---|---|
+| AG-356 | [Accessible browser interaction assistant](./06-accessible-browser-interaction-assistant/) | In progress |
+| AG-357 | [Screenshot-to-UI explanation agent](./07-screenshot-to-ui-explanation-agent/) | In progress |
+| AG-358 | [Visual UI regression investigator](./08-visual-ui-regression-investigator/) | In progress |
+| AG-359 | [Voice conversation agent](./09-voice-conversation-agent/) | In progress |
+| AG-360 | [Speech transcription task agent](./10-speech-transcription-task-agent/) | In progress |
