@@ -42,3 +42,8 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-168 | [Checkpointed workflow agent](18-checkpointed-workflow-agent/) | In progress — implementation and tests authored; execution verification pending |
 | AG-169 | [Persistent workflow state store](19-persistent-workflow-state-store/) | In progress — implementation and tests authored; execution verification pending |
 | AG-170 | [Workflow resume after restart](20-workflow-resume-after-restart/) | In progress — implementation and tests authored; execution verification pending |
+| AG-171 | [Long-running task coordinator](21-long-running-task-coordinator/) | In progress — implementation and tests authored; execution verification pending |
+| AG-172 | [Durable job queue agent](22-durable-job-queue-agent/) | In progress — implementation and tests authored; execution verification pending |
+| AG-173 | [Compensating action workflow](23-compensating-action-workflow/) | In progress — implementation and tests authored; execution verification pending |
+| AG-174 | [Saga-style agent workflow](24-saga-style-agent-workflow/) | In progress — implementation and tests authored; execution verification pending |
+| AG-175 | [Idempotent workflow step runner](25-idempotent-workflow-step-runner/) | In progress — implementation and tests authored; execution verification pending |
