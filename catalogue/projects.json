@@ -3631,7 +3631,7 @@
       "description": "Assist a software engineering task using repository context and controlled tools. Never apply or merge consequential changes without review.",
       "pattern": "Repository understanding, coding support, testing, review, and delivery",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "05-developer-agents/36-deadlock-explanation-agent",
       "tags": [
         "developer-and-software-engineering-agents",
@@ -3646,7 +3646,7 @@
       "description": "Assist a software engineering task using repository context and controlled tools. Never apply or merge consequential changes without review.",
       "pattern": "Repository understanding, coding support, testing, review, and delivery",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "05-developer-agents/37-memory-leak-investigation-assistant",
       "tags": [
         "developer-and-software-engineering-agents",
@@ -3661,7 +3661,7 @@
       "description": "Assist a software engineering task using repository context and controlled tools. Never apply or merge consequential changes without review.",
       "pattern": "Repository understanding, coding support, testing, review, and delivery",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "05-developer-agents/38-refactoring-planner",
       "tags": [
         "developer-and-software-engineering-agents",
@@ -3676,7 +3676,7 @@
       "description": "Assist a software engineering task using repository context and controlled tools. Never apply or merge consequential changes without review.",
       "pattern": "Repository understanding, coding support, testing, review, and delivery",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "05-developer-agents/39-design-pattern-advisor",
       "tags": [
         "developer-and-software-engineering-agents",
@@ -3691,7 +3691,7 @@
       "description": "Assist a software engineering task using repository context and controlled tools. Never apply or merge consequential changes without review.",
       "pattern": "Repository understanding, coding support, testing, review, and delivery",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "05-developer-agents/40-documentation-generator",
       "tags": [
         "developer-and-software-engineering-agents",
@@ -3706,7 +3706,7 @@
       "description": "Assist a software engineering task using repository context and controlled tools. Never apply or merge consequential changes without review.",
       "pattern": "Repository understanding, coding support, testing, review, and delivery",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "05-developer-agents/41-changelog-generator",
       "tags": [
         "developer-and-software-engineering-agents",
@@ -3721,7 +3721,7 @@
       "description": "Assist a software engineering task using repository context and controlled tools. Never apply or merge consequential changes without review.",
       "pattern": "Repository understanding, coding support, testing, review, and delivery",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "05-developer-agents/42-release-note-assistant",
       "tags": [
         "developer-and-software-engineering-agents",
@@ -3736,7 +3736,7 @@
       "description": "Assist a software engineering task using repository context and controlled tools. Never apply or merge consequential changes without review.",
       "pattern": "Repository understanding, coding support, testing, review, and delivery",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "05-developer-agents/43-commit-message-assistant",
       "tags": [
         "developer-and-software-engineering-agents",
@@ -3751,7 +3751,7 @@
       "description": "Assist a software engineering task using repository context and controlled tools. Never apply or merge consequential changes without review.",
       "pattern": "Repository understanding, coding support, testing, review, and delivery",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "05-developer-agents/44-git-conflict-resolution-guide",
       "tags": [
         "developer-and-software-engineering-agents",
@@ -3766,7 +3766,7 @@
       "description": "Assist a software engineering task using repository context and controlled tools. Never apply or merge consequential changes without review.",
       "pattern": "Repository understanding, coding support, testing, review, and delivery",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "05-developer-agents/45-build-failure-investigator",
       "tags": [
         "developer-and-software-engineering-agents",
