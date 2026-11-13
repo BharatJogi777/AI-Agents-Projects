@@ -28,3 +28,14 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-253 | Trace investigation assistant | [03-trace-investigation-assistant](03-trace-investigation-assistant/) |
 | AG-254 | Metrics query assistant | [04-metrics-query-assistant](04-metrics-query-assistant/) |
 | AG-255 | Incident timeline builder | [05-incident-timeline-builder](05-incident-timeline-builder/) |
+
+
+## Implemented projects (AG-256–AG-260)
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-256 | Incident severity classifier | [06-incident-severity-classifier](06-incident-severity-classifier/) |
+| AG-257 | On-call handoff summarizer | [07-on-call-handoff-summarizer](07-on-call-handoff-summarizer/) |
+| AG-258 | Runbook retrieval assistant | [08-runbook-retrieval-assistant](08-runbook-retrieval-assistant/) |
+| AG-259 | Runbook recommendation agent | [09-runbook-recommendation-agent](09-runbook-recommendation-agent/) |
+| AG-260 | Kubernetes pod diagnosis agent | [10-kubernetes-pod-diagnosis-agent](10-kubernetes-pod-diagnosis-agent/) |
