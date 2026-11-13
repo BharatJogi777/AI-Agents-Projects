@@ -5431,7 +5431,7 @@
       "description": "Explore advanced interaction modes and durable workflows while preserving clear user control and safe interruption.",
       "pattern": "Browser, voice, multimodal, event-driven, and long-running agents",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "08-advanced-agents/06-accessible-browser-interaction-assistant",
       "tags": [
         "advanced-interfaces-and-autonomous-workflows",
@@ -5446,7 +5446,7 @@
       "description": "Explore advanced interaction modes and durable workflows while preserving clear user control and safe interruption.",
       "pattern": "Browser, voice, multimodal, event-driven, and long-running agents",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "08-advanced-agents/07-screenshot-to-ui-explanation-agent",
       "tags": [
         "advanced-interfaces-and-autonomous-workflows",
@@ -5461,7 +5461,7 @@
       "description": "Explore advanced interaction modes and durable workflows while preserving clear user control and safe interruption.",
       "pattern": "Browser, voice, multimodal, event-driven, and long-running agents",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "08-advanced-agents/08-visual-ui-regression-investigator",
       "tags": [
         "advanced-interfaces-and-autonomous-workflows",
@@ -5476,7 +5476,7 @@
       "description": "Explore advanced interaction modes and durable workflows while preserving clear user control and safe interruption.",
       "pattern": "Browser, voice, multimodal, event-driven, and long-running agents",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "08-advanced-agents/09-voice-conversation-agent",
       "tags": [
         "advanced-interfaces-and-autonomous-workflows",
@@ -5491,7 +5491,7 @@
       "description": "Explore advanced interaction modes and durable workflows while preserving clear user control and safe interruption.",
       "pattern": "Browser, voice, multimodal, event-driven, and long-running agents",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "08-advanced-agents/10-speech-transcription-task-agent",
       "tags": [
         "advanced-interfaces-and-autonomous-workflows",
