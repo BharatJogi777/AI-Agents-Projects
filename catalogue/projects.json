@@ -3,7 +3,7 @@
   "catalogue_version": "1.0.0",
   "total_projects": 500,
   "generated_at": "2026-11-12",
-  "status_policy": "Planned entries are catalogue records, not implementation claims. AG-001 through AG-080 have implementation files pending local verification; AG-101 through AG-108 have implementation files and authored tests pending local verification.",
+  "status_policy": "Planned entries are catalogue records, not implementation claims. AG-001 through AG-080 have implementation files pending local verification; AG-101 through AG-111 have implementation files and authored tests pending local verification.",
   "tracks": [
     {
       "id": "01-foundations",
@@ -1726,7 +1726,7 @@
       "description": "Expose or consume a typed capability through MCP. Enforce authorization, timeouts, validation, and auditable tool execution.",
       "pattern": "MCP servers, clients, discovery, transport, permissions, and resilience",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "03-mcp-agents/09-mcp-tool-schema-validator",
       "tags": [
         "mcp-and-tool-integration",
@@ -1741,7 +1741,7 @@
       "description": "Expose or consume a typed capability through MCP. Enforce authorization, timeouts, validation, and auditable tool execution.",
       "pattern": "MCP servers, clients, discovery, transport, permissions, and resilience",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "03-mcp-agents/10-mcp-tool-namespace-manager",
       "tags": [
         "mcp-and-tool-integration",
@@ -1756,7 +1756,7 @@
       "description": "Expose or consume a typed capability through MCP. Enforce authorization, timeouts, validation, and auditable tool execution.",
       "pattern": "MCP servers, clients, discovery, transport, permissions, and resilience",
       "difficulty": "Intermediate to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "03-mcp-agents/11-multi-server-mcp-client",
       "tags": [
         "mcp-and-tool-integration",
