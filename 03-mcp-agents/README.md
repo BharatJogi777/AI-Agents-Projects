@@ -30,7 +30,13 @@ This track contains 50 project specifications in the root [project catalogue](..
 | AG-109 | [MCP tool schema validator](09-mcp-tool-schema-validator/) | In progress — implementation and tests authored; execution verification pending |
 | AG-110 | [MCP tool namespace manager](10-mcp-tool-namespace-manager/) | In progress — implementation and tests authored; execution verification pending |
 | AG-111 | [Multi-server MCP client](11-multi-server-mcp-client/) | In progress — implementation and tests authored; execution verification pending |
-| AG-112–AG-150 | Remaining MCP projects | Planned |
+| AG-112–AG-132 | MCP integrations and resilience projects | In progress — implementation and tests authored; execution verification pending |
+| AG-133 | [Cloud inventory MCP server](33-cloud-inventory-mcp-server/) | In progress — implementation and tests authored; execution verification pending |
+| AG-134 | [Kubernetes read-only MCP server](34-kubernetes-read-only-mcp-server/) | In progress — implementation and tests authored; execution verification pending |
+| AG-135 | [Docker inspection MCP server](35-docker-inspection-mcp-server/) | In progress — implementation and tests authored; execution verification pending |
+| AG-136 | [Observability query MCP server](36-observability-query-mcp-server/) | In progress — implementation and tests authored; execution verification pending |
+| AG-137 | [Prometheus MCP integration](37-prometheus-mcp-integration/) | In progress — implementation and tests authored; execution verification pending |
+| AG-138–AG-150 | Remaining MCP projects | Planned |
 
 ## How to run AG-101
 
