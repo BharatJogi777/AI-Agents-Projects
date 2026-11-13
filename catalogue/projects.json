@@ -6556,7 +6556,7 @@
       "description": "Measure and improve agent security, reliability, privacy, and quality with repeatable tests and evidence.",
       "pattern": "Threat modeling, policy enforcement, testing, evaluation, and auditability",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "09-security-evaluation/31-llm-as-judge-calibration-harness",
       "tags": [
         "security-governance-and-evaluation",
@@ -6571,7 +6571,7 @@
       "description": "Measure and improve agent security, reliability, privacy, and quality with repeatable tests and evidence.",
       "pattern": "Threat modeling, policy enforcement, testing, evaluation, and auditability",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "09-security-evaluation/32-human-evaluation-review-queue",
       "tags": [
         "security-governance-and-evaluation",
@@ -6586,7 +6586,7 @@
       "description": "Measure and improve agent security, reliability, privacy, and quality with repeatable tests and evidence.",
       "pattern": "Threat modeling, policy enforcement, testing, evaluation, and auditability",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "09-security-evaluation/33-golden-dataset-regression-runner",
       "tags": [
         "security-governance-and-evaluation",
@@ -6601,7 +6601,7 @@
       "description": "Measure and improve agent security, reliability, privacy, and quality with repeatable tests and evidence.",
       "pattern": "Threat modeling, policy enforcement, testing, evaluation, and auditability",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "09-security-evaluation/34-synthetic-task-dataset-generator",
       "tags": [
         "security-governance-and-evaluation",
@@ -6616,7 +6616,7 @@
       "description": "Measure and improve agent security, reliability, privacy, and quality with repeatable tests and evidence.",
       "pattern": "Threat modeling, policy enforcement, testing, evaluation, and auditability",
       "difficulty": "Advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "09-security-evaluation/35-adversarial-test-case-generator",
       "tags": [
         "security-governance-and-evaluation",
