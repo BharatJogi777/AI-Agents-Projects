@@ -1,1 +1,1 @@
-"""Rollback recommendation agent package."""
+"""42 Rollback Recommendation Agent package."""
