@@ -88,3 +88,14 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-478 | Bookmark classification assistant | [28-bookmark-classification-assistant](./28-bookmark-classification-assistant/) |
 | AG-479 | Reading list curator | [29-reading-list-curator](./29-reading-list-curator/) |
 | AG-480 | Email inbox prioritization assistant | [30-email-inbox-prioritization-assistant](./30-email-inbox-prioritization-assistant/) |
+
+
+## Implemented projects — batch 481–485
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-481 | Email thread summarizer | [31-email-thread-summarizer](./31-email-thread-summarizer/) |
+| AG-482 | Email reply drafter with approval | [32-email-reply-drafter-with-approval](./32-email-reply-drafter-with-approval/) |
+| AG-483 | Task extraction from messages | [33-task-extraction-from-messages](./33-task-extraction-from-messages/) |
+| AG-484 | Project status report agent | [34-project-status-report-agent](./34-project-status-report-agent/) |
+| AG-485 | Project risk register assistant | [35-project-risk-register-assistant](./35-project-risk-register-assistant/) |
