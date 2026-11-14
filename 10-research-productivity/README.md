@@ -17,3 +17,14 @@ This track contains 50 project specifications in the root [project catalogue](..
 ## Project status
 
 Projects are implemented in priority order. Check the catalogue for current status; do not infer status from a folder existing.
+
+
+## Implemented projects — batch 451–455
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-451 | Web research planner | [01-web-research-planner](./01-web-research-planner/) |
+| AG-452 | Source credibility assessor | [02-source-credibility-assessor](./02-source-credibility-assessor/) |
+| AG-453 | Multi-source fact checker | [03-multi-source-fact-checker](./03-multi-source-fact-checker/) |
+| AG-454 | Research question refinement agent | [04-research-question-refinement-agent](./04-research-question-refinement-agent/) |
+| AG-455 | Literature review assistant | [05-literature-review-assistant](./05-literature-review-assistant/) |
