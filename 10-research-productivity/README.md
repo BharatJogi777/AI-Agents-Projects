@@ -28,3 +28,14 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-453 | Multi-source fact checker | [03-multi-source-fact-checker](./03-multi-source-fact-checker/) |
 | AG-454 | Research question refinement agent | [04-research-question-refinement-agent](./04-research-question-refinement-agent/) |
 | AG-455 | Literature review assistant | [05-literature-review-assistant](./05-literature-review-assistant/) |
+
+
+## Implemented projects — batch 456–460
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-456 | Academic paper summarizer | [06-academic-paper-summarizer](./06-academic-paper-summarizer/) |
+| AG-457 | Paper methodology extractor | [07-paper-methodology-extractor](./07-paper-methodology-extractor/) |
+| AG-458 | Citation network explorer | [08-citation-network-explorer](./08-citation-network-explorer/) |
+| AG-459 | Research gap finder | [09-research-gap-finder](./09-research-gap-finder/) |
+| AG-460 | Experiment design assistant | [10-experiment-design-assistant](./10-experiment-design-assistant/) |
