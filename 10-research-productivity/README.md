@@ -77,3 +77,14 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-473 | Standards and regulation tracker | [23-standards-and-regulation-tracker](./23-standards-and-regulation-tracker/) |
 | AG-474 | Knowledge graph curator | [24-knowledge-graph-curator](./24-knowledge-graph-curator/) |
 | AG-475 | Personal notes search assistant | [25-personal-notes-search-assistant](./25-personal-notes-search-assistant/) |
+
+
+## Implemented projects — batch 476–480
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-476 | Knowledge base cleanup agent | [26-knowledge-base-cleanup-agent](./26-knowledge-base-cleanup-agent/) |
+| AG-477 | Duplicate knowledge detector | [27-duplicate-knowledge-detector](./27-duplicate-knowledge-detector/) |
+| AG-478 | Bookmark classification assistant | [28-bookmark-classification-assistant](./28-bookmark-classification-assistant/) |
+| AG-479 | Reading list curator | [29-reading-list-curator](./29-reading-list-curator/) |
+| AG-480 | Email inbox prioritization assistant | [30-email-inbox-prioritization-assistant](./30-email-inbox-prioritization-assistant/) |
