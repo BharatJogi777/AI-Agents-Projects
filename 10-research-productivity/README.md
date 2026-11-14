@@ -50,3 +50,9 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-463 | Patent landscape researcher | [13-patent-landscape-researcher](./13-patent-landscape-researcher/) |
 | AG-464 | Market research assistant | [14-market-research-assistant](./14-market-research-assistant/) |
 | AG-465 | Competitor intelligence monitor | [15-competitor-intelligence-monitor](./15-competitor-intelligence-monitor/) |
+
+| AG-466 | Product requirements analyst | [Project](16-product-requirements-analyst/) |
+| AG-467 | Product discovery interview synthesizer | [Project](17-product-discovery-interview-synthesizer/) |
+| AG-468 | Customer interview question planner | [Project](18-customer-interview-question-planner/) |
+| AG-469 | Survey response analyst | [Project](19-survey-response-analyst/) |
+| AG-470 | Business report drafter | [Project](20-business-report-drafter/) |
