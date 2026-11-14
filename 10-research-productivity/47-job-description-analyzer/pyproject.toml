@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "job-description-analyzer"
+version = "0.1.0"
+description = "Extract explicit skills and responsibilities from a supplied job description and compare them with a caller-provided skill profile."
+requires-python = ">=3.10"
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
