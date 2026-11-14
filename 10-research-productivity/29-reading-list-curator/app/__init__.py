@@ -1,0 +1,1 @@
+"""Reading list curator package."""
