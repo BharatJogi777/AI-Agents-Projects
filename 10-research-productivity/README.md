@@ -99,3 +99,9 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-483 | Task extraction from messages | [33-task-extraction-from-messages](./33-task-extraction-from-messages/) |
 | AG-484 | Project status report agent | [34-project-status-report-agent](./34-project-status-report-agent/) |
 | AG-485 | Project risk register assistant | [35-project-risk-register-assistant](./35-project-risk-register-assistant/) |
+
+| AG-486 | Project plan decomposition agent | [36-project-plan-decomposition-agent](36-project-plan-decomposition-agent/) |
+| AG-487 | Workload prioritization assistant | [37-workload-prioritization-assistant](37-workload-prioritization-assistant/) |
+| AG-488 | Focus session planner | [38-focus-session-planner](38-focus-session-planner/) |
+| AG-489 | Meeting agenda generator | [39-meeting-agenda-generator](39-meeting-agenda-generator/) |
+| AG-490 | Meeting follow-up assistant | [40-meeting-follow-up-assistant](40-meeting-follow-up-assistant/) |
