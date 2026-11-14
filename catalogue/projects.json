@@ -7006,7 +7006,7 @@
       "description": "Turn information and routine knowledge work into structured outputs with source tracking and user confirmation.",
       "pattern": "Evidence gathering, synthesis, knowledge workflows, and personal productivity",
       "difficulty": "Beginner to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "10-research-productivity/11-hypothesis-critique-agent",
       "tags": [
         "research-knowledge-and-productivity-agents",
@@ -7021,7 +7021,7 @@
       "description": "Turn information and routine knowledge work into structured outputs with source tracking and user confirmation.",
       "pattern": "Evidence gathering, synthesis, knowledge workflows, and personal productivity",
       "difficulty": "Beginner to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "10-research-productivity/12-scientific-dataset-discovery-agent",
       "tags": [
         "research-knowledge-and-productivity-agents",
@@ -7036,7 +7036,7 @@
       "description": "Turn information and routine knowledge work into structured outputs with source tracking and user confirmation.",
       "pattern": "Evidence gathering, synthesis, knowledge workflows, and personal productivity",
       "difficulty": "Beginner to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "10-research-productivity/13-patent-landscape-researcher",
       "tags": [
         "research-knowledge-and-productivity-agents",
@@ -7051,7 +7051,7 @@
       "description": "Turn information and routine knowledge work into structured outputs with source tracking and user confirmation.",
       "pattern": "Evidence gathering, synthesis, knowledge workflows, and personal productivity",
       "difficulty": "Beginner to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "10-research-productivity/14-market-research-assistant",
       "tags": [
         "research-knowledge-and-productivity-agents",
@@ -7066,7 +7066,7 @@
       "description": "Turn information and routine knowledge work into structured outputs with source tracking and user confirmation.",
       "pattern": "Evidence gathering, synthesis, knowledge workflows, and personal productivity",
       "difficulty": "Beginner to advanced",
-      "status": "Planned",
+      "status": "In progress",
       "implementation_path": "10-research-productivity/15-competitor-intelligence-monitor",
       "tags": [
         "research-knowledge-and-productivity-agents",
