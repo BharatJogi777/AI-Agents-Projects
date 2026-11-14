@@ -111,3 +111,9 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-493 | Proposal drafting assistant | [43-proposal-drafting-assistant](43-proposal-drafting-assistant/) |
 | AG-494 | RFP response assistant | [44-rfp-response-assistant](44-rfp-response-assistant/) |
 | AG-495 | Grant opportunity finder | [45-grant-opportunity-finder](45-grant-opportunity-finder/) |
+
+| AG-496 | Job search research assistant | [46-job-search-research-assistant](46-job-search-research-assistant/) |
+| AG-497 | Job description analyzer | [47-job-description-analyzer](47-job-description-analyzer/) |
+| AG-498 | Interview preparation assistant | [48-interview-preparation-assistant](48-interview-preparation-assistant/) |
+| AG-499 | Learning path planner | [49-learning-path-planner](49-learning-path-planner/) |
+| AG-500 | Interactive study coach | [50-interactive-study-coach](50-interactive-study-coach/) |
