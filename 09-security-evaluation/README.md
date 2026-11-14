@@ -110,3 +110,13 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-443 | Fallback behavior test suite | [Project](43-fallback-behavior-test-suite/) |
 | AG-444 | Timeout and cancellation test suite | [Project](44-timeout-and-cancellation-test-suite/) |
 | AG-445 | Rate limit resilience test suite | [Project](45-rate-limit-resilience-test-suite/) |
+
+## Implemented projects (AG-446–AG-450)
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-446 | Data retention policy checker | [Project](46-data-retention-policy-checker/) |
+| AG-447 | Audit log privacy filter | [Project](47-audit-log-privacy-filter/) |
+| AG-448 | Model risk register generator | [Project](48-model-risk-register-generator/) |
+| AG-449 | Agent deployment readiness assessor | [Project](49-agent-deployment-readiness-assessor/) |
+| AG-450 | Agent incident response playbook | [Project](50-agent-incident-response-playbook/) |
