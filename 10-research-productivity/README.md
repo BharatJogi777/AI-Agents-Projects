@@ -56,3 +56,24 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-468 | Customer interview question planner | [Project](18-customer-interview-question-planner/) |
 | AG-469 | Survey response analyst | [Project](19-survey-response-analyst/) |
 | AG-470 | Business report drafter | [Project](20-business-report-drafter/) |
+
+
+## Implemented projects — batch 466–470
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-466 | Product requirements analyst | [16-product-requirements-analyst](./16-product-requirements-analyst/) |
+| AG-467 | Product discovery interview synthesizer | [17-product-discovery-interview-synthesizer](./17-product-discovery-interview-synthesizer/) |
+| AG-468 | Customer interview question planner | [18-customer-interview-question-planner](./18-customer-interview-question-planner/) |
+| AG-469 | Survey response analyst | [19-survey-response-analyst](./19-survey-response-analyst/) |
+| AG-470 | Business report drafter | [20-business-report-drafter](./20-business-report-drafter/) |
+
+## Implemented projects — batch 471–475
+
+| ID | Project | Implementation |
+|---|---|---|
+| AG-471 | Executive briefing generator | [21-executive-briefing-generator](./21-executive-briefing-generator/) |
+| AG-472 | Policy document comparison assistant | [22-policy-document-comparison-assistant](./22-policy-document-comparison-assistant/) |
+| AG-473 | Standards and regulation tracker | [23-standards-and-regulation-tracker](./23-standards-and-regulation-tracker/) |
+| AG-474 | Knowledge graph curator | [24-knowledge-graph-curator](./24-knowledge-graph-curator/) |
+| AG-475 | Personal notes search assistant | [25-personal-notes-search-assistant](./25-personal-notes-search-assistant/) |
