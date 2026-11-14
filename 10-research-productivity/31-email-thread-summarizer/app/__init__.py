@@ -1,0 +1,1 @@
+"""Email thread summarizer package."""
