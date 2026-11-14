@@ -105,3 +105,9 @@ Projects are implemented in priority order. Check the catalogue for current stat
 | AG-488 | Focus session planner | [38-focus-session-planner](38-focus-session-planner/) |
 | AG-489 | Meeting agenda generator | [39-meeting-agenda-generator](39-meeting-agenda-generator/) |
 | AG-490 | Meeting follow-up assistant | [40-meeting-follow-up-assistant](40-meeting-follow-up-assistant/) |
+
+| AG-491 | Document comparison assistant | [41-document-comparison-assistant](41-document-comparison-assistant/) |
+| AG-492 | Document quality reviewer | [42-document-quality-reviewer](42-document-quality-reviewer/) |
+| AG-493 | Proposal drafting assistant | [43-proposal-drafting-assistant](43-proposal-drafting-assistant/) |
+| AG-494 | RFP response assistant | [44-rfp-response-assistant](44-rfp-response-assistant/) |
+| AG-495 | Grant opportunity finder | [45-grant-opportunity-finder](45-grant-opportunity-finder/) |
